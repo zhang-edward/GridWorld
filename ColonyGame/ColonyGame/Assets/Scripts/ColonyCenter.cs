@@ -13,11 +13,18 @@ public class ColonyCenter : Entity {
 		get{return faction;}
 	}
 
+	public GameObject[] colonyEntityPrefabs;
+	public GameObject[] colonyBuildingPrefabs;
+
 	public TerritoryMngr territory;
 
 	public override void Act ()
 	{
-
+		if (trees >= 20)
+		{
+			CreateColonyEntity(1);
+			trees -= 20;
+		}
 	}
 
 	public void Init(int faction)
@@ -33,19 +40,30 @@ public class ColonyCenter : Entity {
 			if (world.terrain[(int)pos.y, (int)pos.x] == 0)
 				spawnPoints.Remove (pos);
 		}
-
-		// TODO: put this in a method
-
+		// create a gatherer
+		CreateColonyEntity(0);
 	}
 
-	public void CreateColonyEntity()
+	public void CreateColonyEntity(int id)
 	{
-		int randPos = Random.Range (0, spawnPoints.Count);
-		Vector2 spawnPos = spawnPoints[randPos];
-		if (world.entities[(int)spawnPos.y, (int)spawnPos.x] == null)
+		// get a random spawnPos
+		int i = Random.Range (0, spawnPoints.Count);
+		Vector2 pos = spawnPoints[i];
+
+		int x = (int)pos.x;
+		int y = (int)pos.y;
+
+		if (world.entities[y, x] == null)
 		{
-			ColonyEntity e = world.CreateEntity(1, (int)spawnPos.x, (int)spawnPos.y) as ColonyEntity;
+			ColonyEntity e = world.CreateEntity(colonyEntityPrefabs[id], x, y) as ColonyEntity;
 			e.Init (this, this.territory);
 		}
+	}
+
+	public void CreateColonyBuilding(int id, int x, int y)
+	{
+		ColonyBuilding e = world.CreateEntity(colonyBuildingPrefabs[id], x, y) as ColonyBuilding;
+		e.Init (this, this.territory);
+		territory.setSurroundingTerritory(faction, x, y);
 	}
 }

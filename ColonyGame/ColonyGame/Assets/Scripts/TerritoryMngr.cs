@@ -4,7 +4,7 @@ using System.Collections;
 public class TerritoryMngr : MonoBehaviour {
 
 	private static int WORLD_SIZE = World.WORLD_SIZE;
-	public World world;
+	private World world;
 
 	public SpriteRenderer[,] spriteMap = new SpriteRenderer[WORLD_SIZE, WORLD_SIZE];
 	public int[,] territories = new int[WORLD_SIZE, WORLD_SIZE];
@@ -12,7 +12,7 @@ public class TerritoryMngr : MonoBehaviour {
 	public Sprite[] territorySprites;
 	public GameObject prefab;
 
-	void Start()
+	void Awake()
 	{
 		world = GetComponent<World>();
 		Init();
@@ -28,8 +28,10 @@ public class TerritoryMngr : MonoBehaviour {
 				o.transform.SetParent(this.transform);
 				o.transform.localPosition = new Vector2(x, y);
 
-				spriteMap[y, x] = o.GetComponent<SpriteRenderer>();
-				o.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.4f);
+				SpriteRenderer sr = o.GetComponent<SpriteRenderer>();
+				spriteMap[y, x] = sr;
+				sr.color = new Color(1, 1, 1, 0.4f);
+				sr.sortingOrder = 1;
 
 				// -1 represents no territory
 				territories[y, x] = -1;

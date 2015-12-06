@@ -75,13 +75,14 @@ public class World : MonoBehaviour {
 		}
 		for (int i = 0; i < 2; i ++)
 		{
-			ColonyCenter colony = RandomPlaceEntity(0, 1) as ColonyCenter;
+			ColonyCenter colony = RandomPlaceEntity(entityPrefabs[0], 1) as ColonyCenter;
 			colony.territory = GetComponent<TerritoryMngr>();
-			colony.Init (i);
+			int faction = i;
+			colony.Init (faction);
 		}
 	}
 
-	public Entity RandomPlaceEntity(int id, int check)
+	public Entity RandomPlaceEntity(GameObject prefab, int check)
 	{
 		int x = Random.Range (0, WORLD_SIZE);
 		int y = Random.Range (0, WORLD_SIZE);
@@ -104,12 +105,12 @@ public class World : MonoBehaviour {
 			// =========================
 		}
 		//Debug.Log ("Entity created at: " + x + ", " + y);
-		return CreateEntity(id, x, y);
+		return CreateEntity(prefab, x, y);
 	}
 
-	public Entity CreateEntity(int id, int x, int y)
+	public Entity CreateEntity(GameObject prefab, int x, int y)
 	{
-		GameObject o = Instantiate(entityPrefabs[id], Vector3.one, Quaternion.identity) as GameObject;
+		GameObject o = Instantiate(prefab, Vector3.one, Quaternion.identity) as GameObject;
 		o.transform.SetParent(entitiesFolder);
 		o.transform.localPosition = new Vector2(x, y);
 
@@ -182,7 +183,7 @@ public class World : MonoBehaviour {
 	{
 		if (x < 0 || y < 0)
 			return false;
-		else if (x > WORLD_SIZE || y > WORLD_SIZE)
+		else if (x >= WORLD_SIZE || y >= WORLD_SIZE)
 			return false;
 		return true;
 	}
