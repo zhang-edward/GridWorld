@@ -1,0 +1,120 @@
+Project Proposal:
+-----------------
+
+The game will be a roguelike-RPG fantasy style game in which the player is in a world with towns,
+dungeons, monsters, and different terrain to traverse. The purpose of the game is to make your
+character stronger and more influential on the events that occur in the world that you are in.
+This can be achieved by completing quests given by the towns, defeating monsters and conquering dungeons,
+or acquiring new and more powerful equipment. If the player chooses, he or she may travel to another world
+through a portal and start again.
+
+The player has two main stats:
+Good vs Evil
+Life vs Death
+
+In addition, there are three categories of stats, items, and spells:
+
+Wisdom - Mage (Spell)
+         Possible Spells: Fire, Ice, Lightning, Invisibility, Invincibility
+                          Stunning, Earth, Summoning monsters(dragons, snakes, etc.)
+Strength - Warrior (Physical)
+           Possible Weapons: Sword, Axe, Mace, Shield, Bomb,
+
+Dexterity - Ranger (Stealth, Ranged)
+            Possible Weapons: Crossbow, Longbow, Camaflouge cloak, knife,
+                              Different types of arrows(poison, fire, etc.)
+            Can have pets to do stuff for them(eagle, wolf, etc.) such as steal items
+
+As you level up, you can choose to increase skill level in which ever skill you want.
+You buy weapons for warrior and ranger and magic scrolls for mage.
+You can only use a weapon when the skill it corresponds with has reached a certain level.
+
+Village Relations:
+------------------
+
+Hated	<===	Disliked	<===	Neutral	===>	Liked 	===>	Loved
+		Feared		<===	Neutral ===> 	Comfortable
+
+Neutral:
+Village will sell at medium prices
+Village will give quests
+
+Liked:
+Village will sell at med-low prices
+Village will give better quests
+
+Loved:
+Village will sell at med-low prices
+Village will give even better quests
+
+Disliked:
+Village will sell at med-high prices
+Village will give some quests
+
+Hated:
+Village will ignore or attack
+Village will accept gifts of money to improve relations
+
+Liked + Comfortable = Admired
+- Sale prices: med-low
+- More Quests
+
+Liked + Feared = Respected
+- Sale prices: low
+- Less Quests
+- Less penalty for hurting villages
+
+Hated + Comfortable = Belittled
+- Village will not sell to you
+- Village will try to kill you
+
+Hated + Feared = Terrorizing
+- Sale prices: high
+- Village will never retaliate
+
+
+Game Features:
+--------------
+The basic game will have
+	- World with Randomly Generated:
+		- Terrain
+		- Monsters
+		- Towns
+	
+	- Terrain:
+		
+	- Towns:
+		- Buying, Selling items
+		- Completing Quests for good or bad
+	
+	- Basic Battle System
+	- Leveling System
+
+The expanded game will have
+
+	- World with Randomly Generated:
+		- Terrain
+		- Monsters
+		- Dungeons
+		- Towns
+		- Quests
+		
+	-Terrain:
+		- Terrain "Damage"
+		- Terrain Types:
+			- Grassland
+			- Snowy
+			- Desert
+			- Volcano
+			
+Terrain:
+--------
+	Layers:
+		- Entities (Player, Monsters)
+			- Non Static!
+		- Terrain Objects (Towns, Dungeons, Mountains, Rocks)
+			- Static, Interactable
+		- Terrain Status (Burning, Flooded, Destroyed, etc)
+			- Static, Can affect adjacent tiles
+		- Terrain Tile Biome (Grassland, Snowy, Desert, etc)
+			- Static
