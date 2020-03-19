@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+/* Edward Zhang
+ * A map generator using cell automata.
+ * No longer used in any of my projects, but was cool while it worked
+ */
+
+
+using UnityEngine;
 using System.Collections;
 
 public class WorldGenerator : MonoBehaviour {
@@ -38,24 +44,6 @@ public class WorldGenerator : MonoBehaviour {
 					map[y, x] = 2;
 			}
 		}
-
-		/*int[,] forest = new int[size, size];
-		randomizeArray(forest, 4, 0, 0.42f);
-
-		for (int i = 0; i <= 2; i ++)
-			forest = reduceNoise(forest, 4);
-
-		for (int y = 0; y < size; y ++)
-		{
-			for (int x = 0; x < size; x ++)
-			{
-				if (map[y, x] == 1 && forest[y, x] == 4)
-					map[y, x] = 4;
-			}
-		}*/
-
-
-
 		return map;
 	}
 
