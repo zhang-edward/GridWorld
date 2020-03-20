@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class Conditional_EntityInRange : Behavior {
 
 	public int range = 1;
@@ -8,11 +7,11 @@ public class Conditional_EntityInRange : Behavior {
 	[Tooltip("Entity")]
 	public string targetKey = "target";
 
-	public override NodeStatus Act() {
+	public override NodeStatus Act(Entity entity, Memory memory) {
 		Entity other = memory[targetKey] as Entity;
 		if (Vector2Int.Distance(entity.position, other.position) <= range)
 			return NodeStatus.Success;
-		else 
+		else
 			return NodeStatus.Failure;
 	}
 }

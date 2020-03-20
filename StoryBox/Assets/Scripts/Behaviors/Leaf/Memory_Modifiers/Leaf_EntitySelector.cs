@@ -11,7 +11,7 @@ public class Leaf_EntitySelector : Behavior {
 	[Tooltip("Entity")]
 	public string writeKey = "destination";
 
-	public override NodeStatus Act() {
+	public override NodeStatus Act(Entity entity, Memory memory) {
 		List<Entity> entities = memory[entitiesKey] as List<Entity>;
 
 		foreach (Entity other in entities) {

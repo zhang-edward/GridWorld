@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+#pragma warning disable CS0649
 
 public class World : MonoBehaviour {
 
@@ -14,23 +15,27 @@ public class World : MonoBehaviour {
 
 	// Object tile IDs
 	public const int NONE = 0;
-	public const int FOREST = 1;
-	public const int MOUNTAIN = 2;
+	public const int FOREST1 = 1;
+	public const int FOREST2 = 2;
+	public const int FOREST3 = 3;
+	public const int FOREST4 = 4;
+	public const int MOUNTAIN = 5;
 
-#pragma warning disable CS0649
 	[SerializeField] private Tilemap baseTilemap;
 	[SerializeField] private TileBase[] baseTiles;
 
-	[SerializeField] private Tilemap objectTilemap;
-	[SerializeField] private TileBase[] objectTiles;
+	[SerializeField] private Tilemap structureTileMap;
+	[SerializeField] private TileBase[] structureTiles;
+
+	public GameObject basePrefab;
 
 	private WorldGenerator gen = new WorldGenerator();
 
 	private int[, ] baseMap = new int[WORLD_SIZE, WORLD_SIZE];
-	private int[, ] objectMap = new int[WORLD_SIZE, WORLD_SIZE];
+	private int[, ] structureMap = new int[WORLD_SIZE, WORLD_SIZE];
 
 	public int[, ] BaseMap { get { return baseMap; } }
-	public int[, ] ObjectMap { get { return objectMap; } }
+	public int[, ] StructureMap { get { return structureMap; } }
 
 	void Awake() {
 		Camera.main.transform.position = new Vector3(WORLD_SIZE / 2.0f, (WORLD_SIZE - 1) / 2.0f, -10);
@@ -41,9 +46,29 @@ public class World : MonoBehaviour {
 		for (int r = 0; r < WORLD_SIZE; r++) {
 			for (int c = 0; c < WORLD_SIZE; c++) {
 				baseTilemap.SetTile(new Vector3Int(c, r, 0), baseTiles[baseMap[r, c]]);
-				objectTilemap.SetTile(new Vector3Int(c, r, 0), objectTiles[objectMap[r, c]]);
+				structureTileMap.SetTile(new Vector3Int(c, r, 0), structureTiles[structureMap[r, c]]);
 			}
 		}
+	}
+
+	void Start() {
+		for (int i = 0; i < 1; i++) {
+			int limit = 0;
+			while (limit < 1000) {
+				int x = Random.Range(0, World.WORLD_SIZE);
+				int y = Random.Range(0, World.WORLD_SIZE);
+				if (baseMap[y, x] == GRASS) {
+					EntityManager.instance.CreateEntity(basePrefab, x, y, i);
+					break;
+				}
+				limit++;
+			}
+		}
+	}
+
+	public void ModifyStructureMap(int x, int y, int newTile) {
+		structureMap[y, x] = newTile;
+		structureTileMap.SetTile(new Vector3Int(x, y, 0), structureTiles[newTile]);
 	}
 
 	/// <summary>
@@ -65,8 +90,12 @@ public class World : MonoBehaviour {
 
 		gen.checkNeighbors(ref baseMap, GRASS, SAND, WATER, 2);
 
-		gen.overlay(ref baseMap, ref objectMap, FOREST, GRASS, 0.4f, 2);
-		gen.overlay(ref baseMap, ref objectMap, MOUNTAIN, GRASS, 0.38f, 2);
+		gen.overlay(ref baseMap, ref structureMap, FOREST1, GRASS, 0.5f, 2);
+		gen.checkNeighbors(ref structureMap, FOREST1, FOREST2, FOREST1, 7);
+		gen.checkNeighbors(ref structureMap, FOREST2, FOREST3, FOREST2, 6);
+		gen.checkNeighbors(ref structureMap, FOREST3, FOREST4, FOREST3, 6);
+
+		gen.overlay(ref baseMap, ref structureMap, MOUNTAIN, GRASS, 0.38f, 2);
 		// gen.checkNeighbors(ref map, World.MOUNTAIN, World.DIRT, World.GRASS, 3);
 	}
 

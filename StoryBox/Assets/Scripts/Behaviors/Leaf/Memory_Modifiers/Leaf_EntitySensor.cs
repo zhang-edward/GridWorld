@@ -14,21 +14,21 @@ public class Leaf_EntitySensor : Behavior {
 	[Header("Write Keys")]
 	public string entitiesKey = "entities";
 
-	public override NodeStatus Act() {
+	public override NodeStatus Act(Entity entity, Memory memory) {
 		List<Entity> entities = EntityManager.instance.entities;
 		List<Entity> entitesInRange = new List<Entity>();
-		
+
 		foreach (Entity other in entities) {
-			if (other == entity || !Detects(other)) continue;
+			if (other == entity || !Detects(entity, other)) continue;
 			if (Vector2Int.Distance(other.position, entity.position) < range)
 				entitesInRange.Add(other);
 		}
-		
+
 		memory[entitiesKey] = entitesInRange;
 		return NodeStatus.Success;
 	}
 
-	private bool Detects(Entity other) {
+	private bool Detects(Entity entity, Entity other) {
 		if (allies && other.faction == entity.faction)
 			return true;
 		else if (enemies && other.faction != entity.faction)

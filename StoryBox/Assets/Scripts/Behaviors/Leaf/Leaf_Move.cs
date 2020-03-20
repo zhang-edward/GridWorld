@@ -1,20 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
-
 public class Leaf_Move : Behavior {
 
 	[Header("Read Keys")]
 	public string movementKey = "move_dest";
 
-	private int[, ] map;
+	public override NodeStatus Act(Entity entity, Memory memory) {
+		int[, ] map = entity.world.BaseMap;
 
-	public override void Init(Entity entity, Memory memory) {
-		base.Init(entity, memory);
-		map = entity.world.BaseMap;
-	}
-
-	public override NodeStatus Act() {
-		Vector2Int dest = (Vector2Int)memory[movementKey];
-		if (!EntityManager.instance.EntityExistsAt(dest.x, dest.y)) {
+		Vector2Int dest = (Vector2Int) memory[movementKey];
+		if (entity.allowedTiles.Contains(map[dest.y, dest.x])) {
 			entity.Move(dest.x, dest.y);
 			return NodeStatus.Success;
 		}

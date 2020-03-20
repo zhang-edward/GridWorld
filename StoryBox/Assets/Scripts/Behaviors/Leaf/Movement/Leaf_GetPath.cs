@@ -3,9 +3,8 @@ using Priority_Queue;
 using UnityEngine;
 
 public class Leaf_GetPath : Behavior {
-
-	// [Tooltip("String that contains what terrain is movable for this entity")]
-	public List<int> moveable;
+	
+	private static Vector2Int EMPTY = new Vector2Int(-1, -1);
 
 	[Header("Read Keys")]
 	[Tooltip("Can be an Entity or a Vector2Int")]
@@ -15,15 +14,9 @@ public class Leaf_GetPath : Behavior {
 	[Tooltip("Stack<Vector2Int>")]
 	public string pathKey = "path";
 
-	private Vector2Int EMPTY = new Vector2Int(-1, -1);
-	private int[, ] baseMap;
 
-	public override void Init(Entity entity, Memory memory) {
-		base.Init(entity, memory);
-		this.baseMap = entity.world.BaseMap;
-	}
-
-	public override NodeStatus Act() {
+	public override NodeStatus Act(Entity entity, Memory memory) {
+		int[, ] baseMap = entity.world.BaseMap;
 		object obj = memory[destinationKey];
 		Vector2Int destination;
 		if (obj is Entity) {
@@ -35,7 +28,7 @@ public class Leaf_GetPath : Behavior {
 			return NodeStatus.Failure;
 		}
 
-		Stack<Vector2Int> path = TryGetPath(entity.position.x, entity.position.y, destination.x, destination.y);
+		Stack<Vector2Int> path = TryGetPath(baseMap, entity.allowedTiles, entity.position.x, entity.position.y, destination.x, destination.y);
 		if (path == null) {
 			return NodeStatus.Failure;
 		} else {
@@ -52,7 +45,7 @@ public class Leaf_GetPath : Behavior {
 	/// <param name="destX">Destination X coordinate</param>
 	/// <param name="destY">Destination Y coordinate</param>
 	/// <returns></returns>
-	public Stack<Vector2Int> TryGetPath(int startX, int startY, int destX, int destY) {
+	public static Stack<Vector2Int> TryGetPath(int[, ] baseMap, List<int> allowedTiles, int startX, int startY, int destX, int destY) {
 		// print($"Getting position from {startX}, {startY} to {destX}, {destY}");
 		// Get path
 		List<Vector2Int> frontier = new List<Vector2Int>();
@@ -85,12 +78,12 @@ public class Leaf_GetPath : Behavior {
 
 				if (nx == destX && ny == destY) {
 					cameFrom[ny, nx] = new Vector2Int(current.x, current.y);
-					return GetHalfPath(cameFrom, nx, ny);
+					return GetHalfPath(cameFrom, startX, startY, nx, ny);
 				}
 
 				int neighborTerrain = baseMap[ny, nx];
 				// if the cell has not been visited yet, is walkable, and doesn't contain another entity
-				if (moveable.Contains(neighborTerrain) &&
+				if (allowedTiles.Contains(neighborTerrain) &&
 					cameFrom[ny, nx].Equals(EMPTY) &&
 					!EntityManager.instance.EntityExistsAt(nx, ny)) {
 					// (!entity.world.EntityExistsAt(nx, ny))) {
@@ -109,21 +102,20 @@ public class Leaf_GetPath : Behavior {
 	/// half of it.
 	/// </summary>
 	/// <param name="cameFrom"></param>
-	/// <param name="x"></param>
-	/// <param name="y"></param>
+	/// <param name="destX"></param>
+	/// <param name="destY"></param>
 	/// <returns></returns>
-	private Stack<Vector2Int> GetHalfPath(Vector2Int[, ] cameFrom, int x, int y) {
+	private static Stack<Vector2Int> GetHalfPath(Vector2Int[, ] cameFrom, int startX, int startY, int destX, int destY) {
 		Stack<Vector2Int> ans = new Stack<Vector2Int>();
 		List<Vector2Int> fullPath = new List<Vector2Int>();
-		int pathX = x;
-		int pathY = y;
-		while (pathX != entity.position.x || pathY != entity.position.y) {
+		int pathX = destX;
+		int pathY = destY;
+		while (pathX != startX || pathY != startY) {
 			fullPath.Add(new Vector2Int(pathX, pathY));
 			int tempX = pathX;
 			pathX = cameFrom[pathY, pathX].x;
 			pathY = cameFrom[pathY, tempX].y;
 		}
-		fullPath.RemoveAt(0);
 		// fullPath[0] = end of path
 		// fullPath[fullPath.Count - 1] = start of path
 		for (int i = (fullPath.Count / 2); i < fullPath.Count; i++) {

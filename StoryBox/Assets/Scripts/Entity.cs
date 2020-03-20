@@ -1,15 +1,18 @@
+using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
 public class Entity : MonoBehaviour {
 
 	public int health;
-	public int faction;
-	public World world;
+	public int attack;
 	public Behavior behavior; // Root of the behavior tree
 	public Behavior deathBehavior;
+	public List<int> allowedTiles;	// Which tiles is this entity allowed to be on?
 
 	public Vector2Int position { get; private set; }
+	public World world { get; private set; }
+	public int faction { get; private set; }
 
 	private Coroutine smoothMoveRoutine;
 	private Memory memory = new Memory();
@@ -23,16 +26,23 @@ public class Entity : MonoBehaviour {
 		GetComponent<SpriteRenderer>().color = colors[faction];
 
 		transform.position = (Vector2) position;
-		behavior.Init(this, memory);
+		behavior.Init();
+	}
+
+	public void AssignBehavior(Behavior b) {
+		// Destroy(this.behavior.gameObject);
+
+		this.behavior = b;
+		behavior.Init();
 	}
 
 	public void Act() {
-		behavior.Act();
+		behavior.Act(this, memory);
 	}
 
 	public void Die() {
 		if (deathBehavior != null)
-			deathBehavior.Act();
+			deathBehavior.Act(this, memory);
 		gameObject.SetActive(false);
 	}
 

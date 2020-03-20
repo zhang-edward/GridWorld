@@ -47,11 +47,10 @@ public class EntityManager : MonoBehaviour {
 	public Entity CreateEntity(GameObject prefab, int x, int y, int faction) {
 		if (EntityExistsAt(x, y))
 			return null;
-		GameObject obj = Instantiate(prefab) as GameObject;
+		GameObject obj = Instantiate(prefab, this.transform);
 		Entity entity = obj.GetComponent<Entity>();
 		entity.Init(x, y, faction, world);
 		newEntities.Add(entity);
-		obj.transform.SetParent(this.transform);
 		return entity;
 	}
 

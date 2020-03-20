@@ -2,15 +2,9 @@ using UnityEngine;
 
 public abstract class Behavior : MonoBehaviour {
 
-	protected Entity entity;
-	protected Memory memory;
+	public virtual void Init() { }
 
-	public virtual void Init(Entity entity, Memory memory) {
-		this.entity = entity;
-		this.memory = memory;
-	}
-
-	public abstract NodeStatus Act();
+	public abstract NodeStatus Act(Entity entity, Memory memory);
 }
 
 public enum NodeStatus {
