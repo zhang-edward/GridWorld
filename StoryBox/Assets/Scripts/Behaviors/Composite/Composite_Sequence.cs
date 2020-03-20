@@ -19,7 +19,7 @@ public class Composite_Sequence : Behavior {
 		while (i < behaviors.Length) {
 			switch (behaviors[i].Act()) {
 				case NodeStatus.Failure:
-					// Debug.Log(behaviors[i] + " Failure", this);
+					Debug.Log(behaviors[i] + " Failure", this);
 					i = 0;
 					return NodeStatus.Failure;
 				case NodeStatus.Success:

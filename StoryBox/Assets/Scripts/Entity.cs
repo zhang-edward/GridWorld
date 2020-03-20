@@ -14,9 +14,15 @@ public class Entity : MonoBehaviour {
 	private Coroutine smoothMoveRoutine;
 	private Memory memory = new Memory();
 
-	public void Init() {
-		position = new Vector2Int(Random.Range(0, World.WORLD_SIZE), Random.Range(0, World.WORLD_SIZE));
-		transform.position = (Vector2)position;
+	public void Init(int x, int y, int faction, World world) {
+		this.faction = faction;
+		this.position = new Vector2Int(x, y);
+		this.world = world;
+
+		Color[] colors = { Color.red, Color.blue, Color.cyan, Color.green, Color.magenta };
+		GetComponent<SpriteRenderer>().color = colors[faction];
+
+		transform.position = (Vector2) position;
 		behavior.Init(this, memory);
 	}
 

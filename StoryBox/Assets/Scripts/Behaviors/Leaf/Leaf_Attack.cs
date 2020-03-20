@@ -27,14 +27,17 @@ public class Leaf_Attack : Behavior {
 		int attackPower = (int) memory[attackKey];
 
 		if (cachedAttackTarget.health > 0 &&
-			Vector2Int.Distance(entity.position, cachedAttackTarget.position) <= range) {
+			entity.position.ManhattanDistance(cachedAttackTarget.position) <= range) {
 			cachedAttackTarget.health -= attackPower;
 
 			if (cachedAttackTarget.health > 0)
 				return NodeStatus.Running;
-			else
+			else {
+				cachedAttackTarget = null;
 				return NodeStatus.Success;
+			}
 		} else {
+			cachedAttackTarget = null;
 			return NodeStatus.Failure;
 		}
 	}

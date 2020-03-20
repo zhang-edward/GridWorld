@@ -53,7 +53,7 @@ public class Leaf_GetPath : Behavior {
 	/// <param name="destY">Destination Y coordinate</param>
 	/// <returns></returns>
 	public Stack<Vector2Int> TryGetPath(int startX, int startY, int destX, int destY) {
-		print($"Getting position from {startX}, {startY} to {destX}, {destY}");
+		// print($"Getting position from {startX}, {startY} to {destX}, {destY}");
 		// Get path
 		List<Vector2Int> frontier = new List<Vector2Int>();
 		Vector2Int[, ] cameFrom = new Vector2Int[World.WORLD_SIZE, World.WORLD_SIZE];
@@ -71,7 +71,7 @@ public class Leaf_GetPath : Behavior {
 			Vector2Int current = frontier[0];
 			frontier.RemoveAt(0);
 
-			List<Vector2Int> unweightedNeighbors = GetAdjacentCoords(current.x, current.y);
+			List<Vector2Int> unweightedNeighbors = World.GetAdjacentCoords(current.x, current.y);
 			SimplePriorityQueue<Vector2Int, float> neighbors = new SimplePriorityQueue<Vector2Int, float>();
 			foreach (Vector2Int neighbor in unweightedNeighbors) {
 				neighbors.Enqueue(neighbor, -Vector2Int.Distance(neighbor, new Vector2Int(destX, destY)) + Random.Range(-0.5f, 0.5f));
@@ -130,28 +130,5 @@ public class Leaf_GetPath : Behavior {
 			ans.Push(fullPath[i]);
 		}
 		return ans;
-	}
-
-	private List<Vector2Int> GetAdjacentCoords(int x, int y) {
-		List<Vector2Int> ans = new List<Vector2Int>();
-		int xx, yy;
-
-		xx = x + 1;
-		yy = y;
-		if (InBounds(xx, yy)) ans.Add(new Vector2Int(xx, yy));
-		xx = x;
-		yy = y + 1;
-		if (InBounds(xx, yy)) ans.Add(new Vector2Int(xx, yy));
-		xx = x - 1;
-		yy = y;
-		if (InBounds(xx, yy)) ans.Add(new Vector2Int(xx, yy));
-		xx = x;
-		yy = y - 1;
-		if (InBounds(xx, yy)) ans.Add(new Vector2Int(xx, yy));
-		return ans;
-	}
-
-	private bool InBounds(int x, int y) {
-		return x >= 0 && x < World.WORLD_SIZE && y >= 0 && y < World.WORLD_SIZE;
 	}
 }

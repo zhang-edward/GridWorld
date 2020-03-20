@@ -23,7 +23,8 @@ public class Leaf_MovePath : Behavior {
 			cachedPath = memory[pathKey] as Stack<Vector2Int>;
 
 		if (cachedPath.Count > 0) {
-			memory[movementKey] = cachedPath.Pop();
+			Vector2Int dest = cachedPath.Pop();
+			memory[movementKey] = dest;
 
 			switch (movement.Act()) {
 				// Move was successful
@@ -42,6 +43,7 @@ public class Leaf_MovePath : Behavior {
 					return NodeStatus.Running;
 					// Movement behavior failed
 				case NodeStatus.Failure:
+					cachedPath.Push(dest);
 					return NodeStatus.Failure;
 			}
 		}

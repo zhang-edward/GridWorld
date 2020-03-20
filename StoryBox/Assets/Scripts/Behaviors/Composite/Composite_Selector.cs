@@ -19,7 +19,7 @@ public class Composite_Selector : Behavior {
 		while (i < behaviors.Length) {
 			switch (behaviors[i].Act()) {
 				case NodeStatus.Failure:
-					// Debug.Log(behaviors[i] + ": Failure", this);
+					Debug.Log(behaviors[i] + ": Failure", this);
 					i++;
 					continue;
 				case NodeStatus.Success:

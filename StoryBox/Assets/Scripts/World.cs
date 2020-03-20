@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -16,6 +17,7 @@ public class World : MonoBehaviour {
 	public const int FOREST = 1;
 	public const int MOUNTAIN = 2;
 
+#pragma warning disable CS0649
 	[SerializeField] private Tilemap baseTilemap;
 	[SerializeField] private TileBase[] baseTiles;
 
@@ -31,16 +33,17 @@ public class World : MonoBehaviour {
 	public int[, ] ObjectMap { get { return objectMap; } }
 
 	void Awake() {
+		Camera.main.transform.position = new Vector3(WORLD_SIZE / 2.0f, (WORLD_SIZE - 1) / 2.0f, -10);
+		Camera.main.orthographicSize = WORLD_SIZE / 2.0f;
+
 		GenerateTerrain();
 
 		for (int r = 0; r < WORLD_SIZE; r++) {
 			for (int c = 0; c < WORLD_SIZE; c++) {
-				baseTilemap.SetTile(new Vector3Int(r, c, 0), baseTiles[baseMap[r, c]]);
-				objectTilemap.SetTile(new Vector3Int(r, c, 0), objectTiles[objectMap[r, c]]);
+				baseTilemap.SetTile(new Vector3Int(c, r, 0), baseTiles[baseMap[r, c]]);
+				objectTilemap.SetTile(new Vector3Int(c, r, 0), objectTiles[objectMap[r, c]]);
 			}
 		}
-		Camera.main.transform.position = new Vector3(WORLD_SIZE / 2.0f, (WORLD_SIZE - 1) / 2.0f, -10);
-		Camera.main.orthographicSize = WORLD_SIZE / 2.0f;
 	}
 
 	/// <summary>
@@ -65,5 +68,28 @@ public class World : MonoBehaviour {
 		gen.overlay(ref baseMap, ref objectMap, FOREST, GRASS, 0.4f, 2);
 		gen.overlay(ref baseMap, ref objectMap, MOUNTAIN, GRASS, 0.38f, 2);
 		// gen.checkNeighbors(ref map, World.MOUNTAIN, World.DIRT, World.GRASS, 3);
+	}
+
+	public static List<Vector2Int> GetAdjacentCoords(int x, int y) {
+		List<Vector2Int> ans = new List<Vector2Int>();
+		int xx, yy;
+
+		xx = x + 1;
+		yy = y;
+		if (InBounds(xx, yy)) ans.Add(new Vector2Int(xx, yy));
+		xx = x;
+		yy = y + 1;
+		if (InBounds(xx, yy)) ans.Add(new Vector2Int(xx, yy));
+		xx = x - 1;
+		yy = y;
+		if (InBounds(xx, yy)) ans.Add(new Vector2Int(xx, yy));
+		xx = x;
+		yy = y - 1;
+		if (InBounds(xx, yy)) ans.Add(new Vector2Int(xx, yy));
+		return ans;
+	}
+
+	public static bool InBounds(int x, int y) {
+		return x >= 0 && x < World.WORLD_SIZE && y >= 0 && y < World.WORLD_SIZE;
 	}
 }
