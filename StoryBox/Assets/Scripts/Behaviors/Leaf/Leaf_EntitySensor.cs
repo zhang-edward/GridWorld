@@ -8,7 +8,7 @@ public class Leaf_EntitySensor : Behavior {
 	public string entitiesKey = "entities";
 
 	public override NodeStatus Act() {
-		List<Entity> entities = GameManager.instance.entities;
+		List<Entity> entities = EntityManager.instance.entities;
 		List<Entity> entitesInRange = new List<Entity>();
 		
 		foreach (Entity other in entities) {

@@ -4,9 +4,11 @@ using UnityEngine;
 public class Leaf_EntitySelector : Behavior {
 
 	[Header("Read Keys")]
+	[Tooltip("List<Entity>")]
 	public string entitiesKey = "entities";
 
 	[Header("Write Keys")]
+	[Tooltip("Entity")]
 	public string writeKey = "destination";
 
 	public override NodeStatus Act() {
@@ -14,7 +16,7 @@ public class Leaf_EntitySelector : Behavior {
 
 		foreach (Entity other in entities) {
 			if (other.faction != entity.faction) {
-				memory[writeKey] = other.position;
+				memory[writeKey] = other;
 				return NodeStatus.Success;
 			}
 		}

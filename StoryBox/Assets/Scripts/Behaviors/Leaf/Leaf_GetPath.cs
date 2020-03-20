@@ -8,9 +8,11 @@ public class Leaf_GetPath : Behavior {
 	public List<int> moveable;
 
 	[Header("Read Keys")]
+	[Tooltip("Can be an Entity or a Vector2Int")]
 	public string destinationKey = "destination";
 
 	[Header("Write Keys")]
+	[Tooltip("Stack<Vector2Int>")]
 	public string pathKey = "path";
 
 	private Vector2Int EMPTY = new Vector2Int(-1, -1);
@@ -22,8 +24,17 @@ public class Leaf_GetPath : Behavior {
 	}
 
 	public override NodeStatus Act() {
-		// HashSet<int> moveable = memory[moveableKey] as HashSet<int>;
-		Vector2Int destination = (Vector2Int) memory[destinationKey];
+		object obj = memory[destinationKey];
+		Vector2Int destination;
+		if (obj is Entity) {
+			destination = ((Entity) obj).position;
+		} else if (obj is Vector2Int) {
+			destination = (Vector2Int) obj;
+		} else {
+			Debug.LogError($"Incompatible data type at {destinationKey}!", this);
+			return NodeStatus.Failure;
+		}
+
 		Stack<Vector2Int> path = TryGetPath(entity.position.x, entity.position.y, destination.x, destination.y);
 		if (path == null) {
 			return NodeStatus.Failure;
@@ -79,8 +90,9 @@ public class Leaf_GetPath : Behavior {
 
 				int neighborTerrain = baseMap[ny, nx];
 				// if the cell has not been visited yet, is walkable, and doesn't contain another entity
-				if ((moveable.Contains(neighborTerrain)) &&
-					(cameFrom[ny, nx].Equals(EMPTY))) { //&&
+				if (moveable.Contains(neighborTerrain) &&
+					cameFrom[ny, nx].Equals(EMPTY) &&
+					!EntityManager.instance.EntityExistsAt(nx, ny)) {
 					// (!entity.world.EntityExistsAt(nx, ny))) {
 					// store the cell coords that this neighbor CAME FROM
 					cameFrom[ny, nx] = new Vector2Int(current.x, current.y);
@@ -111,13 +123,12 @@ public class Leaf_GetPath : Behavior {
 			pathX = cameFrom[pathY, pathX].x;
 			pathY = cameFrom[pathY, tempX].y;
 		}
-
+		fullPath.RemoveAt(0);
 		// fullPath[0] = end of path
 		// fullPath[fullPath.Count - 1] = start of path
 		for (int i = (fullPath.Count / 2); i < fullPath.Count; i++) {
 			ans.Push(fullPath[i]);
 		}
-
 		return ans;
 	}
 
