@@ -1,20 +1,18 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Leaf_CreateEntity : Behavior {
+public class Leaf_TransformOther : Behavior {
 
 	public GameObject entityPrefab;
 
-	[Header("Write Keys")]
-	public string childEntitiesKey = "children";
+	[Header("Read Keys")]
+	[Tooltip("Entity")]
+	public string entityKey;
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
-		if (memory[childEntitiesKey] == null)
-			memory[childEntitiesKey] = new List<Entity>();
-
+		Entity target = memory[entityKey] as Entity;
+		target.Kill();
 		Entity child = EntityManager.instance.CreateEntity(entityPrefab, entity.position.x, entity.position.y, entity.faction);
 		if (child != null) {
-			(memory[childEntitiesKey] as List<Entity>).Add(child);
 			return NodeStatus.Success;
 		}
 		return NodeStatus.Failure;

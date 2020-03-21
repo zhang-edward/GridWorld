@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: TerritoryTile
   m_EditorClassIdentifier: 
   m_Sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8308378606183270448, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 1433406387886872337, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 7152889650665359007, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 7152889650665359007, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: -8675146806655265737, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 7735491119007102279, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 7735491119007102279, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 7735491119007102279, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 7735491119007102279, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 7463870996154022773, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 7463870996154022773, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 7463870996154022773, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 7463870996154022773, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 7463870996154022773, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}
+  - {fileID: 7463870996154022773, guid: 9430f688833ec4111962ef1d8097bd12, type: 3}

@@ -5,10 +5,11 @@ using UnityEngine;
 public class Entity : MonoBehaviour {
 
 	[Header("Entity properties")]
-	public int health;
+	public int maxHealth = 1;
 	public int attack;
 	public List<int> allowedTiles; // Which tiles is this entity allowed to be on?
 	public string defaultBehavior;
+	public List<string> tags;
 
 	[Header("View")]
 	public EntitySprite entitySprite;
@@ -16,6 +17,7 @@ public class Entity : MonoBehaviour {
 	public Vector2Int position { get; private set; }
 	public World world { get; private set; }
 	public int faction { get; private set; }
+	public int health { get; private set; }
 	public Stack<int> currentNodes { get; private set; } // Stores the traversal of the behavior tree to the currently running node
 
 	private Behavior behavior;
@@ -37,6 +39,14 @@ public class Entity : MonoBehaviour {
 
 	public void Act() {
 		behavior.Act(this, memory);
+	}
+
+	public void Damage(int amt) {
+		health -= amt;
+	}
+
+	public void Kill() {
+		health = 0;
 	}
 
 	public void Die() {

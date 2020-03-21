@@ -13,6 +13,8 @@ public class Leaf_ResourceSelector : Behavior {
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		List<Vector2Int> structs = memory[structuresKey] as List<Vector2Int>;
+		structs.Shuffle();
+		
 		int minDist = int.MaxValue;
 		Vector2Int selected = NONE;
 		foreach (Vector2Int vec in structs) {

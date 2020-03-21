@@ -6,7 +6,8 @@ public class Leaf_EntitySensor : Behavior {
 	[Header("What to detect")]
 	public bool allies = false;
 	public bool enemies = true;
-	public List<int> factions = new List<int>();
+	public List<int> factions;
+	public List<string> tags;
 
 	[Header("Other properties")]
 	public int range = 100;
@@ -15,20 +16,35 @@ public class Leaf_EntitySensor : Behavior {
 	public string entitiesKey = "entities";
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
-		List<Entity> entities = EntityManager.instance.entities;
-		List<Entity> entitesInRange = new List<Entity>();
+		List<Entity> answer = new List<Entity>();
 
-		foreach (Entity other in entities) {
-			if (other == entity || !Detects(entity, other)) continue;
-			if (Vector2Int.Distance(other.position, entity.position) < range)
-				entitesInRange.Add(other);
+		bool found = false;
+		int xx = entity.position.x;
+		int yy = entity.position.y;
+		for (int y = yy - range; y < yy + range; y++) {
+			for (int x = xx - range; x < xx + range; x++) {
+				if (World.InBounds(x, y)) {
+					List<Entity> entities = EntityManager.instance.GetEntitiesAt(x, y);
+					foreach (Entity other in entities) {
+						if (Detects(entity, other)) {
+							answer.Add(other);
+							found = true;
+						}
+					}
+				}
+			}
 		}
-
-		memory[entitiesKey] = entitesInRange;
-		return NodeStatus.Success;
+		if (found) {
+			memory[entitiesKey] = answer;
+			return NodeStatus.Success;
+		} 
+		else
+			return NodeStatus.Failure;
 	}
 
 	private bool Detects(Entity entity, Entity other) {
+		if (!TagsMatch(other))
+			return false;
 		if (allies && other.faction == entity.faction)
 			return true;
 		else if (enemies && other.faction != entity.faction)
@@ -37,5 +53,13 @@ public class Leaf_EntitySensor : Behavior {
 			return true;
 		else
 			return false;
+	}
+
+	private bool TagsMatch(Entity other) {
+		foreach (string tag in tags) {
+			if (!other.tags.Contains(tag))	
+				return false;
+		}
+		return true;
 	}
 }

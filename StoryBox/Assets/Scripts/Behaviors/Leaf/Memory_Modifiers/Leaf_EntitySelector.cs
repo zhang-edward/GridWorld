@@ -12,14 +12,29 @@ public class Leaf_EntitySelector : Behavior {
 	public string writeKey = "destination";
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
+		// Precondition: entities list will always have > 0 elements
 		List<Entity> entities = memory[entitiesKey] as List<Entity>;
+		Entity selected = SelectNearest(entities, entity);
+		if (selected != null) {
+			memory[writeKey] = selected;
+			return NodeStatus.Success;
+		}
+		else {
+			return NodeStatus.Failure;
+		}
+	}
 
+	private Entity SelectNearest(List<Entity> entities, Entity entity) {
+		entities.Shuffle(); // Shuffle so we choose randomly between equidistant entities
+		int minDist = int.MaxValue;
+		Entity selected = null;
 		foreach (Entity other in entities) {
-			if (other.faction != entity.faction) {
-				memory[writeKey] = other;
-				return NodeStatus.Success;
+			int dist = entity.position.ManhattanDistance(other.position);
+			if (dist < minDist) {
+				minDist = dist;
+				selected = other;
 			}
 		}
-		return NodeStatus.Failure;
+		return selected;
 	}
 }

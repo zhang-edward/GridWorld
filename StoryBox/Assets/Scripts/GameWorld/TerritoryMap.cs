@@ -18,6 +18,5 @@ public class TerritoryMap : MonoBehaviour {
 	}
 
 	public void Init() {
-		
 	}
 }

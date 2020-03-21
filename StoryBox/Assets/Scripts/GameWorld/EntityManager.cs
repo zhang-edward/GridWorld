@@ -4,12 +4,12 @@ using UnityEngine;
 public class EntityManager : MonoBehaviour {
 
 	public static EntityManager instance;
-
 	public const int MAX_ENTITIES_PER_CELL = 4;
 
+	public GameObject debugEntityPrefab;
 	public World world;
 	public List<Entity> entities { get; private set; }
-	public List<Entity>[, ] entityMap = new List<Entity>[World.WORLD_SIZE, World.WORLD_SIZE];
+	private List<Entity>[, ] entityMap = new List<Entity>[World.WORLD_SIZE, World.WORLD_SIZE];
 	public RuntimeObjectPoolerManager entityPools;
 
 	private List<Entity> newEntities = new List<Entity>();
@@ -22,6 +22,14 @@ public class EntityManager : MonoBehaviour {
 			Destroy(gameObject);
 
 		entities = new List<Entity>();
+	}
+
+	void Update() {
+		if (Input.GetMouseButtonDown(0)) {
+			Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			Vector2Int coords = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
+			CreateEntity(debugEntityPrefab, coords.x, coords.y, 0);
+		}
 	}
 
 	public void Tick() {
@@ -47,7 +55,7 @@ public class EntityManager : MonoBehaviour {
 	}
 
 	public Entity CreateEntity(GameObject prefab, int x, int y, int faction) {
-		if (EntityExistsAt(x, y))
+		if (CapacityReachedAt(x, y))
 			return null;
 		// GameObject obj = Instantiate(prefab, this.transform);
 		ObjectPooler pool = entityPools.GetPooler(prefab.name);
@@ -67,7 +75,11 @@ public class EntityManager : MonoBehaviour {
 	}
 
 	public bool CapacityReachedAt(int x, int y) {
-		return entityMap[y, x] != null && entityMap[y, x].Count > MAX_ENTITIES_PER_CELL;
+		return entityMap[y, x] != null && entityMap[y, x].Count >= MAX_ENTITIES_PER_CELL;
+	}
+
+	public List<Entity> GetEntitiesAt(int x, int y) {
+		return entityMap[y, x] != null ? entityMap[y, x] : new List<Entity>();
 	}
 
 	public void UpdateEntityMap(Entity entity, Vector2Int oldPos, Vector2Int newPos) {

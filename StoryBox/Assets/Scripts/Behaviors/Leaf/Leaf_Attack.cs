@@ -14,7 +14,7 @@ public class Leaf_Attack : Behavior {
 
 		if (attackTarget.health > 0 &&
 			entity.position.ManhattanDistance(attackTarget.position) <= range) {
-			attackTarget.health -= attackPower;
+			attackTarget.Damage(attackPower);
 
 			if (attackTarget.health > 0)
 				return NodeStatus.Running;

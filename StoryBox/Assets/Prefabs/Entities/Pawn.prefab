@@ -46,8 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   attack: 0
-  defaultBehavior: Builder
   allowedTiles: 010000000200000003000000
+  defaultBehavior: HouseBuilder
+  tags: []
   entitySprite: {fileID: 4822082886506063469}
 --- !u!1 &3244158651584989580
 GameObject:

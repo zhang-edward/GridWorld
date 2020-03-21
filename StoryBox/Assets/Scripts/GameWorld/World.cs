@@ -52,13 +52,13 @@ public class World : MonoBehaviour {
 	}
 
 	void Start() {
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 100; i++) {
 			int limit = 0;
 			while (limit < 1000) {
 				int x = Random.Range(0, World.WORLD_SIZE);
 				int y = Random.Range(0, World.WORLD_SIZE);
 				if (baseMap[y, x] == GRASS) {
-					EntityManager.instance.CreateEntity(basePrefab, x, y, i);
+					EntityManager.instance.CreateEntity(basePrefab, x, y, 0);
 					break;
 				}
 				limit++;

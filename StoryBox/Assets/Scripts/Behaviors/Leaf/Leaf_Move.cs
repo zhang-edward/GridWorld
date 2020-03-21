@@ -9,7 +9,8 @@ public class Leaf_Move : Behavior {
 		int[, ] map = entity.world.BaseMap;
 
 		Vector2Int dest = (Vector2Int) memory[movementKey];
-		if (entity.allowedTiles.Contains(map[dest.y, dest.x])) {
+		if (entity.allowedTiles.Contains(map[dest.y, dest.x]) &&
+			!EntityManager.instance.CapacityReachedAt(dest.x, dest.y)) {
 			entity.Move(dest.x, dest.y);
 			return NodeStatus.Success;
 		}
