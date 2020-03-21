@@ -8,6 +8,8 @@ public class Leaf_EntitySensor : Behavior {
 	public bool enemies = true;
 	public List<int> factions;
 	public List<string> tags;
+	[Tooltip("Check if this entity has the tag placed by Leaf_TagUniquely")]
+	public bool checkUniqueTag;
 
 	[Header("Other properties")]
 	public int range = 100;
@@ -37,13 +39,12 @@ public class Leaf_EntitySensor : Behavior {
 		if (found) {
 			memory[entitiesKey] = answer;
 			return NodeStatus.Success;
-		} 
-		else
+		} else
 			return NodeStatus.Failure;
 	}
 
 	private bool Detects(Entity entity, Entity other) {
-		if (!TagsMatch(other))
+		if (!CheckTags(entity, other))
 			return false;
 		if (allies && other.faction == entity.faction)
 			return true;
@@ -55,9 +56,11 @@ public class Leaf_EntitySensor : Behavior {
 			return false;
 	}
 
-	private bool TagsMatch(Entity other) {
+	private bool CheckTags(Entity entity, Entity other) {
+		if (checkUniqueTag && !other.tags.Contains(entity.uniqueTag))
+			return false;
 		foreach (string tag in tags) {
-			if (!other.tags.Contains(tag))	
+			if (!other.tags.Contains(tag))
 				return false;
 		}
 		return true;

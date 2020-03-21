@@ -22,12 +22,12 @@ public class Composite_Priority : Behavior {
 			NodeStatus status = behaviors[i].Act(entity, memory);
 			// Fails => continue to next one
 			if (status == NodeStatus.Failure) {
-				Debug.Log(behaviors[i] + ": Failure", this);
+				Debug.Log(behaviors[i] + " Failure", entity.gameObject);
 				i++;
 			}
 			// Succeeds => break with status SUCCESS
 			else if (status == NodeStatus.Success) {
-				// Debug.Log($"{behaviors[i]} success", this);
+				Debug.Log($"{behaviors[i]} Success", entity.gameObject);
 				i = 0;
 				returnStatus = NodeStatus.Success;
 				break;

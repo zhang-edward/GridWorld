@@ -52,7 +52,7 @@ public class World : MonoBehaviour {
 	}
 
 	void Start() {
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 1; i++) {
 			int limit = 0;
 			while (limit < 1000) {
 				int x = Random.Range(0, World.WORLD_SIZE);

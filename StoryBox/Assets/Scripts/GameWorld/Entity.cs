@@ -10,6 +10,7 @@ public class Entity : MonoBehaviour {
 	public List<int> allowedTiles; // Which tiles is this entity allowed to be on?
 	public string defaultBehavior;
 	public List<string> tags;
+	public string uniqueTag { get { return gameObject.GetInstanceID().ToString(); } }
 
 	[Header("View")]
 	public EntitySprite entitySprite;
@@ -31,6 +32,7 @@ public class Entity : MonoBehaviour {
 		this.position = new Vector2Int(x, y);
 		this.world = world;
 
+		health = maxHealth;
 		entitySprite.Init(this);
 		transform.position = (Vector2) position;
 		currentNodes = new Stack<int>();
