@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EntityManager : MonoBehaviour {
 
+	public RuntimeObjectPoolerManager entityPools;
+
 	public static EntityManager instance;
 
 	public World world;
@@ -15,13 +17,8 @@ public class EntityManager : MonoBehaviour {
 			instance = this;
 		else
 			Destroy(gameObject);
-		entities = new List<Entity>();
 
-		// TODO: This is for debugging purposes, remove later
-		for (int i = 0; i < transform.childCount; i++)
-			entities.Add(transform.GetChild(i).GetComponent<Entity>());
-		foreach (Entity e in entities)
-			e.Init(Random.Range(0, World.WORLD_SIZE), Random.Range(0, World.WORLD_SIZE), Random.Range(0, 5), world);
+		entities = new List<Entity>();
 	}
 
 	public void Tick() {
@@ -47,7 +44,11 @@ public class EntityManager : MonoBehaviour {
 	public Entity CreateEntity(GameObject prefab, int x, int y, int faction) {
 		if (EntityExistsAt(x, y))
 			return null;
-		GameObject obj = Instantiate(prefab, this.transform);
+		// GameObject obj = Instantiate(prefab, this.transform);
+		ObjectPooler pool = entityPools.GetPooler(prefab.name);
+		if (pool == null)
+			pool = entityPools.CreateRuntimeObjectPooler(prefab.name, prefab);
+		GameObject obj = pool.GetPooledObject();
 		Entity entity = obj.GetComponent<Entity>();
 		entity.Init(x, y, faction, world);
 		newEntities.Add(entity);

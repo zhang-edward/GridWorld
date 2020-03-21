@@ -90,7 +90,7 @@ public class World : MonoBehaviour {
 
 		gen.checkNeighbors(ref baseMap, GRASS, SAND, WATER, 2);
 
-		gen.overlay(ref baseMap, ref structureMap, FOREST1, GRASS, 0.5f, 2);
+		gen.overlay(ref baseMap, ref structureMap, FOREST1, GRASS, 0.6f, 2);
 		gen.checkNeighbors(ref structureMap, FOREST1, FOREST2, FOREST1, 7);
 		gen.checkNeighbors(ref structureMap, FOREST2, FOREST3, FOREST2, 6);
 		gen.checkNeighbors(ref structureMap, FOREST3, FOREST4, FOREST3, 6);

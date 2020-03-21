@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Leaf_ChangeMemoryInt : Behavior {
-
+#pragma warning disable CS0649
 	private enum Mode {
 		Add,
 		Subtract
@@ -17,9 +17,9 @@ public class Leaf_ChangeMemoryInt : Behavior {
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		memory.SetDefault(key, defaultValue);
 		if (mode == Mode.Add)
-			memory[key] = (int)memory[key] + value;
+			memory[key] = (int) memory[key] + value;
 		if (mode == Mode.Subtract)
-			memory[key] = (int)memory[key] - value;
+			memory[key] = (int) memory[key] - value;
 
 		return NodeStatus.Success;
 	}

@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviors:
   - {fileID: 8234701019795550232}
-  - {fileID: 102622141777019857}
+  - {fileID: 5629958487261638164}
 --- !u!1 &9208129964262019000
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2574329440844581795}
-  - component: {fileID: 102622141777019857}
+  - component: {fileID: 5629958487261638164}
   m_Layer: 0
   m_Name: BuildTown
   m_TagString: Untagged
@@ -283,7 +283,7 @@ Transform:
   m_Father: {fileID: 2050794311537972621}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &102622141777019857
+--- !u!114 &5629958487261638164
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,8 +292,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9208129964262019000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e86ae0b94327e4965adc97465e37053a, type: 3}
+  m_Script: {fileID: 11500000, guid: a2be0a53ecd634884b0bdc701867bd6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  from: 0
-  to: 6
+  entityPrefab: {fileID: 2813499642827131519, guid: a047099128249488ba4793aac4644702,
+    type: 3}
+  childEntitiesKey: children

@@ -97,5 +97,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   attack: 0
-  behavior: {fileID: 11400000, guid: efe813de93f7f45768940a5d5f79e4a8, type: 2}
-  deathBehavior: {fileID: 0}
+  defaultBehavior: Town
+  allowedTiles: 

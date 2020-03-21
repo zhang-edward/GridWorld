@@ -8,8 +8,6 @@ public class Leaf_Attack : Behavior {
 	[Tooltip("Entity")]
 	public string targetKey = "attack_target";
 
-	public override void Init() { }
-
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		Entity attackTarget = memory[targetKey] as Entity;
 		int attackPower = entity.attack;

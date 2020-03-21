@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Leaf_SetBehavior : Behavior {
 
-	public GameObject[] behaviors;
+	public string[] behaviors;
 	public int[] weights;
 
 	[Header("Read Keys")]
@@ -33,10 +33,8 @@ public class Leaf_SetBehavior : Behavior {
 		for (int i = 0; i < weights.Length; i++) {
 			total += weights[i];
 			if (rand < total) {
-				// Assign behavior i to this entity
-				GameObject obj = Instantiate(behaviors[i], e.transform);
-				Behavior b = obj.GetComponent<Behavior>();
-				e.AssignBehavior(b);
+				e.AssignBehavior(behaviors[i]);
+				return;
 			}
 		}
 	}

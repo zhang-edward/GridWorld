@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: general_bigger_1
+  m_Name: dirt
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -9103900199189307504, guid: 9430f688833ec4111962ef1d8097bd12,
     type: 3}

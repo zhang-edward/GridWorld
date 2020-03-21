@@ -1,5 +1,6 @@
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start() {
-		StartCoroutine(Loop());
+		Loop();
 	}
 
 	void Update() {
@@ -25,10 +26,17 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	private IEnumerator Loop() {
+	// private IEnumerator Loop() {
+	// 	for (;;) {
+	// 		EntityManager.instance.Tick();
+	// 		yield return new WaitForSecondsRealtime(0.5f);
+	// 	}
+	// }
+
+	private async void Loop() {
 		for (;;) {
 			EntityManager.instance.Tick();
-			yield return new WaitForSecondsRealtime(0.5f);
+			await Task.Delay(500);
 		}
 	}
 }

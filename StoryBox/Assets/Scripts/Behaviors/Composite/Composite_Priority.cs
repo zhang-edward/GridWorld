@@ -3,7 +3,6 @@ using UnityEngine;
 public class Composite_Priority : Behavior {
 
 	public Behavior[] behaviors;
-	int i = 0; // current behavior that is running
 
 	public override void Init() {
 		foreach (Behavior b in behaviors) {
@@ -16,23 +15,36 @@ public class Composite_Priority : Behavior {
 	/// </summary>
 	/// <returns>behavior return code</returns>
 	public override NodeStatus Act(Entity entity, Memory memory) {
+		int i = entity.currentNodes.Count == 0 ? 0 : entity.currentNodes.Pop();
+		NodeStatus returnStatus = NodeStatus.Failure;
 		while (i < behaviors.Length) {
-			switch (behaviors[i].Act(entity, memory)) {
-				case NodeStatus.Failure:
-					Debug.Log(behaviors[i] + ": Failure", this);
-					i++;
-					continue;
-				case NodeStatus.Success:
-					// Debug.Log($"{behaviors[i]} success + continuing", this);
-					i = 0;
-					return NodeStatus.Success;
-				case NodeStatus.Running:
-					// Debug.Log(behaviors[i] + ": Running", this);
-					return NodeStatus.Running;
+			// Run the current sub-behavior
+			NodeStatus status = behaviors[i].Act(entity, memory);
+			// Fails => continue to next one
+			if (status == NodeStatus.Failure) {
+				// Debug.Log(behaviors[i] + ": Failure", this);
+				i++;
+			}
+			// Succeeds => break with status SUCCESS
+			else if (status == NodeStatus.Success) {
+				// Debug.Log($"{behaviors[i]} success", this);
+				i = 0;
+				returnStatus = NodeStatus.Success;
+				break;
+			}
+			// Running => break with status RUNNING
+			else if (status == NodeStatus.Running) {
+				// Debug.Log(behaviors[i] + ": Running", this);
+				returnStatus = NodeStatus.Running;
+				break;
 			}
 		}
-		// done with all behaviors (all failure)
-		i = 0;
-		return NodeStatus.Failure;
+		// If all sub-behaviors failed
+		if (i == behaviors.Length) {
+			i = 0;
+			returnStatus = NodeStatus.Failure;
+		}
+		entity.currentNodes.Push(i);
+		return returnStatus;
 	}
 }
