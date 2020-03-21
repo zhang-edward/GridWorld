@@ -139,8 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9da20c04f4b47549875ecdb2450bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  maxHealth: 1
   attack: 0
+  expandTerritoryRange: 2
   allowedTiles: 010000000200000003000000
   defaultBehavior: Dummy
   tags: []

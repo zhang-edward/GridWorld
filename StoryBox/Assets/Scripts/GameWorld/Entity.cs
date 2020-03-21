@@ -7,10 +7,10 @@ public class Entity : MonoBehaviour {
 	[Header("Entity properties")]
 	public int maxHealth = 1;
 	public int attack;
+	public int expandTerritoryRange = 0;
 	public List<int> allowedTiles; // Which tiles is this entity allowed to be on?
 	public string defaultBehavior;
 	public List<string> tags;
-	public string uniqueTag { get { return gameObject.GetInstanceID().ToString(); } }
 
 	[Header("View")]
 	public EntitySprite entitySprite;
@@ -19,13 +19,17 @@ public class Entity : MonoBehaviour {
 	public World world { get; private set; }
 	public int faction { get; private set; }
 	public int health { get; private set; }
+	public string uniqueTag { get { return gameObject.GetInstanceID().ToString(); } }
 	public Stack<int> currentNodes { get; private set; } // Stores the traversal of the behavior tree to the currently running node
 
 	private Behavior behavior;
 	private Memory memory = new Memory();
 
-	public delegate void PositionChanged(Entity e, Vector2Int oldPos, Vector2Int newPos);
+	public delegate void PositionChanged(Entity entity, Vector2Int oldPos, Vector2Int newPos);
 	public event PositionChanged onPositionChanged;
+
+	public delegate void LifecycleEvent(Entity entity);
+	public event LifecycleEvent onEntityDied;
 
 	public void Init(int x, int y, int faction, World world) {
 		this.faction = faction;
@@ -52,9 +56,9 @@ public class Entity : MonoBehaviour {
 	}
 
 	public void Die() {
-		// if (deathBehavior != null)
-		// 	deathBehavior.Act(this, memory);
 		gameObject.SetActive(false);
+		// Fire event
+		onEntityDied?.Invoke(this);
 	}
 
 	public void AssignBehavior(string key) {

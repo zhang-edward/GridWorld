@@ -9,9 +9,12 @@ public class EntityManager : MonoBehaviour {
 	public GameObject debugEntityPrefab;
 	public World world;
 	public List<Entity> entities { get; private set; }
-	private List<Entity>[, ] entityMap = new List<Entity>[World.WORLD_SIZE, World.WORLD_SIZE];
 	public RuntimeObjectPoolerManager entityPools;
 
+	public delegate void EntityEvent(Entity entity);
+	public event EntityEvent onTerritoryExpandingEntityCreated;
+
+	private List<Entity>[, ] entityMap = new List<Entity>[World.WORLD_SIZE, World.WORLD_SIZE];
 	private List<Entity> newEntities = new List<Entity>();
 
 	void Awake() {
@@ -25,10 +28,20 @@ public class EntityManager : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetMouseButtonDown(0)) {
-			Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Vector2Int coords = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
+		Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		Vector2Int coords = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
+		if (Input.GetKeyDown(KeyCode.Alpha1)) {
 			CreateEntity(debugEntityPrefab, coords.x, coords.y, 0);
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha2)) {
+			CreateEntity(debugEntityPrefab, coords.x, coords.y, 1);
+		}
+		if (Input.GetMouseButtonDown(0)) {
+			List<Entity> l = entityMap[coords.y, coords.x];
+			for (int i = l.Count - 1; i >= 0; i--) {
+				Entity e = l[i];
+				RemoveEntity(e);
+			}
 		}
 	}
 
@@ -55,19 +68,36 @@ public class EntityManager : MonoBehaviour {
 	}
 
 	public Entity CreateEntity(GameObject prefab, int x, int y, int faction) {
+		// Check preconditions for spawning entity
 		if (CapacityReachedAt(x, y))
 			return null;
-		// GameObject obj = Instantiate(prefab, this.transform);
+		// Get object pooler
 		ObjectPooler pool = entityPools.GetPooler(prefab.name);
 		if (pool == null)
 			pool = entityPools.CreateRuntimeObjectPooler(prefab.name, prefab);
+
+		// Configure entity properties
 		GameObject obj = pool.GetPooledObject();
 		Entity entity = obj.GetComponent<Entity>();
 		entity.Init(x, y, faction, world);
+
+		// Track entity
 		newEntities.Add(entity);
 		AddToEntityMap(entity, x, y);
 		entity.onPositionChanged += UpdateEntityMap;
+
+		// Fire events
+		if (entity.expandTerritoryRange > 0)
+			onTerritoryExpandingEntityCreated?.Invoke(entity);
+
 		return entity;
+	}
+
+	public void RemoveEntity(Entity e) {
+		e.Die();
+		entities.Remove(e);
+		entityMap[e.position.y, e.position.x].Remove(e);
+		e.onPositionChanged -= UpdateEntityMap;
 	}
 
 	public bool EntityExistsAt(int x, int y) {
