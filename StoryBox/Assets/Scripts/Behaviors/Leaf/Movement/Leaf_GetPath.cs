@@ -85,7 +85,7 @@ public class Leaf_GetPath : Behavior {
 				// if the cell has not been visited yet, is walkable, and doesn't contain another entity
 				if (allowedTiles.Contains(neighborTerrain) &&
 					cameFrom[ny, nx].Equals(EMPTY) &&
-					!EntityManager.instance.EntityExistsAt(nx, ny)) {
+					!EntityManager.instance.CapacityReachedAt(nx, ny)) {
 					// (!entity.world.EntityExistsAt(nx, ny))) {
 					// store the cell coords that this neighbor CAME FROM
 					cameFrom[ny, nx] = new Vector2Int(current.x, current.y);

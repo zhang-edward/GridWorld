@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start() {
-		Loop();
+		StartCoroutine(Loop());
 	}
 
 	void Update() {
@@ -26,17 +26,17 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	// private IEnumerator Loop() {
-	// 	for (;;) {
-	// 		EntityManager.instance.Tick();
-	// 		yield return new WaitForSecondsRealtime(0.5f);
-	// 	}
-	// }
-
-	private async void Loop() {
+	private IEnumerator Loop() {
 		for (;;) {
 			EntityManager.instance.Tick();
-			await Task.Delay(500);
+			yield return new WaitForSecondsRealtime(0.5f);
 		}
 	}
+
+	// private async void Loop() {
+	// 	for (;;) {
+	// 		EntityManager.instance.Tick();
+	// 		await Task.Delay(500);
+	// 	}
+	// }
 }
