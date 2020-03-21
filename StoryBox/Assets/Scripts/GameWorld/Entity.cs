@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour {
 
+	[Header("Entity properties")]
 	public int health;
 	public int attack;
-	public string defaultBehavior;
 	public List<int> allowedTiles; // Which tiles is this entity allowed to be on?
+	public string defaultBehavior;
+
+	[Header("View")]
 	public EntitySprite entitySprite;
 
 	public Vector2Int position { get; private set; }

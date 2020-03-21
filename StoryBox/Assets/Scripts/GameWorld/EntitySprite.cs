@@ -6,15 +6,13 @@ public class EntitySprite : MonoBehaviour {
 	private Entity entity;
 	private Vector3 randomOffset;
 
-	Color[] colors = { Color.red, Color.blue, Color.cyan, Color.green, Color.magenta };
-
 	void Awake() {
 		sr = GetComponent<SpriteRenderer>();
 	}
 
 	public void Init(Entity entity) {
 		this.entity = entity;
-		sr.color = colors[entity.faction];
+		sr.color = TerritoryMap.colors[entity.faction];
 		ChangeRandomOffset(null, Vector2Int.one, Vector2Int.one);
 		entity.onPositionChanged += ChangeRandomOffset;
 	}
