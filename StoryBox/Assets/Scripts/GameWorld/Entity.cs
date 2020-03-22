@@ -31,8 +31,13 @@ public class Entity : MonoBehaviour {
 		this.faction = faction;
 		this.position = new Vector2Int(x, y);
 		this.world = world;
-		
-		// Initialize from data
+
+		InitFromData(data);
+		// Other properties
+		transform.position = (Vector2) position;
+	}
+
+	public void InitFromData(EntityData data) {
 		allowedTiles = data.allowedTiles;
 		attack = data.attack;
 		health = data.maxHealth;
@@ -42,8 +47,7 @@ public class Entity : MonoBehaviour {
 		tags = new List<string>();
 		tags.AddRange(data.defaultTags);
 
-		// Other properties
-		transform.position = (Vector2) position;
+		// Reset behavior tree
 		currentNodes = new Stack<int>();
 	}
 

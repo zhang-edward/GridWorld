@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c128a6cdcf03644569eb56c0ac89cca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 714a51d95504a46198a8db8965d87792, type: 2}
+  data: {fileID: 11400000, guid: c676b08df3b244292b75d3efad4013c3, type: 2}
   entityKey: project
 --- !u!1 &2391298118616410659
 GameObject:
@@ -1500,3 +1500,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 4
+  timerKey: chop_wood_progress
