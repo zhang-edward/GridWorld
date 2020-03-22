@@ -10,6 +10,11 @@ public class Composite_Priority : Behavior {
 		}
 	}
 
+	public override string PrintTreeTraversal(System.Collections.Generic.Stack<int> stack) {
+		int i = stack.Pop();
+		return $"{gameObject.name} (Sequence) \n{behaviors[i].PrintTreeTraversal(stack)}";
+	}
+
 	/// <summary>
 	/// performs behavior
 	/// </summary>
@@ -38,6 +43,7 @@ public class Composite_Priority : Behavior {
 		if (i == behaviors.Length)
 			i = 0;
 		entity.currentNodes.Push(i);
+
 		return status;
 	}
 }

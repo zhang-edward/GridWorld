@@ -9,6 +9,11 @@ public class Composite_Sequence : Behavior {
 		}
 	}
 
+	public override string PrintTreeTraversal(System.Collections.Generic.Stack<int> stack) {
+		int i = stack.Pop();
+		return $"{gameObject.name} (Sequence) \n{behaviors[i].PrintTreeTraversal(stack)}";
+	}
+
 	/// <summary>
 	/// performs behavior
 	/// </summary>

@@ -1,8 +1,11 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Entity : MonoBehaviour {
+
+	[Header("Debug")]
+	public bool debugBehavior;
 
 	[Header("View")]
 	public float moveLerpSpeed = 0.05f;
@@ -33,7 +36,7 @@ public class Entity : MonoBehaviour {
 		this.faction = faction;
 		this.position = new Vector2Int(x, y);
 		this.world = world;
-		
+
 		memory = new Memory();
 		memory["self"] = this;
 
@@ -64,6 +67,13 @@ public class Entity : MonoBehaviour {
 
 	public void Act() {
 		behavior.Act(this, memory);
+		if (debugBehavior) {
+			// Perform shallow copy of the stack
+			List<int> lst = new List<int>(currentNodes.ToArray());
+			lst.Reverse();
+			Stack<int> btTraversal = new Stack<int>(lst);
+			print(behavior.PrintTreeTraversal(btTraversal));
+		}
 	}
 
 	public void Damage(int amt) {
