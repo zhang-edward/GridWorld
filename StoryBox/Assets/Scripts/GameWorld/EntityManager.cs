@@ -72,22 +72,25 @@ public class EntityManager : MonoBehaviour {
 		if (CapacityReachedAt(x, y))
 			return null;
 
-		// Configure entity properties
+		// Configure GameObject
 		GameObject obj = entityPool.GetPooledObject();
-		obj.name = data.name + obj.GetInstanceID();
 		Entity entity = obj.GetComponent<Entity>();
-		entity.Init(x, y, faction, world, data);
 
 		// Track entity
 		newEntities.Add(entity);
 		AddToEntityMap(entity, x, y);
 		entity.onPositionChanged += UpdateEntityMap;
+		entity.onEntityInitialized += EntityInitialized;
 
-		// Fire events
-		if (entity.expandTerritoryRange > 0)
-			onTerritoryExpandingEntityCreated?.Invoke(entity);
+		// Initialize entity
+		entity.Init(x, y, faction, world, data);
 
 		return entity;
+	}
+
+	private void EntityInitialized(Entity entity) {
+		if (entity.expandTerritoryRange > 0)
+			onTerritoryExpandingEntityCreated?.Invoke(entity);
 	}
 
 	public void RemoveEntity(Entity e) {

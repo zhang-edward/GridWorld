@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90e28537663ce409196230287a792fc4, type: 3}
-  m_Name: House
+  m_Name: Builder
   m_EditorClassIdentifier: 
   maxHealth: 1
   attack: 0
-  expandTerritoryRange: 2
-  allowedTiles: 0100000002000000
-  defaultBehavior: Dummy
+  expandTerritoryRange: 0
+  allowedTiles: 010000000200000003000000
+  defaultBehavior: HouseBuilder
   defaultTags: []
-  sprite: {fileID: -7741745274710520091, guid: 409da735e9cbb4d9c844cdbea9c7581f, type: 3}
+  sprite: {fileID: 6585860390097811766, guid: 409da735e9cbb4d9c844cdbea9c7581f, type: 3}

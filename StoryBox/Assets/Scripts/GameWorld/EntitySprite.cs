@@ -23,6 +23,6 @@ public class EntitySprite : MonoBehaviour {
 	}
 
 	void Update() {
-		transform.localPosition = Vector3.Lerp(transform.localPosition, randomOffset, 0.1f);
+		transform.localPosition = Vector3.Lerp(transform.localPosition, randomOffset, entity.moveLerpSpeed);
 	}
 }

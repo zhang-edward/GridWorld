@@ -5,6 +5,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour {
 
 	[Header("View")]
+	public float moveLerpSpeed = 0.05f;
 	public EntitySprite entitySprite;
 
 	public int faction { get; private set; }
@@ -25,6 +26,7 @@ public class Entity : MonoBehaviour {
 	public event PositionChanged onPositionChanged;
 
 	public delegate void LifecycleEvent(Entity entity);
+	public event LifecycleEvent onEntityInitialized;
 	public event LifecycleEvent onEntityDied;
 
 	public void Init(int x, int y, int faction, World world, EntityData data) {
@@ -49,6 +51,12 @@ public class Entity : MonoBehaviour {
 
 		// Reset behavior tree
 		currentNodes = new Stack<int>();
+
+		// Configure GameObject
+		gameObject.name = data.name + gameObject.GetInstanceID();
+
+		// Fire events
+		onEntityInitialized?.Invoke(this);
 	}
 
 	public void Act() {
@@ -64,6 +72,7 @@ public class Entity : MonoBehaviour {
 	}
 
 	public void Die() {
+		print("I died for some reason");
 		gameObject.SetActive(false);
 		// Fire event
 		onEntityDied?.Invoke(this);
@@ -80,6 +89,6 @@ public class Entity : MonoBehaviour {
 	}
 
 	void Update() {
-		transform.position = Vector3.Lerp(transform.position, (Vector2) position, 0.1f);
+		transform.position = Vector3.Lerp(transform.position, (Vector2) position, moveLerpSpeed);
 	}
 }

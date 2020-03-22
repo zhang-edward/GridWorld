@@ -54,7 +54,9 @@ public class ObjectPooler : MonoBehaviour {
 			for (int i = 0; i < poolAmount; i++) {
 				CreateObject();
 			}
-			return CreateObject();
+			GameObject obj = CreateObject();
+			obj.SetActive(true);
+			return obj;
 		}
 		return null;
 	}

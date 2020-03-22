@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class TerritoryMap : MonoBehaviour {
 
+	public static TerritoryMap instance;
 	public static Color[] colors = { Color.red, Color.blue, Color.cyan, Color.green, Color.magenta };
 
 	[SerializeField] private Tilemap tilemap;
@@ -55,6 +56,11 @@ public class TerritoryMap : MonoBehaviour {
 	}
 
 	void Awake() {
+		if (instance == null)
+			instance = this;
+		else
+			Destroy(gameObject);
+
 		for (int r = 0; r < World.WORLD_SIZE; r++) {
 			for (int c = 0; c < World.WORLD_SIZE; c++) {
 				map[r, c] = new TerritoryData();

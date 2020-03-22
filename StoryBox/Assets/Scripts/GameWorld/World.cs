@@ -24,18 +24,18 @@ public class World : MonoBehaviour {
 	[SerializeField] private Tilemap baseTilemap;
 	[SerializeField] private TileBase[] baseTiles;
 
-	[SerializeField] private Tilemap structureTileMap;
-	[SerializeField] private TileBase[] structureTiles;
+	[SerializeField] private Tilemap resourcesTilemap;
+	[SerializeField] private TileBase[] resourcesTiles;
 
 	public EntityData entityData;
 
 	private WorldGenerator gen = new WorldGenerator();
 
 	private int[, ] baseMap = new int[WORLD_SIZE, WORLD_SIZE];
-	private int[, ] structureMap = new int[WORLD_SIZE, WORLD_SIZE];
+	private int[, ] resourcesMap = new int[WORLD_SIZE, WORLD_SIZE];
 
 	public int[, ] BaseMap { get { return baseMap; } }
-	public int[, ] StructureMap { get { return structureMap; } }
+	public int[, ] ResourcesMap { get { return resourcesMap; } }
 
 	void Awake() {
 		Camera.main.transform.position = new Vector3(WORLD_SIZE / 2.0f, (WORLD_SIZE - 1) / 2.0f, -10);
@@ -46,7 +46,7 @@ public class World : MonoBehaviour {
 		for (int r = 0; r < WORLD_SIZE; r++) {
 			for (int c = 0; c < WORLD_SIZE; c++) {
 				baseTilemap.SetTile(new Vector3Int(c, r, 0), baseTiles[baseMap[r, c]]);
-				structureTileMap.SetTile(new Vector3Int(c, r, 0), structureTiles[structureMap[r, c]]);
+				resourcesTilemap.SetTile(new Vector3Int(c, r, 0), resourcesTiles[resourcesMap[r, c]]);
 			}
 		}
 	}
@@ -67,8 +67,8 @@ public class World : MonoBehaviour {
 	}
 
 	public void ModifyStructureMap(int x, int y, int newTile) {
-		structureMap[y, x] = newTile;
-		structureTileMap.SetTile(new Vector3Int(x, y, 0), structureTiles[newTile]);
+		resourcesMap[y, x] = newTile;
+		resourcesTilemap.SetTile(new Vector3Int(x, y, 0), resourcesTiles[newTile]);
 	}
 
 	/// <summary>
@@ -90,12 +90,12 @@ public class World : MonoBehaviour {
 
 		gen.checkNeighbors(ref baseMap, GRASS, SAND, WATER, 2);
 
-		gen.overlay(ref baseMap, ref structureMap, FOREST1, GRASS, 0.6f, 2);
-		gen.checkNeighbors(ref structureMap, FOREST1, FOREST2, FOREST1, 7);
-		gen.checkNeighbors(ref structureMap, FOREST2, FOREST3, FOREST2, 6);
-		gen.checkNeighbors(ref structureMap, FOREST3, FOREST4, FOREST3, 6);
+		gen.overlay(ref baseMap, ref resourcesMap, FOREST1, GRASS, 0.6f, 2);
+		gen.checkNeighbors(ref resourcesMap, FOREST1, FOREST2, FOREST1, 7);
+		gen.checkNeighbors(ref resourcesMap, FOREST2, FOREST3, FOREST2, 6);
+		gen.checkNeighbors(ref resourcesMap, FOREST3, FOREST4, FOREST3, 6);
 
-		gen.overlay(ref baseMap, ref structureMap, MOUNTAIN, GRASS, 0.38f, 2);
+		gen.overlay(ref baseMap, ref resourcesMap, MOUNTAIN, GRASS, 0.38f, 2);
 		// gen.checkNeighbors(ref map, World.MOUNTAIN, World.DIRT, World.GRASS, 3);
 	}
 

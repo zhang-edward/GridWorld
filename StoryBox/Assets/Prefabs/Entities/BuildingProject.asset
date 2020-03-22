@@ -15,7 +15,7 @@ MonoBehaviour:
   maxHealth: 1
   attack: 0
   expandTerritoryRange: 0
-  allowedTiles: 010000000200000003000000
+  allowedTiles: 0100000002000000
   defaultBehavior: Dummy
   defaultTags:
   - building_project

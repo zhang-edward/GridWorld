@@ -6,7 +6,6 @@ public class Leaf_EntitySensor : Behavior {
 	[Header("What to detect")]
 	public bool allies = false;
 	public bool enemies = true;
-	public List<int> factions;
 	public List<string> tags;
 	[Tooltip("Check if this entity has the tag placed by Leaf_TagUniquely")]
 	public bool checkUniqueTag;
@@ -49,8 +48,6 @@ public class Leaf_EntitySensor : Behavior {
 		if (allies && other.faction == entity.faction)
 			return true;
 		else if (enemies && other.faction != entity.faction)
-			return true;
-		else if (factions.Contains(other.faction))
 			return true;
 		else
 			return false;
