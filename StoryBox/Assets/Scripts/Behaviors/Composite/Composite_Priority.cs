@@ -10,10 +10,10 @@ public class Composite_Priority : Behavior {
 		}
 	}
 
-	public override string PrintTreeTraversal(System.Collections.Generic.Stack<int> stack) {
+	public override string PrintTreeTraversal(System.Collections.Generic.Stack<int> stack, Entity entity) {
 		int i = stack.Pop();
 		if (i < behaviors.Length)
-			return $"{gameObject.name} (Priority) \n{behaviors[i].PrintTreeTraversal(stack)}";
+			return $"{gameObject.name} (Priority) \n{behaviors[i].PrintTreeTraversal(stack, entity)}";
 		else
 			return $"{gameObject.name} (Priority) all failed";
 	}
@@ -32,12 +32,15 @@ public class Composite_Priority : Behavior {
 		while (i < behaviors.Length) {
 			// Run the current sub-behavior
 			status = behaviors[i].Act(entity, memory);
+			// print($"{behaviors[i]}: {status.ToString()}");
 			// Fails => continue to next one
 			if (status == NodeStatus.Failure) {
+				entity.currentNodes.Clear(); // Any downstream tree traversal is now wrong
 				i++;
 			}
 			// Succeeds => break with status SUCCESS
 			else if (status == NodeStatus.Success) {
+				entity.currentNodes.Clear(); // Any downstream tree traversal is now wrong
 				i = 0;
 				break;
 			}

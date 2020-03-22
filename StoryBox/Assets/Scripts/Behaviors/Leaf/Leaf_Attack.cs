@@ -27,4 +27,11 @@ public class Leaf_Attack : Behavior {
 			return NodeStatus.Failure;
 		}
 	}
+
+	public override string PrintTreeTraversal(System.Collections.Generic.Stack<int> stack, Entity entity) {
+		string ans = base.PrintTreeTraversal(stack, entity);
+		Entity attackTarget = entity.memory[targetKey] as Entity;
+		ans += $": {attackTarget}";
+		return ans;
+	}
 }

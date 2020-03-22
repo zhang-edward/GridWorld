@@ -21,9 +21,9 @@ public class Entity : MonoBehaviour {
 	public Vector2Int position { get; private set; }
 	public string uniqueTag { get { return gameObject.GetInstanceID().ToString(); } }
 	public Stack<int> currentNodes { get; private set; } // Stores the traversal of the behavior tree to the currently running node
+	public Memory memory { get; private set; }
 
 	private Behavior behavior;
-	private Memory memory = new Memory();
 
 	public delegate void PositionChanged(Entity entity, Vector2Int oldPos, Vector2Int newPos);
 	public event PositionChanged onPositionChanged;
@@ -72,7 +72,7 @@ public class Entity : MonoBehaviour {
 			List<int> lst = new List<int>(currentNodes.ToArray());
 			lst.Reverse();
 			Stack<int> btTraversal = new Stack<int>(lst);
-			print(behavior.PrintTreeTraversal(btTraversal));
+			print(behavior.PrintTreeTraversal(btTraversal, this));
 		}
 	}
 
@@ -98,6 +98,10 @@ public class Entity : MonoBehaviour {
 		Vector2Int oldPos = this.position;
 		position = new Vector2Int(x, y);
 		onPositionChanged?.Invoke(this, oldPos, position);
+	}
+
+	public override string ToString() {
+		return gameObject.name;
 	}
 
 	void Update() {
