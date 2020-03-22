@@ -10,7 +10,7 @@ public class Leaf_TransformOther : Behavior {
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		Entity target = memory[entityKey] as Entity;
-		target.InitFromData(data);
+		target.TransformTo(data);
 		return NodeStatus.Success;
 	}
 }

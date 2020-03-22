@@ -33,14 +33,9 @@ public class Leaf_EntityFilter : Behavior {
 	}
 
 	private bool Detects(Entity entity, Entity other) {
-		if (!CheckTags(entity, other))
-			return false;
-		if (allies && other.faction == entity.faction)
-			return true;
-		else if (enemies && other.faction != entity.faction)
-			return true;
-		else
-			return false;
+		return CheckTags(entity, other) &&
+			((allies && other.faction == entity.faction) ||
+			(enemies && other.faction != entity.faction));
 	}
 
 	private bool CheckTags(Entity entity, Entity other) {

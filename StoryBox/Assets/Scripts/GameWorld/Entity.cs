@@ -33,13 +33,16 @@ public class Entity : MonoBehaviour {
 		this.faction = faction;
 		this.position = new Vector2Int(x, y);
 		this.world = world;
+		
+		memory = new Memory();
+		memory["self"] = this;
 
-		InitFromData(data);
+		TransformTo(data);
 		// Other properties
 		transform.position = (Vector2) position;
 	}
 
-	public void InitFromData(EntityData data) {
+	public void TransformTo(EntityData data) {
 		allowedTiles = data.allowedTiles;
 		attack = data.attack;
 		health = data.maxHealth;

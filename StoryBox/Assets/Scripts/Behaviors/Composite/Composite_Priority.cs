@@ -22,19 +22,21 @@ public class Composite_Priority : Behavior {
 			NodeStatus status = behaviors[i].Act(entity, memory);
 			// Fails => continue to next one
 			if (status == NodeStatus.Failure) {
-				if (GameManager.instance.debuggingLog) Debug.Log(behaviors[i] + " Failure", entity.gameObject);
+				// if (GameManager.instance.debuggingLog) Debug.Log(behaviors[i] + " Failure", entity.gameObject);
 				i++;
 			}
 			// Succeeds => break with status SUCCESS
 			else if (status == NodeStatus.Success) {
-				if (GameManager.instance.debuggingLog) Debug.Log($"{behaviors[i]} Success", entity.gameObject);
+				if (GameManager.instance.debuggingLog)
+					Debug.Log($"{entity.gameObject.name}: {behaviors[i].gameObject.name}: Success", entity.gameObject);
 				i = 0;
 				returnStatus = NodeStatus.Success;
 				break;
 			}
 			// Running => break with status RUNNING
 			else if (status == NodeStatus.Running) {
-				if (GameManager.instance.debuggingLog) Debug.Log(behaviors[i] + ": Running", this);
+				if (GameManager.instance.debuggingLog)
+					Debug.Log($"{entity.gameObject.name}: {behaviors[i].gameObject.name}: Running", entity.gameObject);
 				returnStatus = NodeStatus.Running;
 				break;
 			}

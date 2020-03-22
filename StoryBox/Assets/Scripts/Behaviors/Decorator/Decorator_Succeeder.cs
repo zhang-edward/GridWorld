@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Leaf_TransformSelf : Behavior {
+public class Decorator_Succeeder : Behavior {
 
-	public EntityData data;
+	public Behavior subBehavior;
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
-		entity.TransformTo(data);
+		subBehavior.Act(entity, memory);
 		return NodeStatus.Success;
 	}
 }

@@ -22,19 +22,23 @@ public class Composite_Sequence : Behavior {
 			NodeStatus status = behaviors[i].Act(entity, memory);
 			// Fails => continue to next one
 			if (status == NodeStatus.Failure) {
-				if (GameManager.instance.debuggingLog) Debug.Log(behaviors[i] + ": Failure", entity.gameObject);
+				if (GameManager.instance.debuggingLog)
+					Debug.Log($"{entity.gameObject.name}: {behaviors[i].gameObject.name}: Failure", entity.gameObject);
 				i = 0;
 				returnStatus = NodeStatus.Failure;
 				break;
 			}
 			// Succeeds => break with status SUCCESS
 			else if (status == NodeStatus.Success) {
-				if (GameManager.instance.debuggingLog) Debug.Log($"{behaviors[i]} success", entity.gameObject);
+				// if (GameManager.instance.debuggingLog) Debug.Log($"{behaviors[i]} success", entity.gameObject);
 				i++;
 			}
 			// Running => break with status RUNNING
 			else if (status == NodeStatus.Running) {
-				if (GameManager.instance.debuggingLog) Debug.Log(behaviors[i] + ": Running", this);
+				// Debug
+				if (GameManager.instance.debuggingLog)
+					Debug.Log($"{entity.gameObject.name}: {behaviors[i].gameObject.name}: Running", entity.gameObject);
+				// Debug
 				returnStatus = NodeStatus.Running;
 				break;
 			}
@@ -42,6 +46,8 @@ public class Composite_Sequence : Behavior {
 		// If all sub-behaviors succeeded
 		if (i == behaviors.Length) {
 			i = 0;
+			if (GameManager.instance.debuggingLog)
+				Debug.Log($"{gameObject.name}: Success", entity.gameObject);
 			returnStatus = NodeStatus.Success;
 		}
 		entity.currentNodes.Push(i);

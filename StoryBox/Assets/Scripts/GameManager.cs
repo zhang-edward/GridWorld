@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 	public bool debuggingLog = false;
 
+	private bool paused = true;
+	private bool step = false;
+
 	void Awake() {
 		if (instance == null)
 			instance = this;
@@ -25,11 +28,24 @@ public class GameManager : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.R)) {
 			SceneManager.LoadScene(0);
 		}
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			paused = !paused;
+		}
+		if (Input.GetKeyDown(KeyCode.Period)) {
+			step = true;
+			paused = false;
+		}
 	}
 
 	private IEnumerator Loop() {
 		for (;;) {
+			while (paused) {
+				step = false;
+				yield return null;
+			}
 			EntityManager.instance.Tick();
+			if (step)
+				paused = true;
 			yield return new WaitForSecondsRealtime(0.5f);
 		}
 	}

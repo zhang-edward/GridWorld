@@ -25,7 +25,6 @@ public class Leaf_PositionSelector : Behavior {
 				selected = pos;
 			}
 		}
-		print($"Selected {selected}");
 		if (selected != NONE) {
 			memory[selectedKey] = selected;
 			return NodeStatus.Success;

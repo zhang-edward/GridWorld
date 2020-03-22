@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Leaf_ModifyTag : Behavior {
+public class Leaf_ModifyTagSelf : Behavior {
 
 	private enum Mode {
 		Add,
@@ -10,21 +10,17 @@ public class Leaf_ModifyTag : Behavior {
 	[SerializeField] private Mode mode = Mode.Add;
 	public string tagValue;
 
-	[Header("Read Keys")]
-	public string entityKey;
-
 	public override NodeStatus Act(Entity entity, Memory memory) {
-		Entity target = memory[entityKey] as Entity;
 		switch (mode) {
 			case Mode.Add:
-				if (target.tags.Contains(tagValue))
+				if (entity.tags.Contains(tagValue))
 					return NodeStatus.Failure;
 				else
-					target.tags.Add(tagValue);
+					entity.tags.Add(tagValue);
 				break;
 			case Mode.Delete:
-				if (target.tags.Contains(tagValue))
-					target.tags.Remove(tagValue);
+				if (entity.tags.Contains(tagValue))
+					entity.tags.Remove(tagValue);
 				else
 					return NodeStatus.Failure;
 				break;
