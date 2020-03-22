@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae32e190e10b642b4acf59d213fb5eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 10
+  time: 100
   timerKey: spawn_child_timer
 --- !u!1 &5844176102766962422
 GameObject:

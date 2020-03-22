@@ -11,7 +11,10 @@ public class Composite_Sequence : Behavior {
 
 	public override string PrintTreeTraversal(System.Collections.Generic.Stack<int> stack) {
 		int i = stack.Pop();
-		return $"{gameObject.name} (Sequence) \n{behaviors[i].PrintTreeTraversal(stack)}";
+		if (i < behaviors.Length)
+			return $"{gameObject.name} (Sequence) \n{behaviors[i].PrintTreeTraversal(stack)}";
+		else
+			return $"{gameObject.name} (Sequence) all succeeded";
 	}
 
 	/// <summary>
@@ -20,6 +23,10 @@ public class Composite_Sequence : Behavior {
 	/// <returns>behavior return code</returns>
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		int i = entity.currentNodes.Count == 0 ? 0 : entity.currentNodes.Pop();
+		// When we run through all the behaviors, i = behaviors.length is saved on the stack for 
+		// infomation-preserving purposes.
+		i = i % behaviors.Length;
+
 		NodeStatus status = NodeStatus.Failure;
 		while (i < behaviors.Length) {
 			// Run the current sub-behavior
@@ -38,9 +45,6 @@ public class Composite_Sequence : Behavior {
 				break;
 			}
 		}
-		// If all sub-behaviors succeeded
-		if (i == behaviors.Length)
-			i = 0;
 		entity.currentNodes.Push(i);
 		return status;
 	}

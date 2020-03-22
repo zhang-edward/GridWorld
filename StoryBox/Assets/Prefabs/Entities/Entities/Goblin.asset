@@ -15,7 +15,7 @@ MonoBehaviour:
   maxHealth: 2
   attack: 1
   expandTerritoryRange: 0
-  allowedTiles: 
+  allowedTiles: 010000000200000003000000
   defaultBehavior: Aggro
   defaultTags: []
   sprite: {fileID: -4472081488600128898, guid: fe5c862abc4f64df99960f41c108f739, type: 3}

@@ -20,7 +20,6 @@ public class Leaf_CreateEntity : Behavior {
 
 		Entity child = EntityManager.instance.CreateEntity(data, position.x, position.y, entity.faction);
 		if (child != null) {
-			print($"Created {child} at {position}");
 			(memory[childEntitiesKey] as List<Entity>).Add(child);
 			memory[childKey] = child;
 			return NodeStatus.Success;

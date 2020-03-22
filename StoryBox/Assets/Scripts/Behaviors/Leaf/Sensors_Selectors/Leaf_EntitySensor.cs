@@ -11,7 +11,7 @@ public class Leaf_EntitySensor : Behavior {
 	public bool checkUniqueTag;
 
 	[Header("Other properties")]
-	public int range = 100;
+	public int range;
 
 	[Header("Write Keys")]
 	public string entitiesKey = "entities";
