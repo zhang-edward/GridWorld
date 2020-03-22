@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2599724977129351725}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2599724976178706197
 MonoBehaviour:
@@ -93,6 +93,7 @@ MonoBehaviour:
   enemies: 0
   range: 10
   positionsKey: potential_house_locations
+  countKey: 
 --- !u!1 &2599724976576980007
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +142,7 @@ MonoBehaviour:
   noEntity: 1
   positionsKeyIn: potential_house_locations
   positionsKeyOut: potential_house_locations
+  countKey: 
 --- !u!1 &2599724977129351724
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +173,7 @@ Transform:
   m_Children:
   - {fileID: 2599724976438679724}
   - {fileID: 2599724976576980000}
+  - {fileID: 2810091164534679774}
   - {fileID: 2599724977213961071}
   - {fileID: 5788709035530923297}
   - {fileID: 2599724976178706196}
@@ -192,6 +195,7 @@ MonoBehaviour:
   behaviors:
   - {fileID: 2599724976438679725}
   - {fileID: 2599724976576980001}
+  - {fileID: 7309137973729948021}
   - {fileID: 2599724977213961064}
   - {fileID: 1512893525949219323}
   - {fileID: 2599724976178706197}
@@ -224,7 +228,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2599724977129351725}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2599724977213961064
 MonoBehaviour:
@@ -240,6 +244,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionsKey: potential_house_locations
   selectedKey: house_project_location
+--- !u!1 &3983534918058395196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2810091164534679774}
+  - component: {fileID: 7309137973729948021}
+  m_Layer: 0
+  m_Name: NoOverlappingResources
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2810091164534679774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3983534918058395196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2599724977129351725}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7309137973729948021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3983534918058395196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb490c1123d94f9e9bae5a162d05797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: 1
+  ids: 00000000
+  noEntity: 1
+  positionsKeyIn: potential_house_locations
+  positionsKeyOut: potential_house_locations
+  countKey: 
 --- !u!1 &6219223852221105750
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +322,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2599724977129351725}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1512893525949219323
 MonoBehaviour:

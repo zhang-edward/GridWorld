@@ -36,13 +36,13 @@ public class EntityManager : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Alpha2)) {
 			CreateEntity(debugEntity, coords.x, coords.y, 1);
 		}
-		if (Input.GetMouseButtonDown(0)) {
-			List<Entity> l = entityMap[coords.y, coords.x];
-			for (int i = l.Count - 1; i >= 0; i--) {
-				Entity e = l[i];
-				RemoveEntity(e);
-			}
-		}
+		//if (Input.GetMouseButtonDown(0)) {
+		//	List<Entity> l = entityMap[coords.y, coords.x];
+		//	for (int i = l.Count - 1; i >= 0; i--) {
+		//		Entity e = l[i];
+		//		RemoveEntity(e);
+		//	}
+		//}
 	}
 
 	public void Tick() {
