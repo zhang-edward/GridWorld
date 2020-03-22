@@ -6,10 +6,10 @@ public class EntityManager : MonoBehaviour {
 	public static EntityManager instance;
 	public const int MAX_ENTITIES_PER_CELL = 4;
 
-	public GameObject debugEntityPrefab;
+	public EntityData debugEntity;
 	public World world;
 	public List<Entity> entities { get; private set; }
-	public RuntimeObjectPoolerManager entityPools;
+	public ObjectPooler entityPool;
 
 	public delegate void EntityEvent(Entity entity);
 	public event EntityEvent onTerritoryExpandingEntityCreated;
@@ -31,10 +31,10 @@ public class EntityManager : MonoBehaviour {
 		Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		Vector2Int coords = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
 		if (Input.GetKeyDown(KeyCode.Alpha1)) {
-			CreateEntity(debugEntityPrefab, coords.x, coords.y, 0);
+			CreateEntity(debugEntity, coords.x, coords.y, 0);
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha2)) {
-			CreateEntity(debugEntityPrefab, coords.x, coords.y, 1);
+			CreateEntity(debugEntity, coords.x, coords.y, 1);
 		}
 		if (Input.GetMouseButtonDown(0)) {
 			List<Entity> l = entityMap[coords.y, coords.x];
@@ -67,19 +67,16 @@ public class EntityManager : MonoBehaviour {
 		}
 	}
 
-	public Entity CreateEntity(GameObject prefab, int x, int y, int faction) {
+	public Entity CreateEntity(EntityData data, int x, int y, int faction) {
 		// Check preconditions for spawning entity
 		if (CapacityReachedAt(x, y))
 			return null;
-		// Get object pooler
-		ObjectPooler pool = entityPools.GetPooler(prefab.name);
-		if (pool == null)
-			pool = entityPools.CreateRuntimeObjectPooler(prefab.name, prefab);
 
 		// Configure entity properties
-		GameObject obj = pool.GetPooledObject();
+		GameObject obj = entityPool.GetPooledObject();
+		obj.name = data.name + obj.GetInstanceID();
 		Entity entity = obj.GetComponent<Entity>();
-		entity.Init(x, y, faction, world);
+		entity.Init(x, y, faction, world, data);
 
 		// Track entity
 		newEntities.Add(entity);

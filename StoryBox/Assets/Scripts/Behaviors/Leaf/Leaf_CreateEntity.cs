@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Leaf_CreateEntity : Behavior {
 
-	public GameObject entityPrefab;
+	public EntityData data;
 
 	[Header("Write Keys")]
 	public string childEntitiesKey = "children";
@@ -12,7 +12,7 @@ public class Leaf_CreateEntity : Behavior {
 		if (memory[childEntitiesKey] == null)
 			memory[childEntitiesKey] = new List<Entity>();
 
-		Entity child = EntityManager.instance.CreateEntity(entityPrefab, entity.position.x, entity.position.y, entity.faction);
+		Entity child = EntityManager.instance.CreateEntity(data, entity.position.x, entity.position.y, entity.faction);
 		if (child != null) {
 			(memory[childEntitiesKey] as List<Entity>).Add(child);
 			return NodeStatus.Success;

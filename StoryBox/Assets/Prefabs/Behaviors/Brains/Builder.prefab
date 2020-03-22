@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6007829969335860156}
   - component: {fileID: 972157483258670459}
   m_Layer: 0
-  m_Name: Priority
+  m_Name: Builder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,6 +62,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildTown
       objectReference: {fileID: 0}
+    - target: {fileID: 5629958487261638164, guid: e78ad548d238248409fd93758789a98c,
+        type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 335bad352607b42b9aadff19cd65f094,
+        type: 2}
     - target: {fileID: 7189702080529726674, guid: e78ad548d238248409fd93758789a98c,
         type: 3}
       propertyPath: m_LocalPosition.x

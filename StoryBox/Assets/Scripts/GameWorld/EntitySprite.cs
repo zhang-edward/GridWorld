@@ -10,9 +10,10 @@ public class EntitySprite : MonoBehaviour {
 		sr = GetComponent<SpriteRenderer>();
 	}
 
-	public void Init(Entity entity) {
+	public void Init(Entity entity, Sprite sprite) {
 		this.entity = entity;
 		sr.color = TerritoryMap.colors[entity.faction];
+		sr.sprite = sprite;
 		ChangeRandomOffset(null, Vector2Int.one, Vector2Int.one);
 		entity.onPositionChanged += ChangeRandomOffset;
 	}

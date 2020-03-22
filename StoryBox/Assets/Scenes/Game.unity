@@ -354,11 +354,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 111865305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e40df2f16ef934703866aff7d7556f86, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e3346b28105c475fb46730b0fc0deff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runtimeObjectPoolerPrefab: {fileID: 6717213826964032694, guid: 092892aca7c15400eb055cd2a38c8d16,
+  isGlobal: 0
+  poolType: Entity
+  pooledObject: {fileID: 1626793646759749932, guid: cc27468d5003e48728b44f532397f39a,
     type: 3}
+  poolAmount: 10
+  willGrow: 1
 --- !u!4 &111865307
 Transform:
   m_ObjectHideFlags: 0
@@ -497,8 +501,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2eac7cea4e11d4e2f88951a52fae3489, type: 2}
   - {fileID: 11400000, guid: 7751342cbc0fb4fd5a3c71010fcfe2fd, type: 2}
   - {fileID: 11400000, guid: e12920be1ccf64f03a9b986d6e160a0b, type: 2}
-  basePrefab: {fileID: 1626793646759749932, guid: cc27468d5003e48728b44f532397f39a,
-    type: 3}
+  entityData: {fileID: 11400000, guid: c676b08df3b244292b75d3efad4013c3, type: 2}
 --- !u!114 &353964533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,10 +1037,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce920acdf4d3a43e9b39714a8ae9c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugEntityPrefab: {fileID: 2527344175111921210, guid: 375564c0402224d6ab397ac2181e1aae,
-    type: 3}
+  debugEntity: {fileID: 11400000, guid: 66924e3a2c0fd400f99ac29979dae96b, type: 2}
   world: {fileID: 353964532}
-  entityPools: {fileID: 111865306}
+  entityPool: {fileID: 111865306}
 --- !u!4 &1359973687
 Transform:
   m_ObjectHideFlags: 0

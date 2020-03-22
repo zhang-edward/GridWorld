@@ -14,6 +14,10 @@ public class ObjectPooler : MonoBehaviour {
 	protected List<GameObject> pooledObjects;
 	private bool initialized;
 
+	void Awake() {
+		Init();
+	}
+
 	public virtual void Init() {
 		if (initialized)
 			return;

@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour {
 
-	[Header("Entity properties")]
-	public int maxHealth = 1;
-	public int attack;
-	public int expandTerritoryRange = 0;
-	public List<int> allowedTiles; // Which tiles is this entity allowed to be on?
-	public string defaultBehavior;
-	public List<string> tags;
-
 	[Header("View")]
 	public EntitySprite entitySprite;
 
-	public Vector2Int position { get; private set; }
-	public World world { get; private set; }
 	public int faction { get; private set; }
 	public int health { get; private set; }
+	public int attack { get; private set; }
+	public int expandTerritoryRange { get; private set; }
+	public List<string> tags { get; private set; }
+	public List<int> allowedTiles { get; private set; }
+	public World world { get; private set; }
+	public Vector2Int position { get; private set; }
 	public string uniqueTag { get { return gameObject.GetInstanceID().ToString(); } }
 	public Stack<int> currentNodes { get; private set; } // Stores the traversal of the behavior tree to the currently running node
 
@@ -31,16 +27,24 @@ public class Entity : MonoBehaviour {
 	public delegate void LifecycleEvent(Entity entity);
 	public event LifecycleEvent onEntityDied;
 
-	public void Init(int x, int y, int faction, World world) {
+	public void Init(int x, int y, int faction, World world, EntityData data) {
 		this.faction = faction;
 		this.position = new Vector2Int(x, y);
 		this.world = world;
+		
+		// Initialize from data
+		allowedTiles = data.allowedTiles;
+		attack = data.attack;
+		health = data.maxHealth;
+		expandTerritoryRange = data.expandTerritoryRange;
+		entitySprite.Init(this, data.sprite);
+		behavior = BehaviorManager.instance.GetBehavior(data.defaultBehavior);
+		tags = new List<string>();
+		tags.AddRange(data.defaultTags);
 
-		health = maxHealth;
-		entitySprite.Init(this);
+		// Other properties
 		transform.position = (Vector2) position;
 		currentNodes = new Stack<int>();
-		behavior = BehaviorManager.instance.GetBehavior(defaultBehavior);
 	}
 
 	public void Act() {

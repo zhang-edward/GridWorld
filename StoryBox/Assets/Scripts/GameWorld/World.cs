@@ -27,7 +27,7 @@ public class World : MonoBehaviour {
 	[SerializeField] private Tilemap structureTileMap;
 	[SerializeField] private TileBase[] structureTiles;
 
-	public GameObject basePrefab;
+	public EntityData entityData;
 
 	private WorldGenerator gen = new WorldGenerator();
 
@@ -58,7 +58,7 @@ public class World : MonoBehaviour {
 				int x = Random.Range(0, World.WORLD_SIZE);
 				int y = Random.Range(0, World.WORLD_SIZE);
 				if (baseMap[y, x] == GRASS) {
-					EntityManager.instance.CreateEntity(basePrefab, x, y, 0);
+					EntityManager.instance.CreateEntity(entityData, x, y, 0);
 					break;
 				}
 				limit++;
