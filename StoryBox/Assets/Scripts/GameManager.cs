@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
 	public static GameManager instance;
-	public bool debuggingLog = false;
 
 	private bool paused = true;
 	private bool step = false;
