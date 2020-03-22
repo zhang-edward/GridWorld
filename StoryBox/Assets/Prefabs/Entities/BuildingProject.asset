@@ -20,5 +20,6 @@ MonoBehaviour:
   defaultTags:
   - building_project
   - unreserved
-  - house
   sprite: {fileID: 2534334833520402907, guid: 29539c8bda8d243488487b78c5634121, type: 3}
+  immobile: 1
+  spriteOffset: 0

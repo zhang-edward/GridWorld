@@ -22,7 +22,6 @@ public class Leaf_TilemapSensor : Behavior {
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		List<Vector2Int> selected = new List<Vector2Int>();
-		bool found = false;
 		int[, ] map = null;
 		// Select which tilemap to look in
 		switch (tilemap) {
@@ -40,15 +39,11 @@ public class Leaf_TilemapSensor : Behavior {
 			for (int x = xx - range; x < xx + range; x++) {
 				if (World.InBounds(x, y) && Detects(map[y, x], x, y)) {
 					selected.Add(new Vector2Int(x, y));
-					found = true;
 				}
 			}
 		}
-		if (found) {
-			memory[positionsKey] = selected;
-			return NodeStatus.Success;
-		} else
-			return NodeStatus.Failure;
+		memory[positionsKey] = selected;
+		return NodeStatus.Success;
 	}
 
 	private bool Detects(int tile, int x, int y) {

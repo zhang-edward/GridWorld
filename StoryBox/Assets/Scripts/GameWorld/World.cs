@@ -58,7 +58,7 @@ public class World : MonoBehaviour {
 				int x = Random.Range(0, World.WORLD_SIZE);
 				int y = Random.Range(0, World.WORLD_SIZE);
 				if (baseMap[y, x] == GRASS) {
-					EntityManager.instance.CreateEntity(entityData, x, y, 0);
+					EntityManager.instance.CreateEntity(entityData, x, y, i);
 					break;
 				}
 				limit++;

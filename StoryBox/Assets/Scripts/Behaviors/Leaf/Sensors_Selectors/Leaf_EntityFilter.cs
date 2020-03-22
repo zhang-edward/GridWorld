@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Leaf_EntitySensor : Behavior {
+public class Leaf_EntityFilter : Behavior {
 
 	[Header("What to detect")]
 	public bool allies = false;
@@ -10,32 +10,25 @@ public class Leaf_EntitySensor : Behavior {
 	[Tooltip("Check if this entity has the tag placed by Leaf_TagUniquely")]
 	public bool checkUniqueTag;
 
-	[Header("Other properties")]
-	public int range = 100;
+	[Header("Read Keys")]
+	public string entitiesKeyIn;
 
 	[Header("Write Keys")]
-	public string entitiesKey = "entities";
+	public string entitiesKeyOut;
 	public string countKey;
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
-		List<Entity> answer = new List<Entity>();
+		memory.SetDefault(entitiesKeyIn, new List<Entity>());
+		List<Entity> entities = (List<Entity>) memory[entitiesKeyIn];
+		List<Entity> filteredEntities = new List<Entity>();
 
-		int xx = entity.position.x;
-		int yy = entity.position.y;
-		for (int y = yy - range; y < yy + range; y++) {
-			for (int x = xx - range; x < xx + range; x++) {
-				if (World.InBounds(x, y)) {
-					List<Entity> entities = EntityManager.instance.GetEntitiesAt(x, y);
-					foreach (Entity other in entities) {
-						if (Detects(entity, other)) {
-							answer.Add(other);
-						}
-					}
-				}
+		foreach (Entity other in entities) {
+			if (Detects(entity, other)) {
+				filteredEntities.Add(other);
 			}
 		}
-		memory[entitiesKey] = answer;
-		memory[countKey] = answer.Count;
+		memory[entitiesKeyOut] = filteredEntities;
+		memory[countKey] = filteredEntities.Count;
 		return NodeStatus.Success;
 	}
 

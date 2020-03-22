@@ -9,7 +9,6 @@ public class Leaf_SetBehavior : Behavior {
 
 	[Header("Read Keys")]
 	public string childEntitiesKey = "children";
-	// [Header("Write Keys")]
 
 	private float[] probs;
 

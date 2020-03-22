@@ -44,7 +44,7 @@ public class Entity : MonoBehaviour {
 		attack = data.attack;
 		health = data.maxHealth;
 		expandTerritoryRange = data.expandTerritoryRange;
-		entitySprite.Init(this, data.sprite);
+		entitySprite.Init(this, data.sprite, data.spriteOffset, data.immobile);
 		behavior = BehaviorManager.instance.GetBehavior(data.defaultBehavior);
 		tags = new List<string>();
 		tags.AddRange(data.defaultTags);
@@ -72,7 +72,6 @@ public class Entity : MonoBehaviour {
 	}
 
 	public void Die() {
-		print("I died for some reason");
 		gameObject.SetActive(false);
 		// Fire event
 		onEntityDied?.Invoke(this);

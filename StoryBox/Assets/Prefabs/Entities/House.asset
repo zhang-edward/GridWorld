@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   attack: 0
-  expandTerritoryRange: 2
+  expandTerritoryRange: 0
   allowedTiles: 0100000002000000
   defaultBehavior: Dummy
   defaultTags: []
   sprite: {fileID: -7741745274710520091, guid: 409da735e9cbb4d9c844cdbea9c7581f, type: 3}
+  immobile: 1
+  spriteOffset: 0.1

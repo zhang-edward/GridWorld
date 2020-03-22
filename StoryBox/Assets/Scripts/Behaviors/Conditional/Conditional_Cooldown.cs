@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Conditional_Cooldown : Behavior {
 
-	// [Header("Read Keys")]
-	// [Header("Write Keys")]
 	public int cooldown = 10;
 	public int initialTimer = 1;
 

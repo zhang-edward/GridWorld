@@ -19,3 +19,5 @@ MonoBehaviour:
   defaultBehavior: HouseOrderer
   defaultTags: []
   sprite: {fileID: 1032229067355242517, guid: 29539c8bda8d243488487b78c5634121, type: 3}
+  immobile: 1
+  spriteOffset: 0.1

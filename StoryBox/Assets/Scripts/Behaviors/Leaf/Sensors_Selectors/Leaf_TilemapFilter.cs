@@ -23,11 +23,11 @@ public class Leaf_TilemapFilter : Behavior {
 	[Header("Write Keys")]
 	[Tooltip("List<Vector2Int>")]
 	public string positionsKeyOut = "positions";
+	public string countKey;
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		// Read positions list from memory
 		List<Vector2Int> positions = memory[positionsKeyIn] as List<Vector2Int>;
-		bool found = false;
 		// Select which tilemap to look in
 		int[, ] map = null;
 		switch (tilemap) {
@@ -46,16 +46,13 @@ public class Leaf_TilemapFilter : Behavior {
 			int y = vec.y;
 			if (Detects(map[y, x], x, y)) {
 				filteredPositions.Add(new Vector2Int(x, y));
-				found = true;
 			}
 		}
 
 		// Write filtered list to memory
-		if (found) {
-			memory[positionsKeyOut] = filteredPositions;
-			return NodeStatus.Success;
-		} else
-			return NodeStatus.Failure;
+		memory[positionsKeyOut] = filteredPositions;
+		memory[countKey] = filteredPositions.Count;
+		return NodeStatus.Success;
 	}
 
 	private bool Detects(int tile, int x, int y) {

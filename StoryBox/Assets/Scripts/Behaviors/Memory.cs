@@ -10,7 +10,10 @@ public class Memory {
 
 	public object this[string s] {
 		get => values.ContainsKey(s) ? values[s] : null;
-		set => values[s] = value;
+		set {
+			if (s != "")
+				values[s] = value;
+		}
 	}
 
 	public void SetDefault(string key, object value) {
