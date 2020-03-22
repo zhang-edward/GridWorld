@@ -11,10 +11,13 @@ public class Leaf_PathTo : Behavior {
 
 	[Header("Read Keys")]
 	public string destinationKey = "destination";
-	public string pathCacheKey = "pathCache";
 
 	[Header("Write Keys")]
 	public string movementKey = "move_dest";
+
+	private string pathCacheKey {
+		get { return "path_cache: " + this.GetInstanceID(); }
+	}
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		// Gets the destination from memory
@@ -50,8 +53,7 @@ public class Leaf_PathTo : Behavior {
 				return NodeStatus.Running;
 				// Movement behavior failed
 			case NodeStatus.Failure:
-				path.Push(dest);
-				memory[pathCacheKey] = path; // Save path for next tick
+				memory[pathCacheKey] = null; // discard path in cache
 				return NodeStatus.Failure;
 			default:
 				return NodeStatus.Failure;
