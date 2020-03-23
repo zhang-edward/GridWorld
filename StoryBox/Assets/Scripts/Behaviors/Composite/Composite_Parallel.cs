@@ -6,7 +6,6 @@ public class Composite_Parallel : Behavior {
 	private int maskAll;
 
 	public override void Init() {
-		print("fucking finally");
 		if (behaviors.Length >= 32) {
 			Debug.LogError("Too many sub-behaviors!");
 		}

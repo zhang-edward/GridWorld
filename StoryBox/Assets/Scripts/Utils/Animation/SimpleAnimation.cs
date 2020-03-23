@@ -12,21 +12,12 @@ public class SimpleAnimation
 
 	public float SecondsPerFrame
 	{
-		get { return 1.0f / (float)fps; }
+		get { return 1.0f / fps; }
 	}
 	
 	public float TimeLength
 	{
-		get { return frames.Length * (float)SecondsPerFrame; }
+		get { return frames.Length * SecondsPerFrame; }
 	}
 
-	public void SetTimeLength(float timeLength)
-	{
-		fps = 1 / (timeLength / frames.Length);
-	}
-
-	public float GetSecondsUntilFrame(int frame)
-	{
-		return frame * SecondsPerFrame;
-	}
 }

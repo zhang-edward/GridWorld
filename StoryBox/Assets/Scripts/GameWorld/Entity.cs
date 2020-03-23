@@ -73,12 +73,15 @@ public class Entity : MonoBehaviour {
 			List<int> lst = new List<int>(currentNodes.ToArray());
 			lst.Reverse();
 			Stack<int> btTraversal = new Stack<int>(lst);
-			print(behavior.PrintTreeTraversal(btTraversal, this));
+			//foreach (int n in btTraversal)
+			//	print(n);
+			print("Next tick:\n" + behavior.PrintTreeTraversal(btTraversal, this));
 		}
 	}
 
 	public void Damage(int amt) {
 		health -= amt;
+		entitySprite.AnimateDamage();
 	}
 
 	public void Kill() {
@@ -98,6 +101,7 @@ public class Entity : MonoBehaviour {
 	public void Move(int x, int y) {
 		Vector2Int oldPos = this.position;
 		position = new Vector2Int(x, y);
+		FaceTowards(position);
 
 		if (moveRoutine != null)
 			StopCoroutine(moveRoutine);
@@ -129,4 +133,13 @@ public class Entity : MonoBehaviour {
 	public void ResetAnimation() {
 		entitySprite.ResetAnimation();
 	}
+
+	public void FaceTowards(Entity other) {
+		entitySprite.FaceTowards(other.entitySprite);
+	}
+
+	public void FaceTowards(Vector2Int pos) {
+		entitySprite.FaceTowards(pos);
+	}
+
 }

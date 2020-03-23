@@ -44,6 +44,5 @@ public class Leaf_AnimateDelay : Behavior {
 			memory[timerKey] = timer;
 			return NodeStatus.Running;
 		}
-		return NodeStatus.Success;
 	}
 }

@@ -18,6 +18,54 @@ MonoBehaviour:
   allowedTiles: 010000000200000003000000
   defaultBehavior: Aggro
   defaultTags: []
-  sprite: {fileID: -4472081488600128898, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+  animations:
+    dict:
+      reorderableList:
+        canAdd: 1
+        canRemove: 1
+        draggable: 1
+        expandable: 1
+        multipleSelection: 1
+        isExpanded: 1
+        label:
+          m_Text: Keys
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+        headerHeight: 18
+        footerHeight: 13
+        slideEasing: 0.15
+        verticalSpacing: 2
+        showDefaultBackground: 1
+        elementDisplayType: 0
+        elementNameProperty: 
+        elementNameOverride: 
+        elementIcon: {fileID: 0}
+      reqReferences: {fileID: 0}
+      isExpanded: 1
+      _keyValues:
+      - Default
+      - Move
+      - Attack
+      _keys:
+      - Default
+      - Move
+      - Attack
+      _values:
+      - frames:
+        - {fileID: 2922111715158936421, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        fps: 1
+        looping: 0
+      - frames:
+        - {fileID: 2922111715158936421, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 2733724926189066201, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        fps: 10
+        looping: 1
+      - frames:
+        - {fileID: -126080620982740698, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 7241908573746217322, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 5560722041020433753, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 2922111715158936421, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        fps: 10
+        looping: 0
   immobile: 0
   spriteOffset: 0.3

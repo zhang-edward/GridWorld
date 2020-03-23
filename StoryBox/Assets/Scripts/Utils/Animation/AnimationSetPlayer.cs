@@ -14,18 +14,14 @@ public class AnimationSetPlayer : SimpleAnimationPlayer
 		return true;
 	}
 
-	void Update()
-	{
-		if (!isPlaying)
-		{
-			ResetToDefault();
-		}
-	}
-
 	public void ResetToDefault()
 	{
 		currentAnimation = "Default";
 		anim = animationSet["Default"];
 		Play();
+	}
+
+	protected override void OnAnimationEnded() {
+		ResetToDefault();
 	}
 }

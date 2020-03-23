@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SimpleAnimationPlayer : MonoBehaviour
 {
-	public SpriteRenderer spriteRenderer;
+	public SpriteRenderer sr;
 	public SimpleAnimation anim;
 	public bool isPlaying { get; private set; }
 
@@ -12,13 +12,7 @@ public class SimpleAnimationPlayer : MonoBehaviour
 
 	void Awake()
 	{
-		spriteRenderer = GetComponent<SpriteRenderer>();
-	}
-
-	void OnEnable()
-	{
-		//sr.sprite = anim.frames [0];
-		Play();
+		sr = GetComponent<SpriteRenderer>();
 	}
 
 	public void Play()
@@ -30,30 +24,23 @@ public class SimpleAnimationPlayer : MonoBehaviour
 		playAnimRoutine = StartCoroutine(PlayAnim());
 	}
 
-	public void Reset()
-	{
-		frameIndex = 0;
-		spriteRenderer.sprite = anim.frames[0];
-		if (playAnimRoutine != null)
-			StopCoroutine(playAnimRoutine);
-	}
-
 	protected virtual IEnumerator PlayAnim()
 	{
+		frameIndex = 0;
 		isPlaying = true;
 		while (frameIndex < anim.frames.Length)
 		{
-			spriteRenderer.sprite = anim.frames[frameIndex];
+			sr.sprite = anim.frames[frameIndex];
 			frameIndex++;
 			// if looping, set animation to beginning and do not stop playing
-			if (anim.looping)
-			{
-				if (frameIndex >= anim.frames.Length)
-					frameIndex = 0;
+			if (anim.looping && frameIndex >= anim.frames.Length) {
+				frameIndex = 0;
 			}
 			yield return new WaitForSecondsRealtime(anim.SecondsPerFrame);
 		}
 		isPlaying = false;
 		yield return null;
 	}
+
+	protected virtual void OnAnimationEnded() {}
 }

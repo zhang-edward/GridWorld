@@ -7,6 +7,7 @@ public class Leaf_Animation : Behavior {
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		entity.PlayAnimation(animationKey);
+		print("Executed this shit!");
 		return NodeStatus.Success;
 	}
 }
