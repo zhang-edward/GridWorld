@@ -9,6 +9,7 @@ public abstract class Behavior : MonoBehaviour {
 	/// <param name="stack">The child nodes of each composite node in the BT traversal</param>
 	/// <returns></returns>
 	public virtual string PrintTreeTraversal(System.Collections.Generic.Stack<int> stack, Entity entity) { return gameObject.name; }
+
 	public abstract NodeStatus Act(Entity entity, Memory memory);
 }
 

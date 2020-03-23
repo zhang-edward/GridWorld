@@ -25,7 +25,7 @@ public class Composite_Sequence : Behavior {
 		int i = entity.currentNodes.Count == 0 ? 0 : entity.currentNodes.Pop();
 		// When we run through all the behaviors, i = behaviors.length is saved on the stack for 
 		// infomation-preserving purposes.
-		i = i % behaviors.Length;
+		i %= behaviors.Length;
 
 		NodeStatus status = NodeStatus.Failure;
 		while (i < behaviors.Length) {

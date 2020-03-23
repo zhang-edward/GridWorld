@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
 	public static GameManager instance;
+	public float tickInterval = 0.5f;
 
 	private bool paused = true;
 	private bool step = false;
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour {
 			EntityManager.instance.Tick();
 			if (step)
 				paused = true;
-			yield return new WaitForSecondsRealtime(0.5f);
+			yield return new WaitForSecondsRealtime(tickInterval);
 		}
 	}
 

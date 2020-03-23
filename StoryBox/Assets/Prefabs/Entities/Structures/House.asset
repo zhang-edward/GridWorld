@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e28537663ce409196230287a792fc4, type: 3}
   m_Name: House
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 20
   attack: 0
   expandTerritoryRange: 1
   allowedTiles: 0100000002000000
@@ -22,4 +22,4 @@ MonoBehaviour:
   - vacant
   sprite: {fileID: -7741745274710520091, guid: 409da735e9cbb4d9c844cdbea9c7581f, type: 3}
   immobile: 1
-  spriteOffset: 0.1
+  spriteOffset: 0.2

@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,6 +24,7 @@ public class Entity : MonoBehaviour {
 	public Memory memory { get; private set; }
 
 	private Behavior behavior;
+	private Coroutine moveRoutine;
 
 	public delegate void PositionChanged(Entity entity, Vector2Int oldPos, Vector2Int newPos);
 	public event PositionChanged onPositionChanged;
@@ -50,7 +51,7 @@ public class Entity : MonoBehaviour {
 		attack = data.attack;
 		health = data.maxHealth;
 		expandTerritoryRange = data.expandTerritoryRange;
-		entitySprite.Init(this, data.sprite, data.spriteOffset, data.immobile);
+		entitySprite.Init(this, data.animations, data.spriteOffset, data.immobile);
 		behavior = BehaviorManager.instance.GetBehavior(data.defaultBehavior);
 		tags = new List<string>();
 		tags.AddRange(data.defaultTags);
@@ -97,6 +98,10 @@ public class Entity : MonoBehaviour {
 	public void Move(int x, int y) {
 		Vector2Int oldPos = this.position;
 		position = new Vector2Int(x, y);
+
+		if (moveRoutine != null)
+			StopCoroutine(moveRoutine);
+		moveRoutine = StartCoroutine(MoveRoutine(transform.position, new Vector3(x, y)));
 		onPositionChanged?.Invoke(this, oldPos, position);
 	}
 
@@ -104,7 +109,24 @@ public class Entity : MonoBehaviour {
 		return gameObject.name;
 	}
 
-	void Update() {
-		transform.position = Vector3.Lerp(transform.position, (Vector2) position, moveLerpSpeed);
+	private IEnumerator MoveRoutine(Vector3 oldPos, Vector3 newPos) {
+		PlayAnimation("Move");
+		float t = 0;
+		while (t < GameManager.instance.tickInterval) {
+			t += Time.deltaTime;
+			transform.position = Vector2.Lerp(oldPos, newPos, t / GameManager.instance.tickInterval);
+			yield return null;
+		}
+		transform.position = newPos;
+		ResetAnimation();
+		yield return null;
+	}
+
+	public void PlayAnimation(string key) {
+		entitySprite.PlayAnimation(key);
+	}
+
+	public void ResetAnimation() {
+		entitySprite.ResetAnimation();
 	}
 }

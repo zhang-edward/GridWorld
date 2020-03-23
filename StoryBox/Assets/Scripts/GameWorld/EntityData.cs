@@ -13,7 +13,7 @@ public class EntityData : ScriptableObject {
 	public List<string> defaultTags;
 
 	[Header("View")]
-	public Sprite sprite;
+	public AnimationSet animations;
 	public bool immobile;
 	public float spriteOffset = 0.3f;
 }

@@ -12,12 +12,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e28537663ce409196230287a792fc4, type: 3}
   m_Name: Builder
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 10
   attack: 0
   expandTerritoryRange: 0
   allowedTiles: 010000000200000003000000
   defaultBehavior: HouseBuilder
   defaultTags: []
-  sprite: {fileID: 6585860390097811766, guid: 409da735e9cbb4d9c844cdbea9c7581f, type: 3}
+  animations:
+    dict:
+      reorderableList:
+        canAdd: 1
+        canRemove: 1
+        draggable: 1
+        expandable: 1
+        multipleSelection: 1
+        isExpanded: 1
+        label:
+          m_Text: Keys
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+        headerHeight: 18
+        footerHeight: 13
+        slideEasing: 0.15
+        verticalSpacing: 2
+        showDefaultBackground: 1
+        elementDisplayType: 0
+        elementNameProperty: 
+        elementNameOverride: 
+        elementIcon: {fileID: 0}
+      reqReferences: {fileID: 0}
+      isExpanded: 1
+      _keyValues:
+      - Default
+      - Move
+      - Build
+      _keys:
+      - Default
+      - Move
+      - Build
+      _values:
+      - frames:
+        - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        fps: 10
+        looping: 0
+      - frames:
+        - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: -3333249045553888777, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        fps: 10
+        looping: 1
+      - frames:
+        - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 8862369697692505149, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 5662891429576332192, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: -2674780064655468220, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        fps: 10
+        looping: 1
   immobile: 0
   spriteOffset: 0.3

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e28537663ce409196230287a792fc4, type: 3}
   m_Name: Barracks
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 30
   attack: 0
   expandTerritoryRange: 1
   allowedTiles: 

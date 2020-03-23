@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e28537663ce409196230287a792fc4, type: 3}
   m_Name: CapitalBuilding
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 100
   attack: 0
   expandTerritoryRange: 3
   allowedTiles: 0100000002000000
@@ -20,4 +20,4 @@ MonoBehaviour:
   defaultTags: []
   sprite: {fileID: 1032229067355242517, guid: 29539c8bda8d243488487b78c5634121, type: 3}
   immobile: 1
-  spriteOffset: 0.1
+  spriteOffset: 0.2

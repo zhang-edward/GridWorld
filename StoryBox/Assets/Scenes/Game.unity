@@ -406,6 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3063b0ba79446419a020b9acce7c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tickInterval: 0.5
 --- !u!4 &286679688
 Transform:
   m_ObjectHideFlags: 0
@@ -494,7 +495,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e3e7aa76b1ac044b18a44778c9c2a638, type: 2}
   - {fileID: 11400000, guid: 2eac7cea4e11d4e2f88951a52fae3489, type: 2}
   - {fileID: 11400000, guid: 7751342cbc0fb4fd5a3c71010fcfe2fd, type: 2}
-  entityData: {fileID: 11400000, guid: c676b08df3b244292b75d3efad4013c3, type: 2}
+  entityData: {fileID: 11400000, guid: 3fe73ba4cedba4a7fa7d2903e3c688c5, type: 2}
 --- !u!114 &353964533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,7 +618,7 @@ PrefabInstance:
     - target: {fileID: 1129449537717165848, guid: 5afc53bdf574940c2aa6652dca3ff196,
         type: 3}
       propertyPath: pathCacheKey
-      value: motherfucker
+      value: pathCache
       objectReference: {fileID: 0}
     - target: {fileID: 1129449537865081009, guid: 5afc53bdf574940c2aa6652dca3ff196,
         type: 3}
@@ -873,7 +874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce920acdf4d3a43e9b39714a8ae9c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugEntity: {fileID: 11400000, guid: 22d3f73a011a046a4a6f3626fb2a52d8, type: 2}
+  debugEntity: {fileID: 11400000, guid: 3fe73ba4cedba4a7fa7d2903e3c688c5, type: 2}
   world: {fileID: 353964532}
   entityPool: {fileID: 111865306}
 --- !u!4 &1359973687

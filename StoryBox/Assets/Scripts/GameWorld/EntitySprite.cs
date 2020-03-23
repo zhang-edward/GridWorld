@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EntitySprite : MonoBehaviour {
@@ -5,28 +6,46 @@ public class EntitySprite : MonoBehaviour {
 	private SpriteRenderer sr;
 	private Entity entity;
 	private Vector3 randomOffset;
+	private float offsetSpeed = 0.05f;
+
+	private AnimationSetPlayer player;
 
 	// Properties
 	private float offsetAmount;
 	private bool immobile;
 
 	void Awake() {
+		player = GetComponent<AnimationSetPlayer>();
 		sr = GetComponent<SpriteRenderer>();
 	}
 
-	public void Init(Entity entity, Sprite sprite, float offsetAmount, bool immobile) {
+	public void Init(Entity entity, AnimationSet set, float offsetAmount, bool immobile) {
 		this.entity = entity;
 		this.offsetAmount = offsetAmount;
 		this.immobile = immobile;
+		player.animationSet = set;
 
 		sr.color = TerritoryMap.colors[entity.faction];
-		sr.sprite = sprite;
-		ChangeRandomOffset(null, Vector2Int.one, Vector2Int.one);
-		entity.onPositionChanged += ChangeRandomOffset;
+
+		randomOffset = new Vector3(Random.Range(-offsetAmount, offsetAmount), Random.Range(-offsetAmount, offsetAmount));
+		ChangeOffset();
+		entity.onPositionChanged += (unused1, unused2, unused3) => ChangeOffset();
 	}
 
-	private void ChangeRandomOffset(Entity entity, Vector2Int oldPos, Vector2Int newPos) {
-		randomOffset = new Vector3(Random.Range(-offsetAmount, offsetAmount), Random.Range(-offsetAmount, offsetAmount));
+	public void ResetAnimation() {
+		player.ResetToDefault();
+	}
+
+	public void PlayAnimation(string key) {
+		if (player.animationSet.dict.ContainsKey(key))
+			player.Play(key);
+		else
+			player.ResetToDefault();
+	}
+
+	private void ChangeOffset() {
+		randomOffset += new Vector3(Random.Range(-offsetSpeed, offsetSpeed), Random.Range(-offsetSpeed, offsetSpeed));
+		randomOffset = Vector3.ClampMagnitude(randomOffset, offsetAmount);
 	}
 
 	void Update() {
