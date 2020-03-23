@@ -8,6 +8,11 @@ public class Decorator_DoWhile : Behavior {
 	public Behavior conditional;
 	public Behavior subBehavior;
 
+	public override void Init() {
+		conditional.Init();
+		subBehavior.Init();
+	}
+
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		if (conditional.Act(entity, memory) == NodeStatus.Success) {
 			NodeStatus status = subBehavior.Act(entity, memory);

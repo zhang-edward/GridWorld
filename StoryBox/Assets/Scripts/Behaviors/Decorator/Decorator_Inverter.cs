@@ -4,6 +4,10 @@ public class Decorator_Inverter : Behavior {
 
 	public Behavior subBehavior;
 
+	public override void Init() {
+		subBehavior.Init();
+	}
+
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		NodeStatus status = subBehavior.Act(entity, memory);
 		if (status == NodeStatus.Success)

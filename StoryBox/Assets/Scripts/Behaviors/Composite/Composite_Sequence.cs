@@ -5,6 +5,7 @@ public class Composite_Sequence : Behavior {
 
 	public override void Init() {
 		foreach (Behavior b in behaviors) {
+			print(b);
 			b.Init();
 		}
 	}
@@ -31,7 +32,9 @@ public class Composite_Sequence : Behavior {
 		while (i < behaviors.Length) {
 			// Run the current sub-behavior
 			status = behaviors[i].Act(entity, memory);
-			// print($"{behaviors[i]}: {status.ToString()}");
+			if (entity.debugBehavior)
+				print($"{behaviors[i]}: {status.ToString()}");
+
 			// Fails => continue to next one
 			if (status == NodeStatus.Failure) {
 				entity.currentNodes.Clear(); // Any downstream tree traversal is now wrong
