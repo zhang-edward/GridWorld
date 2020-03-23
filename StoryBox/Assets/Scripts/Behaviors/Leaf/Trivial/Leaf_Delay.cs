@@ -4,8 +4,9 @@ public class Leaf_Delay : Behavior {
 
 	public int time;
 
-	[Header("Read and Write Keys")]
-	public string timerKey = "timer";
+	private string timerKey {
+		get { return "timer: " + GetInstanceID(); }
+	}
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		memory.SetDefault(timerKey, time);

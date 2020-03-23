@@ -16,7 +16,7 @@ public class Leaf_PathTo : Behavior {
 	public string movementKey = "move_dest";
 
 	private string pathCacheKey {
-		get { return "path_cache: " + this.GetInstanceID(); }
+		get { return "path_cache: " + GetInstanceID(); }
 	}
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
