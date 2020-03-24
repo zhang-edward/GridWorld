@@ -12,12 +12,7 @@ public class Leaf_BecomeChild : Behavior {
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		Entity target = (Entity)memory[targetEntity];
-		List<Entity> list = target.memory[targetWriteKey] as List<Entity>;
-		if (list == null)
-			list = new List<Entity>();
-		list.Add(entity);
-		target.memory[targetWriteKey] = list;
-
+		target.AddChild(targetWriteKey, entity);
 		return NodeStatus.Success;
 	}
 }

@@ -15,12 +15,12 @@ public class Leaf_CreateEntity : Behavior {
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		Vector2Int position = (Vector2Int)memory[positionKey];
-		if (memory[childEntitiesKey] == null)
-			memory[childEntitiesKey] = new List<Entity>();
-
 		Entity child = EntityManager.instance.CreateEntity(data, position.x, position.y, entity.faction);
+
 		if (child != null) {
-			(memory[childEntitiesKey] as List<Entity>).Add(child);
+			if (childEntitiesKey != "") {
+				entity.AddChild(childEntitiesKey, child);
+			}
 			memory[childKey] = child;
 			return NodeStatus.Success;
 		}

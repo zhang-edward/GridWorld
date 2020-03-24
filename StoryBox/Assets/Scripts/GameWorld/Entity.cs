@@ -14,16 +14,21 @@ public class Entity : MonoBehaviour {
 	[Header("Tags")]
 	public List<string> tags;
 
+	// Properties
 	public int faction { get; private set; }
 	public int health { get; private set; }
 	public int attack { get; private set; }
 	public int expandTerritoryRange { get; private set; }
 	public List<int> allowedTiles { get; private set; }
+
+	// State
 	public World world { get; private set; }
 	public Vector2Int position { get; private set; }
 	public string uniqueTag { get { return gameObject.GetInstanceID().ToString(); } }
 	public Stack<int> currentNodes { get; private set; } // Stores the traversal of the behavior tree to the currently running node
 	public Memory memory { get; private set; }
+	public Entity parentEntity { get; private set; }
+	public Dictionary<string, List<Entity>> childEntities { get; private set; }
 
 	private Behavior behavior;
 	private Coroutine moveRoutine;
@@ -37,11 +42,14 @@ public class Entity : MonoBehaviour {
 
 	public void Init(int x, int y, int faction, World world, EntityData data) {
 		this.faction = faction;
-		this.position = new Vector2Int(x, y);
 		this.world = world;
+
+		position = new Vector2Int(x, y);
+		childEntities = new Dictionary<string, List<Entity>>();
 
 		memory = new Memory();
 		memory["self"] = this;
+
 
 		TransformTo(data);
 		// Other properties
@@ -144,4 +152,24 @@ public class Entity : MonoBehaviour {
 		entitySprite.FaceTowards(pos);
 	}
 
+	public void SetParent(Entity parentEntity) {
+		this.parentEntity = parentEntity;
+	}
+
+	public void AddChild(string key, Entity child) {
+		if (!childEntities.ContainsKey(key)) {
+			childEntities[key] = new List<Entity>();
+			memory[key] = childEntities[key];
+		}
+		childEntities[key].Add(child);
+		child.SetParent(this);
+		child.onEntityDied += RemoveChild;
+	}
+
+	public void RemoveChild(Entity child) {
+		foreach (List<Entity> list in childEntities.Values)
+			if (list.Contains(child))
+				list.Remove(child);
+		child.onEntityDied -= RemoveChild;
+	}
 }
