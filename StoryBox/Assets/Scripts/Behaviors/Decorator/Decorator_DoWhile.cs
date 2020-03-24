@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -11,6 +12,10 @@ public class Decorator_DoWhile : Behavior {
 	public override void Init() {
 		conditional.Init();
 		subBehavior.Init();
+	}
+
+	public override string PrintTreeTraversal(Stack<int> stack, Entity entity) {
+		return $"{gameObject.name} (DoWhile) \n{subBehavior.PrintTreeTraversal(stack, entity)}";
 	}
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
