@@ -20,6 +20,8 @@ public class Leaf_PositionSelector : Behavior {
 
 	public override NodeStatus Act(Entity entity, Memory memory) {
 		List<Vector2Int> positions = memory[positionsKey] as List<Vector2Int>;
+		if (positions.Count <= 0)
+			return NodeStatus.Failure;
 		positions.Shuffle();
 
 		Vector2Int selected = NONE;

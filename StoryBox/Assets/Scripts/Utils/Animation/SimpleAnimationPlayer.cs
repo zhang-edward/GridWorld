@@ -39,6 +39,7 @@ public class SimpleAnimationPlayer : MonoBehaviour
 			yield return new WaitForSecondsRealtime(anim.SecondsPerFrame);
 		}
 		isPlaying = false;
+		OnAnimationEnded();
 		yield return null;
 	}
 
