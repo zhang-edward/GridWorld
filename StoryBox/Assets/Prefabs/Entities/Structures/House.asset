@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e28537663ce409196230287a792fc4, type: 3}
   m_Name: House
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 50
   attack: 0
   expandTerritoryRange: 1
   allowedTiles: 0100000002000000
@@ -20,6 +20,38 @@ MonoBehaviour:
   defaultTags:
   - house
   - vacant
-  sprite: {fileID: -7741745274710520091, guid: 409da735e9cbb4d9c844cdbea9c7581f, type: 3}
+  animations:
+    dict:
+      reorderableList:
+        canAdd: 1
+        canRemove: 1
+        draggable: 1
+        expandable: 1
+        multipleSelection: 1
+        isExpanded: 1
+        label:
+          m_Text: Keys
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+        headerHeight: 18
+        footerHeight: 13
+        slideEasing: 0.15
+        verticalSpacing: 2
+        showDefaultBackground: 1
+        elementDisplayType: 0
+        elementNameProperty: 
+        elementNameOverride: 
+        elementIcon: {fileID: 0}
+      reqReferences: {fileID: 0}
+      isExpanded: 1
+      _keyValues:
+      - Default
+      _keys:
+      - Default
+      _values:
+      - frames:
+        - {fileID: -4216053607638181208, guid: 29539c8bda8d243488487b78c5634121, type: 3}
+        fps: 0
+        looping: 0
   immobile: 1
   spriteOffset: 0.2

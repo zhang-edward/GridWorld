@@ -17,7 +17,50 @@ MonoBehaviour:
   expandTerritoryRange: 0
   allowedTiles: 010000000200000003000000
   defaultBehavior: Settler
-  defaultTags: []
-  sprite: {fileID: -1125704382110878302, guid: 409da735e9cbb4d9c844cdbea9c7581f, type: 3}
+  defaultTags:
+  - settler
+  animations:
+    dict:
+      reorderableList:
+        canAdd: 1
+        canRemove: 1
+        draggable: 1
+        expandable: 1
+        multipleSelection: 1
+        isExpanded: 1
+        label:
+          m_Text: Keys
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+        headerHeight: 18
+        footerHeight: 13
+        slideEasing: 0.15
+        verticalSpacing: 2
+        showDefaultBackground: 1
+        elementDisplayType: 0
+        elementNameProperty: 
+        elementNameOverride: 
+        elementIcon: {fileID: 0}
+      reqReferences: {fileID: 0}
+      isExpanded: 1
+      _keyValues:
+      - Default
+      - Move
+      _keys:
+      - Default
+      - Move
+      _values:
+      - frames:
+        - {fileID: 4862552147654451688, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        fps: 0
+        looping: 0
+      - frames:
+        - {fileID: 4862552147654451688, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 770849671259497214, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 4862552147654451688, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 770849671259497214, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 4862552147654451688, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        fps: 10
+        looping: 0
   immobile: 0
   spriteOffset: 0.3

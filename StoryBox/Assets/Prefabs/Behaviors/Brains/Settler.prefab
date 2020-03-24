@@ -46,6 +46,51 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 335bad352607b42b9aadff19cd65f094, type: 2}
   childEntitiesKey: 
   childKey: capital
+--- !u!1 &2386458411398756583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3470619610813036478}
+  - component: {fileID: 7829486898186015646}
+  m_Layer: 0
+  m_Name: SetParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3470619610813036478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2386458411398756583}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4552292627559337625}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7829486898186015646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2386458411398756583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d1da4b4b63244fbbfa2cb8b54a951b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetEntity: capital
+  targetWriteKey: builders
 --- !u!1 &2550093399094203740
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89418b629a96f4fe2a8e12bb17a9e88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 0
   positionsKey: potential_settle_locations
   selectedKey: selected_settle_location
 --- !u!1 &4545538016063071055
@@ -265,8 +311,8 @@ Transform:
   - {fileID: 3126139021488469833}
   - {fileID: 8082097655125702507}
   - {fileID: 5261147738527602971}
-  - {fileID: 3777914738706443859}
   - {fileID: 8006018750149862090}
+  - {fileID: 3470619610813036478}
   m_Father: {fileID: 6007829969335860156}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -288,8 +334,8 @@ MonoBehaviour:
   - {fileID: 106551569056556531}
   - {fileID: 4764618243894728300}
   - {fileID: 3582268392434492725}
-  - {fileID: 5191350799649716000}
   - {fileID: 1549792750320654377}
+  - {fileID: 7829486898186015646}
 --- !u!1 &5046739005288478545
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,56 +384,6 @@ MonoBehaviour:
   range: 25
   noEntity: 1
   positionsKey: potential_settle_locations
---- !u!1 &5082676601587852249
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3777914738706443859}
-  - component: {fileID: 5191350799649716000}
-  m_Layer: 0
-  m_Name: MakeCapitalMyParent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3777914738706443859
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5082676601587852249}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4552292627559337625}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5191350799649716000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5082676601587852249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d92627ad5a4904b108550abc4deedf80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetEntity: capital
-  myReadKeys:
-  - self
-  targetWriteKeys:
-  - founder
-  targetReadKeys: []
-  myWriteKeys: []
 --- !u!1 &5110033538721672050
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +430,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 6423635673735429506}
   destinationKey: selected_settle_location
-  pathCacheKey: pathCache
   movementKey: move_dest
 --- !u!1 &5941546823310915574
 GameObject:
@@ -447,7 +442,7 @@ GameObject:
   - component: {fileID: 8006018750149862090}
   - component: {fileID: 1549792750320654377}
   m_Layer: 0
-  m_Name: TransformToBuilder
+  m_Name: BecomeBuilder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,7 +460,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4552292627559337625}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1549792750320654377
 MonoBehaviour:

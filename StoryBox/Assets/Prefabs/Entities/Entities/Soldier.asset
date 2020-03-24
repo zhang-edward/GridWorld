@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90e28537663ce409196230287a792fc4, type: 3}
-  m_Name: Goblin
+  m_Name: Soldier
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  attack: 1
+  maxHealth: 20
+  attack: 2
   expandTerritoryRange: 0
   allowedTiles: 010000000200000003000000
-  defaultBehavior: Aggro
-  defaultTags: []
+  defaultBehavior: Soldier
+  defaultTags:
+  - soldier
   animations:
     dict:
       reorderableList:
@@ -26,7 +27,7 @@ MonoBehaviour:
         draggable: 1
         expandable: 1
         multipleSelection: 1
-        isExpanded: 1
+        isExpanded: 0
         label:
           m_Text: Keys
           m_Image: {fileID: 0}
@@ -41,7 +42,7 @@ MonoBehaviour:
         elementNameOverride: 
         elementIcon: {fileID: 0}
       reqReferences: {fileID: 0}
-      isExpanded: 1
+      isExpanded: 0
       _keyValues:
       - Default
       - Move
@@ -52,22 +53,21 @@ MonoBehaviour:
       - Attack
       _values:
       - frames:
-        - {fileID: 2922111715158936421, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        fps: 1
+        - {fileID: 6246832655069406539, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
+        fps: 0
         looping: 0
       - frames:
-        - {fileID: 2922111715158936421, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 2733724926189066201, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 2922111715158936421, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 2733724926189066201, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 2922111715158936421, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 6246832655069406539, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
+        - {fileID: -2269519568428476932, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
+        - {fileID: 6246832655069406539, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
+        - {fileID: -2269519568428476932, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
         fps: 10
         looping: 0
       - frames:
-        - {fileID: -126080620982740698, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 7241908573746217322, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 5560722041020433753, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 2922111715158936421, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 6246832655069406539, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
+        - {fileID: -6676640116428088755, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
+        - {fileID: -2411736328533753459, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
+        - {fileID: 3240119343033235501, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
         fps: 10
         looping: 0
   immobile: 0

@@ -16,8 +16,9 @@ MonoBehaviour:
   attack: 0
   expandTerritoryRange: 0
   allowedTiles: 010000000200000003000000
-  defaultBehavior: HouseBuilder
-  defaultTags: []
+  defaultBehavior: Builder
+  defaultTags:
+  - builder
   animations:
     dict:
       reorderableList:
@@ -58,8 +59,11 @@ MonoBehaviour:
       - frames:
         - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
         - {fileID: -3333249045553888777, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: -3333249045553888777, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
         fps: 10
-        looping: 1
+        looping: 0
       - frames:
         - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
         - {fileID: 8862369697692505149, guid: fe5c862abc4f64df99960f41c108f739, type: 3}

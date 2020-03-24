@@ -12,12 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e28537663ce409196230287a792fc4, type: 3}
   m_Name: Barracks
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 60
   attack: 0
-  expandTerritoryRange: 1
+  expandTerritoryRange: 2
   allowedTiles: 
   defaultBehavior: Dummy
-  defaultTags: []
-  sprite: {fileID: -6390229602189606177, guid: 29539c8bda8d243488487b78c5634121, type: 3}
+  defaultTags:
+  - barracks
+  - employer
+  animations:
+    dict:
+      reorderableList:
+        canAdd: 1
+        canRemove: 1
+        draggable: 1
+        expandable: 1
+        multipleSelection: 1
+        isExpanded: 1
+        label:
+          m_Text: Keys
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+        headerHeight: 18
+        footerHeight: 13
+        slideEasing: 0.15
+        verticalSpacing: 2
+        showDefaultBackground: 1
+        elementDisplayType: 0
+        elementNameProperty: 
+        elementNameOverride: 
+        elementIcon: {fileID: 0}
+      reqReferences: {fileID: 0}
+      isExpanded: 1
+      _keyValues:
+      - Default
+      _keys:
+      - Default
+      _values:
+      - frames:
+        - {fileID: -6390229602189606177, guid: 29539c8bda8d243488487b78c5634121, type: 3}
+        fps: 0
+        looping: 0
   immobile: 1
   spriteOffset: 0.2
