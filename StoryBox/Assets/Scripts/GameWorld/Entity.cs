@@ -11,11 +11,13 @@ public class Entity : MonoBehaviour {
 	public float moveLerpSpeed = 0.05f;
 	public EntitySprite entitySprite;
 
+	[Header("Tags")]
+	public List<string> tags;
+
 	public int faction { get; private set; }
 	public int health { get; private set; }
 	public int attack { get; private set; }
 	public int expandTerritoryRange { get; private set; }
-	public List<string> tags { get; private set; }
 	public List<int> allowedTiles { get; private set; }
 	public World world { get; private set; }
 	public Vector2Int position { get; private set; }
@@ -116,13 +118,13 @@ public class Entity : MonoBehaviour {
 	private IEnumerator MoveRoutine(Vector3 oldPos, Vector3 newPos) {
 		PlayAnimation("Move");
 		float t = 0;
-		while (t < GameManager.instance.tickInterval) {
+		float moveTime = GameManager.instance.tickInterval;
+		while (t < moveTime) {
 			t += Time.deltaTime;
-			transform.position = Vector2.Lerp(oldPos, newPos, t / GameManager.instance.tickInterval);
+			transform.position = Vector2.Lerp(oldPos, newPos, t / moveTime);
 			yield return null;
 		}
 		transform.position = newPos;
-		ResetAnimation();
 		yield return null;
 	}
 

@@ -20,4 +20,7 @@ public class SimpleAnimation
 		get { return frames.Length * SecondsPerFrame; }
 	}
 
+	public void SetTimeLength(float timeLength) {
+		fps = 1 / (timeLength / frames.Length);
+	}
 }

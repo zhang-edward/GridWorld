@@ -25,6 +25,10 @@ public class EntitySprite : MonoBehaviour {
 		this.entity = entity;
 		this.offsetAmount = offsetAmount;
 		this.immobile = immobile;
+
+		// Configure animation
+		if (set.dict.ContainsKey("Move"))
+			set.dict["Move"].SetTimeLength(GameManager.instance.tickInterval);
 		player.animationSet = set;
 		player.ResetToDefault();
 
