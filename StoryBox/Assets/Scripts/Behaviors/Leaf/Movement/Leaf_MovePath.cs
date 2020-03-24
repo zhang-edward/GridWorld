@@ -11,14 +11,14 @@ public class Leaf_MovePath : Behavior {
 	[Header("Write Keys")]
 	public string movementKey = "move_dest";
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		Stack<Vector2Int> path = memory[pathKey] as Stack<Vector2Int>;
 
 		if (path.Count > 0) {
 			Vector2Int dest = path.Pop();
 			memory[movementKey] = dest;
 
-			switch (movement.Act(entity, memory)) {
+			switch (movement.ExecuteAction(entity, memory)) {
 				// Move was successful
 				case NodeStatus.Success:
 					// If the path is now empty, return success

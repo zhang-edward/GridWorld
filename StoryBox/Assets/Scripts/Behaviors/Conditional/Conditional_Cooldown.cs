@@ -12,7 +12,7 @@ public class Conditional_Cooldown : Behavior {
 		timer = initialTimer;
 	}
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		timer--;
 		if (timer <= 0) {
 			timer = cooldown;

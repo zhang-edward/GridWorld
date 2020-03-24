@@ -6,6 +6,8 @@ public class Composite_Parallel : Behavior {
 	private int maskAll;
 
 	public override void Init() {
+		if (behaviors == null)
+			Debug.LogError("failed init", this);
 		if (behaviors.Length >= 32) {
 			Debug.LogError("Too many sub-behaviors!");
 		}
@@ -30,7 +32,7 @@ public class Composite_Parallel : Behavior {
 	/// performs behavior
 	/// </summary>
 	/// <returns>behavior return code</returns>
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		// The value stored on the stack is a bitmask indicating which tasks should be run and which ones are done
 		int mask = entity.currentNodes.Count == 0 ? maskAll : entity.currentNodes.Pop();
 		int returnMask = 0;
@@ -43,7 +45,7 @@ public class Composite_Parallel : Behavior {
 			if ((mask & curMask) == 0) continue;
 
 			// Run the current sub-behavior
-			status = behaviors[i].Act(entity, memory);
+			status = behaviors[i].ExecuteAction(entity, memory);
 			print($"{behaviors[i]}: {status.ToString()}");
 			// print($"{behaviors[i]}: {status.ToString()}");
 			// Fails => break with status FAILURE

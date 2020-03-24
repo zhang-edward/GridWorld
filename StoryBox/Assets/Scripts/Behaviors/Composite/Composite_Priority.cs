@@ -22,7 +22,7 @@ public class Composite_Priority : Behavior {
 	/// performs behavior
 	/// </summary>
 	/// <returns>behavior return code</returns>
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		int i = entity.currentNodes.Count == 0 ? 0 : entity.currentNodes.Pop();
 		// When we run through all the behaviors, i = behaviors.length is saved on the stack for 
 		// infomation-preserving purposes.
@@ -31,7 +31,7 @@ public class Composite_Priority : Behavior {
 		NodeStatus status = NodeStatus.Failure;
 		while (i < behaviors.Length) {
 			// Run the current sub-behavior
-			status = behaviors[i].Act(entity, memory);
+			status = behaviors[i].ExecuteAction(entity, memory);
 			//if (entity.debugBehavior)
 			//	print($"{behaviors[i]}: {status.ToString()}");
 			// Fails => continue to next one

@@ -5,7 +5,7 @@ public class Leaf_ModifyResourceMap : Behavior {
 	public int from;
 	public int to;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		if (entity.world.ResourcesMap[entity.position.y, entity.position.x] != from)
 			return NodeStatus.Failure;
 			

@@ -13,7 +13,7 @@ public class Leaf_AnimateDelay : Behavior {
 		get { return "is_animating: " + GetInstanceID(); }
 	}
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		memory.SetDefault(timerKey, time);
 		memory.SetDefault(isAnimating, false);
 

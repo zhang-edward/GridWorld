@@ -9,7 +9,7 @@ public class Leaf_CreateEntityHere : Behavior {
 	public string childEntitiesKey = "children";
 	public string childKey = "child";
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		Entity child = EntityManager.instance.CreateEntity(data, entity.position.x, entity.position.y, entity.faction);
 		if (child != null) {
 			if (childEntitiesKey != "") {

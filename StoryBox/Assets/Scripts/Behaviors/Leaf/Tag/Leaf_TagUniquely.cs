@@ -12,7 +12,7 @@ public class Leaf_TagUniquely : Behavior {
 	[Header("Read Keys")]
 	public string entityKey;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		Entity target = memory[entityKey] as Entity;
 		switch (mode) {
 			case Mode.Add:

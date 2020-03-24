@@ -17,7 +17,7 @@ public class Leaf_EntityFilter : Behavior {
 	public string entitiesKeyOut;
 	public string countKey;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		memory.SetDefault(entitiesKeyIn, new List<Entity>());
 		List<Entity> entities = (List<Entity>) memory[entitiesKeyIn];
 		List<Entity> filteredEntities = new List<Entity>();

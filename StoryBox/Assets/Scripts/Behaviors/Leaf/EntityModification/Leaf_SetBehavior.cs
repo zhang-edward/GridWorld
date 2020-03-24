@@ -18,7 +18,7 @@ public class Leaf_SetBehavior : Behavior {
 		probs = weights.Select(weight => weight / sum).ToArray();
 	}
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		List<Entity> entities = memory[childEntitiesKey] as List<Entity>;
 		foreach (Entity e in entities)
 			Assign(e);

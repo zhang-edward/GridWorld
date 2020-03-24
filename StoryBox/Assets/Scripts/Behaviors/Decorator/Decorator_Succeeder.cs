@@ -13,8 +13,8 @@ public class Decorator_Succeeder : Behavior {
 		return $"{gameObject.name} (Succeeder) \n{subBehavior.PrintTreeTraversal(stack, entity)}";
 	}
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
-		subBehavior.Act(entity, memory);
+	protected override NodeStatus Act(Entity entity, Memory memory) {
+		subBehavior.ExecuteAction(entity, memory);
 		return NodeStatus.Success;
 	}
 }

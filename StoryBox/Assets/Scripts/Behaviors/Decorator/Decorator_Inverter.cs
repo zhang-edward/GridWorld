@@ -13,8 +13,8 @@ public class Decorator_Inverter : Behavior {
 		return $"{gameObject.name} (Inverter) \n{subBehavior.PrintTreeTraversal(stack, entity)}";
 	}
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
-		NodeStatus status = subBehavior.Act(entity, memory);
+	protected override NodeStatus Act(Entity entity, Memory memory) {
+		NodeStatus status = subBehavior.ExecuteAction(entity, memory);
 		if (status == NodeStatus.Success)
 			return NodeStatus.Failure;
 		else if (status == NodeStatus.Failure)

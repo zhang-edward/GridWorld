@@ -17,7 +17,7 @@ public class Conditional_CheckMemoryInt : Behavior {
 	public int value;
 	public int defaultValue;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		memory.SetDefault(key, defaultValue);
 
 		bool result = false;

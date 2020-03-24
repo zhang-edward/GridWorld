@@ -14,7 +14,7 @@ public class Leaf_MemoryTransaction : Behavior {
 	public string[] targetReadKeys;
 	public string[] myWriteKeys;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		
 		return NodeStatus.Success;
 	}

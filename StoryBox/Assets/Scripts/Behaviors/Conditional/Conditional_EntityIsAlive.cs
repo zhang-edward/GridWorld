@@ -5,7 +5,7 @@ public class Conditional_EntityIsAlive : Behavior {
 	[Tooltip("Entity")]
 	public string targetKey = "target";
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		Entity other = memory[targetKey] as Entity;
 		if (other.health > 0)
 			return NodeStatus.Success;

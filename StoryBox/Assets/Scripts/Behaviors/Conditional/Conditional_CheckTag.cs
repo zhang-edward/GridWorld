@@ -9,7 +9,7 @@ public class Conditional_CheckTag : Behavior {
 	[Tooltip("Entity")]
 	public string entityKey;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		Entity target = (Entity)memory[entityKey];
 
 		foreach (string tagValue in tagValues) {

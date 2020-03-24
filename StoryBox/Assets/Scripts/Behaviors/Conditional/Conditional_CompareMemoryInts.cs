@@ -18,7 +18,7 @@ public class Conditional_CompareMemoryInts : Behavior {
 	public string key2;
 	public int defaultValue2;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		memory.SetDefault(key1, defaultValue1);
 		memory.SetDefault(key2, defaultValue2);
 

@@ -14,7 +14,7 @@ public class Leaf_ChangeMemoryInt : Behavior {
 	[Header("Read and Write Keys")]
 	public string key;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		memory.SetDefault(key, defaultValue);
 		if (mode == Mode.Add)
 			memory[key] = (int) memory[key] + value;

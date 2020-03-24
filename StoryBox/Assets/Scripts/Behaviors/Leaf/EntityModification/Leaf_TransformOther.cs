@@ -8,7 +8,7 @@ public class Leaf_TransformOther : Behavior {
 	[Tooltip("Entity")]
 	public string entityKey;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		Entity target = memory[entityKey] as Entity;
 		target.TransformTo(data);
 		return NodeStatus.Success;

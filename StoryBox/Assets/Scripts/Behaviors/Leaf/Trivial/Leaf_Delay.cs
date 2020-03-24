@@ -8,7 +8,7 @@ public class Leaf_Delay : Behavior {
 		get { return "timer: " + GetInstanceID(); }
 	}
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		memory.SetDefault(timerKey, time);
 
 		int timer = (int) memory[timerKey];

@@ -13,7 +13,7 @@ public class Leaf_CreateEntity : Behavior {
 	public string childEntitiesKey = "children";
 	public string childKey = "child";
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		Vector2Int position = (Vector2Int)memory[positionKey];
 		Entity child = EntityManager.instance.CreateEntity(data, position.x, position.y, entity.faction);
 

@@ -14,15 +14,15 @@ public class Leaf_TerritorySensor : Behavior {
 	public string positionsKey = "positions";
 	public string countKey;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		List<Vector2Int> selected = new List<Vector2Int>();
 		TerritoryMap.TerritoryData[, ] map = TerritoryMap.instance.map;
 
 		// Search tilemap for ids
 		int xx = entity.position.x;
 		int yy = entity.position.y;
-		for (int y = yy - range; y < yy + range; y++) {
-			for (int x = xx - range; x < xx + range; x++) {
+		for (int y = yy - range; y <= yy + range; y++) {
+			for (int x = xx - range; x <= xx + range; x++) {
 				if (World.InBounds(x, y) && Detects(entity.faction, map[y,x].control)) {
 					selected.Add(new Vector2Int(x, y));
 				}

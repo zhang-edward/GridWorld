@@ -10,7 +10,7 @@ public class Leaf_ModifyTagSelf : Behavior {
 	[SerializeField] private Mode mode = Mode.Add;
 	public string tagValue;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		switch (mode) {
 			case Mode.Add:
 				if (entity.tags.Contains(tagValue))

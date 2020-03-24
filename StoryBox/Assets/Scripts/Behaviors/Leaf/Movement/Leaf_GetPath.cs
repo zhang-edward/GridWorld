@@ -15,7 +15,7 @@ public class Leaf_GetPath : Behavior {
 	public string pathKey = "path";
 
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		int[, ] baseMap = entity.world.BaseMap;
 		object obj = memory[destinationKey];
 		Vector2Int destination;

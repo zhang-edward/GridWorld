@@ -18,14 +18,14 @@ public class Decorator_DoWhile : Behavior {
 		return $"{gameObject.name} (DoWhile) \n{subBehavior.PrintTreeTraversal(stack, entity)}";
 	}
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
-		if (conditional.Act(entity, memory) == NodeStatus.Success) {
-			NodeStatus status = subBehavior.Act(entity, memory);
+	protected override NodeStatus Act(Entity entity, Memory memory) {
+		if (conditional.ExecuteAction(entity, memory) == NodeStatus.Success) {
+			NodeStatus status = subBehavior.ExecuteAction(entity, memory);
 			if (status == NodeStatus.Failure)
 				return NodeStatus.Failure;
 			else
 				return NodeStatus.Running;
 		} else
-			return NodeStatus.Failure;
+			return NodeStatus.Success;
 	}
 }

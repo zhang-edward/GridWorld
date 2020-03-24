@@ -14,7 +14,7 @@ public class Leaf_Attack : Behavior {
 		get { return "attack_timer:" + GetInstanceID(); }
 	}
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		// Timer cooldown
 		memory.SetDefault(attackTimerKey, attackInterval);
 		int timer = (int)memory[attackTimerKey];

@@ -25,7 +25,7 @@ public class Leaf_TilemapFilter : Behavior {
 	public string positionsKeyOut = "positions";
 	public string countKey;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		// Read positions list from memory
 		List<Vector2Int> positions = memory[positionsKeyIn] as List<Vector2Int>;
 		// Select which tilemap to look in

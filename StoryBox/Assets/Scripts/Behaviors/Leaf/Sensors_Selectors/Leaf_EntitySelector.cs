@@ -11,7 +11,7 @@ public class Leaf_EntitySelector : Behavior {
 	[Tooltip("Entity")]
 	public string writeKey = "destination";
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		// Precondition: entities list will always have > 0 elements
 		List<Entity> entities = memory[entitiesKey] as List<Entity>;
 		Entity selected = SelectNearest(entities, entity);

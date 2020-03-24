@@ -19,7 +19,7 @@ public class Leaf_PathTo : Behavior {
 		get { return "path_cache: " + GetInstanceID(); }
 	}
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		// Gets the destination from memory
 		Vector2Int destination = ReadDestinationFromMemory(memory);
 		if (destination == EMPTY) {
@@ -42,7 +42,7 @@ public class Leaf_PathTo : Behavior {
 		Vector2Int dest = path.Pop();
 		memory[movementKey] = dest;
 
-		switch (movement.Act(entity, memory)) {
+		switch (movement.ExecuteAction(entity, memory)) {
 			// Move was successful
 			case NodeStatus.Success:
 				memory[pathCacheKey] = path; // Save path for next tick

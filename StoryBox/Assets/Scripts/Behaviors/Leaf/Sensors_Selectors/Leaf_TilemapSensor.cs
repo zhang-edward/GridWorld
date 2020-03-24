@@ -19,8 +19,9 @@ public class Leaf_TilemapSensor : Behavior {
 	[Header("Write Keys")]
 	[Tooltip("List<Vector2Int>")]
 	public string positionsKey;
+	public string countKey;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		List<Vector2Int> selected = new List<Vector2Int>();
 		int[, ] map = null;
 		// Select which tilemap to look in
@@ -35,14 +36,15 @@ public class Leaf_TilemapSensor : Behavior {
 		// Search tilemap for ids
 		int xx = entity.position.x;
 		int yy = entity.position.y;
-		for (int y = yy - range; y < yy + range; y++) {
-			for (int x = xx - range; x < xx + range; x++) {
+		for (int y = yy - range; y <= yy + range; y++) {
+			for (int x = xx - range; x <= xx + range; x++) {
 				if (World.InBounds(x, y) && Detects(map[y, x], x, y)) {
 					selected.Add(new Vector2Int(x, y));
 				}
 			}
 		}
 		memory[positionsKey] = selected;
+		memory[countKey] = selected.Count;
 		return NodeStatus.Success;
 	}
 

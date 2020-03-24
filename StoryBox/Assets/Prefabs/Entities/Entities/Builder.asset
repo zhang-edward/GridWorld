@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Builder
   m_EditorClassIdentifier: 
   maxHealth: 10
-  attack: 0
+  attack: 1
   expandTerritoryRange: 0
   allowedTiles: 010000000200000003000000
   defaultBehavior: Builder

@@ -17,13 +17,13 @@ public class Leaf_EntitySensor : Behavior {
 	public string entitiesKey = "entities";
 	public string countKey;
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		List<Entity> answer = new List<Entity>();
 
 		int xx = entity.position.x;
 		int yy = entity.position.y;
-		for (int y = yy - range; y < yy + range; y++) {
-			for (int x = xx - range; x < xx + range; x++) {
+		for (int y = yy - range; y <= yy + range; y++) {
+			for (int x = xx - range; x <= xx + range; x++) {
 				if (World.InBounds(x, y)) {
 					List<Entity> entities = EntityManager.instance.GetEntitiesAt(x, y);
 					foreach (Entity other in entities) {

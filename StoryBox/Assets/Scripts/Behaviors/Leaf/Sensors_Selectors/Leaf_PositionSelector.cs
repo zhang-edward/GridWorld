@@ -18,7 +18,7 @@ public class Leaf_PositionSelector : Behavior {
 	[Header("Write Keys")]
 	public string selectedKey = "selected";
 
-	public override NodeStatus Act(Entity entity, Memory memory) {
+	protected override NodeStatus Act(Entity entity, Memory memory) {
 		List<Vector2Int> positions = memory[positionsKey] as List<Vector2Int>;
 		if (positions.Count <= 0)
 			return NodeStatus.Failure;

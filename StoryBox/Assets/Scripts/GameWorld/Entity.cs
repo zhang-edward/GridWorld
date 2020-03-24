@@ -77,7 +77,7 @@ public class Entity : MonoBehaviour {
 	}
 
 	public void Act() {
-		behavior.Act(this, memory);
+		behavior.ExecuteAction(this, memory);
 		if (debugBehavior) {
 			// Perform shallow copy of the stack
 			List<int> lst = new List<int>(currentNodes.ToArray());
