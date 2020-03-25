@@ -10,7 +10,7 @@ public class Conditional_CheckTag : Behavior {
 	public string entityKey;
 
 	protected override NodeStatus Act(Entity entity, Memory memory) {
-		Entity target = (Entity)memory[entityKey];
+		Entity target = entityKey != "" ? (Entity)memory[entityKey] : entity;
 
 		foreach (string tagValue in tagValues) {
 			if (!target.tags.Contains(tagValue))

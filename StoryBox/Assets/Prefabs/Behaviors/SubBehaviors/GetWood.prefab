@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8021c7071e9f7418d98752759ce76f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   conditional: {fileID: 1877366528234498673}
   subBehavior: {fileID: 6886550216523397879}
 --- !u!114 &6886550216523397879
@@ -64,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 6351547769333185245}
   - {fileID: 6351547769297272571}
@@ -82,6 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695afd001dd8c4b2caaa43fd0d081d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   key: wood
   mode: 3
   value: 5
@@ -131,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 2389731689275472728}
   - {fileID: 6351547768180925179}
@@ -177,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86ae0b94327e4965adc97465e37053a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   from: 1
   to: 0
 --- !u!1 &3670781172885163099
@@ -222,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86ae0b94327e4965adc97465e37053a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   from: 4
   to: 3
 --- !u!1 &3670781173271660297
@@ -267,6 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86ae0b94327e4965adc97465e37053a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   from: 2
   to: 1
 --- !u!1 &3670781173397589465
@@ -312,52 +319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86ae0b94327e4965adc97465e37053a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   from: 3
   to: 2
---- !u!1 &6351547768047876058
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6351547768047876059}
-  - component: {fileID: 6351547768047876056}
-  m_Layer: 0
-  m_Name: Move
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6351547768047876059
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6351547768047876058}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6351547768143246234}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6351547768047876056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6351547768047876058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47bd192e7066e4659acb76ceaefa2e02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementKey: move_dest
 --- !u!1 &6351547768143246237
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,8 +349,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 6351547768047876059}
+  m_Children: []
   m_Father: {fileID: 3670781172376367606}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -402,7 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07273ee41ab643e48cac19839da080c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 6351547768047876056}
+  debug: 0
+  movement: {fileID: 0}
   destinationKey: selected_forest
   movementKey: move_dest
 --- !u!1 &6351547768180925181
@@ -452,6 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab585fffd6aa4ad8986e79e64144307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 3670781172885163097}
   - {fileID: 3670781173397589471}
@@ -500,6 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb343e192c1ba4c90a8daeec68070675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   mode: 0
   value: 5
   defaultValue: 0
@@ -547,6 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89418b629a96f4fe2a8e12bb17a9e88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   mode: 0
   positionsKey: forests
   selectedKey: selected_forest
@@ -593,11 +560,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c1d1c5b0db24474b88fb19112acf2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   tilemap: 1
   ids: 01000000020000000300000004000000
   range: 5
   noEntity: 0
   positionsKey: forests
+  countKey: 
 --- !u!1 &8380704479262338441
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,5 +610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e155b8ddce18461f8af62742e94a9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   animationKey: Chop
   time: 4

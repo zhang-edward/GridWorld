@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d5b274f005f45ce933f412d21c30a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   conditions:
   - {fileID: 4322724503601294167}
   - {fileID: 3876229464687472466}
@@ -91,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695afd001dd8c4b2caaa43fd0d081d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   key: num_children
   mode: 2
   value: 3
@@ -139,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab585fffd6aa4ad8986e79e64144307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 8908921502265188866}
 --- !u!1 &3303895172387302154
@@ -184,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae32e190e10b642b4acf59d213fb5eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   time: 1
 --- !u!1 &5844176102766962422
 GameObject:
@@ -225,10 +229,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5844176102766962422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2be0a53ecd634884b0bdc701867bd6f, type: 3}
+  m_Script: {fileID: 11500000, guid: 260094c6da16d4f82bff5934eeb2f50e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   data: {fileID: 11400000, guid: 3fe73ba4cedba4a7fa7d2903e3c688c5, type: 2}
+  positionKey: 
   childEntitiesKey: children
   childKey: 
 --- !u!1 &8193525436531008980
@@ -277,6 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 2728482818250545372}
   - {fileID: 8691518640306111365}
@@ -324,6 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6895d38c7b348c79d847f2aa7402e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   allies: 1
   enemies: 0
   tags: []

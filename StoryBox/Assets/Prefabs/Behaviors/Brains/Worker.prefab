@@ -40,10 +40,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2019019816482871693}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c3551d13a169495fbfa3d89d65c6384, type: 3}
+  m_Script: {fileID: 11500000, guid: c128a6cdcf03644569eb56c0ac89cca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   data: {fileID: 11400000, guid: 818244e4452df49e29ba62cb7a9d35c7, type: 2}
+  entityKey: 
 --- !u!1 &2635034912927953674
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ea7e88fc85646b79298847c6780b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   tagValues:
   - has_job
   - job_soldier
@@ -137,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 8151145381603973187}
   - {fileID: 8340482442163618972}
@@ -184,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d1da4b4b63244fbbfa2cb8b54a951b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   targetEntity: employer
   targetWriteKey: soldiers
 --- !u!1 &7163252172574264114
@@ -229,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d1da4b4b63244fbbfa2cb8b54a951b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   targetEntity: employer
   targetWriteKey: builders
 --- !u!1 &8658969302339074156
@@ -274,6 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5409ab55f4a4dcabd91651b54bd12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   allies: 1
   enemies: 0
   tags:
@@ -326,6 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9771706a9d55443d5a411b2db1452f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   entitiesKey: potential_employers
   writeKey: employer
 --- !u!1 &8658969302688443364
@@ -374,6 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 8658969302982371553}
   - {fileID: 8658969304050694560}
@@ -422,6 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07273ee41ab643e48cac19839da080c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   movement: {fileID: 8658969304201124241}
   destinationKey: employer
   movementKey: move_dest
@@ -468,6 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ea7e88fc85646b79298847c6780b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   tagValues:
   - has_job
   - job_builder
@@ -517,6 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab585fffd6aa4ad8986e79e64144307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 8658969303200364323}
   - {fileID: 3163700833297572635}
@@ -565,6 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab585fffd6aa4ad8986e79e64144307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 8658969302688443366}
   - {fileID: 1666690615779912440}
@@ -615,6 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 8658969302339074158}
   - {fileID: 8658969302346175946}
@@ -660,10 +674,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8658969304050694566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c3551d13a169495fbfa3d89d65c6384, type: 3}
+  m_Script: {fileID: 11500000, guid: c128a6cdcf03644569eb56c0ac89cca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   data: {fileID: 11400000, guid: d27734fe911684510b798a99a7257efb, type: 2}
+  entityKey: 
 --- !u!1 &8658969304201124247
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +723,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bd192e7066e4659acb76ceaefa2e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  moveRange: 1
   movementKey: move_dest
 --- !u!114 &8658969302984637561
 MonoBehaviour:
@@ -720,6 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009ef675ac6f647deb94996d7524d066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   allies: 1
   enemies: 0
   range: 10

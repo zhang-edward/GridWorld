@@ -154,6 +154,7 @@ public class Entity : MonoBehaviour {
 
 	public void SetParent(Entity parentEntity) {
 		this.parentEntity = parentEntity;
+		memory["parent"] = parentEntity;
 	}
 
 	public void AddChild(string key, Entity child) {

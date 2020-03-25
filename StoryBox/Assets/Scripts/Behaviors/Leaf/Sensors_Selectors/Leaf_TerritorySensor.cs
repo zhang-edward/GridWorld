@@ -23,7 +23,9 @@ public class Leaf_TerritorySensor : Behavior {
 		int yy = entity.position.y;
 		for (int y = yy - range; y <= yy + range; y++) {
 			for (int x = xx - range; x <= xx + range; x++) {
-				if (World.InBounds(x, y) && Detects(entity.faction, map[y,x].control)) {
+				if (!World.InBounds(x, y) || map[y, x].control == -1)
+					continue;
+				if (Detects(entity.faction, map[y,x].control)) {
 					selected.Add(new Vector2Int(x, y));
 				}
 			}

@@ -33,6 +33,7 @@ public class EntitySprite : MonoBehaviour {
 		player.ResetToDefault();
 
 		sr.color = Color.white;
+		sr.material.SetColor("Color_C654C1FC", TerritoryMap.instance.colors[entity.faction]);
 
 		randomOffset = new Vector3(Random.Range(-offsetAmount, offsetAmount), Random.Range(-offsetAmount, offsetAmount));
 		ChangeOffset();

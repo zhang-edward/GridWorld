@@ -47,6 +47,7 @@ MonoBehaviour:
   debugBehavior: 0
   moveLerpSpeed: 0.05
   entitySprite: {fileID: 4822082886506063469}
+  tags: []
 --- !u!1 &3244158651584989580
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,7 +100,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 573f5b0082bc74081a3252b9c6722b2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,8 +120,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1140814759
   m_SortingLayer: 2
-  m_SortingOrder: 25
-  m_Sprite: {fileID: 8343568013638087518, guid: 409da735e9cbb4d9c844cdbea9c7581f,
+  m_SortingOrder: -1480
+  m_Sprite: {fileID: 8351446633001484291, guid: fe5c862abc4f64df99960f41c108f739,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

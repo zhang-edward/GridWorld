@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Leaf_TransformOther : Behavior {
+public class Leaf_Transform : Behavior {
 
 	public EntityData data;
 
@@ -9,8 +9,9 @@ public class Leaf_TransformOther : Behavior {
 	public string entityKey;
 
 	protected override NodeStatus Act(Entity entity, Memory memory) {
-		Entity target = memory[entityKey] as Entity;
+		Entity target = entityKey != "" ? memory[entityKey] as Entity : entity;
 		target.TransformTo(data);
+
 		return NodeStatus.Success;
 	}
 }

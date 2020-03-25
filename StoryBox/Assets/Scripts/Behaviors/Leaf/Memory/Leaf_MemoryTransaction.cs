@@ -15,7 +15,16 @@ public class Leaf_MemoryTransaction : Behavior {
 	public string[] myWriteKeys;
 
 	protected override NodeStatus Act(Entity entity, Memory memory) {
-		
+		Entity target = memory[targetEntity] as Entity;
+
+		for (int i = 0; i < myReadKeys.Length; i ++) {
+			target.memory[targetWriteKeys[i]] = memory[myReadKeys[i]];
+		}
+
+		for (int i = 0; i < myWriteKeys.Length; i++) {
+			memory[myWriteKeys[i]] = target.memory[targetReadKeys[i]];
+		}
+
 		return NodeStatus.Success;
 	}
 }

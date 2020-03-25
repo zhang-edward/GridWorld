@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class World : MonoBehaviour {
 
-	public const int WORLD_SIZE = 25;
+	public const int WORLD_SIZE = 50;
 
 	// Base tile IDs
 	public const int WATER = 0;
