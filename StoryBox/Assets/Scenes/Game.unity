@@ -1637,6 +1637,7 @@ MonoBehaviour:
     - Barracks
     - EnemyCamp
     - Aggro
+    - Project
     _keys:
     - Dummy
     - Settler
@@ -1648,6 +1649,7 @@ MonoBehaviour:
     - Barracks
     - EnemyCamp
     - Aggro
+    - Project
     _values:
     - {fileID: 4310568840794384901, guid: 053637df062304613aa32eb8e7eaa452, type: 3}
     - {fileID: 972157483258670459, guid: 82dd35a8c682742f2b0cc9195356376c, type: 3}
@@ -1659,6 +1661,7 @@ MonoBehaviour:
     - {fileID: 3222829710095964034, guid: 116dbe4754c6f414fa1baa54af038f23, type: 3}
     - {fileID: 6508914233073115633, guid: 40f51f6de080b4e839d8bbb743f5380a, type: 3}
     - {fileID: 1129449537865081008, guid: 5afc53bdf574940c2aa6652dca3ff196, type: 3}
+    - {fileID: 2831825321604697118, guid: 61b329b222fb246e48c6daa6f5841234, type: 3}
 --- !u!4 &1486372153
 Transform:
   m_ObjectHideFlags: 0
@@ -1891,4 +1894,72 @@ MonoBehaviour:
     type: 3}
   entityNameText: {fileID: 452243441}
   healthText: {fileID: 1245687346}
-  attackText: {fileID: 189614095}
+--- !u!1001 &6994981944656249634
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6994981945952378736, guid: 61b329b222fb246e48c6daa6f5841234,
+        type: 3}
+      propertyPath: m_Name
+      value: Project
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994981945952378737, guid: 61b329b222fb246e48c6daa6f5841234,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.5366955
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994981945952378737, guid: 61b329b222fb246e48c6daa6f5841234,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.7242923
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994981945952378737, guid: 61b329b222fb246e48c6daa6f5841234,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 53.658245
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994981945952378737, guid: 61b329b222fb246e48c6daa6f5841234,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994981945952378737, guid: 61b329b222fb246e48c6daa6f5841234,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994981945952378737, guid: 61b329b222fb246e48c6daa6f5841234,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994981945952378737, guid: 61b329b222fb246e48c6daa6f5841234,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994981945952378737, guid: 61b329b222fb246e48c6daa6f5841234,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994981945952378737, guid: 61b329b222fb246e48c6daa6f5841234,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994981945952378737, guid: 61b329b222fb246e48c6daa6f5841234,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994981945952378737, guid: 61b329b222fb246e48c6daa6f5841234,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 61b329b222fb246e48c6daa6f5841234, type: 3}

@@ -18,6 +18,7 @@ MonoBehaviour:
   allowedTiles: 
   defaultBehavior: Barracks
   defaultTags:
+  - structure
   - barracks
   - employer
   animations:
@@ -55,3 +56,4 @@ MonoBehaviour:
         looping: 0
   immobile: 1
   spriteOffset: 0.2
+  infoPanelData: {fileID: 0}

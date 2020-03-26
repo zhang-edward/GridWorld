@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114682b98ceff4bc8a8eb3f3b2d6a826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   subBehavior: {fileID: 7580613422338834566}
 --- !u!114 &7580613422338834566
 MonoBehaviour:
@@ -57,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43736c03c4654e20ac2eac0a8ac2e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   mode: 0
   tagValue: has_job
 --- !u!1 &1421738288694309190
@@ -102,6 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695afd001dd8c4b2caaa43fd0d081d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  entityKey: 
   key: num_builders
   mode: 3
   value: 2
@@ -134,8 +138,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1636297700419881280}
   - {fileID: 5579744390726626954}
+  - {fileID: 1636297700419881280}
   m_Father: {fileID: 7069268100592386354}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -151,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 8162878243539742653}
   - {fileID: 5883629566391184427}
@@ -197,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6895d38c7b348c79d847f2aa7402e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   allies: 1
   enemies: 0
   tags:
@@ -236,7 +242,7 @@ Transform:
   - {fileID: 3875642511007879150}
   - {fileID: 7948246638394850415}
   m_Father: {fileID: 3622292704463959604}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5883629566391184427
 MonoBehaviour:
@@ -250,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 5358485490800476142}
   - {fileID: 2084436160714647861}
@@ -297,6 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114682b98ceff4bc8a8eb3f3b2d6a826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   subBehavior: {fileID: 5534007364941553134}
 --- !u!114 &5534007364941553134
 MonoBehaviour:
@@ -310,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43736c03c4654e20ac2eac0a8ac2e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   mode: 1
   tagValue: job_builder
 --- !u!1 &6064120160617626769
@@ -357,6 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab585fffd6aa4ad8986e79e64144307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 2233360587714713732}
   - {fileID: 7215111757920356308}
@@ -405,6 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 5922506090535112319}
   - {fileID: 7106431926691188470}
@@ -453,6 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 2472730407562731393}
   - {fileID: 8912474658302224896}
@@ -485,7 +497,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3622292704463959604}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8162878243539742653
 MonoBehaviour:
@@ -499,6 +511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695afd001dd8c4b2caaa43fd0d081d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  entityKey: 
   key: num_builders
   mode: 2
   value: 2
@@ -547,6 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114682b98ceff4bc8a8eb3f3b2d6a826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   subBehavior: {fileID: 5375261701680121702}
 --- !u!114 &5375261701680121702
 MonoBehaviour:
@@ -560,6 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43736c03c4654e20ac2eac0a8ac2e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   mode: 0
   tagValue: job_builder
 --- !u!1 &7808558801656305273
@@ -607,6 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 8449767387832534633}
   - {fileID: 2426259098986849510}
@@ -654,6 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114682b98ceff4bc8a8eb3f3b2d6a826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   subBehavior: {fileID: 1993228622101688303}
 --- !u!114 &1993228622101688303
 MonoBehaviour:
@@ -667,5 +685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43736c03c4654e20ac2eac0a8ac2e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   mode: 1
   tagValue: has_job

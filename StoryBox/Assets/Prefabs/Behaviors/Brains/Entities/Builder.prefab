@@ -837,6 +837,57 @@ MonoBehaviour:
   key2: project_wood
   defaultValue2: 0
   writeKey: wood
+--- !u!1 &1519242581794470108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5543731238255541704}
+  - component: {fileID: 7849110072689826866}
+  m_Layer: 0
+  m_Name: Reserve
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5543731238255541704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519242581794470108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8453914780215483928}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7849110072689826866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519242581794470108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92627ad5a4904b108550abc4deedf80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  targetEntity: project
+  myReadKeys:
+  - self
+  targetWriteKeys:
+  - reserved_by
+  targetReadKeys: []
+  myWriteKeys: []
 --- !u!1 &1716851431977533084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,6 +1083,56 @@ MonoBehaviour:
   behaviors:
   - {fileID: 5015163050273087916}
   - {fileID: 8239012991466447472}
+--- !u!1 &1986286008709090122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5238480589911567453}
+  - component: {fileID: 8475734381929656241}
+  m_Layer: 0
+  m_Name: FindDamagedBuildings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5238480589911567453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986286008709090122}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3030623384830040382}
+  m_Father: {fileID: 3035118846338677899}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8475734381929656241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986286008709090122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6984371711e2c43f08ef3674d3358460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  condition: {fileID: 1369987180178972156}
+  entitiesKeyIn: damaged_buildings
+  entityConditionKey: building_check_if_damaged
+  entitiesKeyOut: damaged_buildings
+  countKey: num_damaged_buildings
 --- !u!1 &2001482124844455587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,6 +1372,52 @@ MonoBehaviour:
   - stockpile_wood
   targetReadKeys: []
   myWriteKeys: []
+--- !u!1 &2362126902877089110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5426260950201545310}
+  - component: {fileID: 6933125413481924934}
+  m_Layer: 0
+  m_Name: SelectDamagedBuilding
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5426260950201545310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362126902877089110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3035118846338677899}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6933125413481924934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362126902877089110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9771706a9d55443d5a411b2db1452f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  entitiesKey: damaged_buildings
+  writeKey: to_repair
 --- !u!1 &2391298118616410659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,7 +1606,7 @@ Transform:
   - {fileID: 5690928108220757091}
   - {fileID: 8723920420535112320}
   m_Father: {fileID: 8448191133758397465}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6278758598750527281
 MonoBehaviour:
@@ -2205,7 +2352,7 @@ Transform:
   - {fileID: 5832012835668575845}
   - {fileID: 5026154100886278303}
   m_Father: {fileID: 8448191133758397465}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5065099775786302380
 MonoBehaviour:
@@ -2402,6 +2549,7 @@ Transform:
   m_Children:
   - {fileID: 3454438043452349870}
   - {fileID: 5847800128538920430}
+  - {fileID: 5486149983132604051}
   m_Father: {fileID: 8465974150821872909}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2421,6 +2569,58 @@ MonoBehaviour:
   behaviors:
   - {fileID: 2364977660983750677}
   - {fileID: 8740205117692102857}
+  - {fileID: 7478893626425596197}
+--- !u!1 &4790869347865912721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5486149983132604051}
+  - component: {fileID: 7478893626425596197}
+  m_Layer: 0
+  m_Name: Reserve
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5486149983132604051
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4790869347865912721}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3908651106129681537}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7478893626425596197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4790869347865912721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92627ad5a4904b108550abc4deedf80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  targetEntity: project
+  myReadKeys:
+  - self
+  targetWriteKeys:
+  - reserved_by
+  targetReadKeys: []
+  myWriteKeys: []
 --- !u!1 &4796226046180141915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2555,14 +2755,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4867317511959259615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f5500fb65a8f4bd582764905dc60a3d, type: 3}
+  m_Script: {fileID: 11500000, guid: 30db3430d2b6343c893da771449b962e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  range: 1
-  attackInterval: 1
+  range: 0
+  interval: 1
   animationKey: 
   targetKey: clear_terrain
+  mode: 0
+  amountKey: attack
+  defaultAmount: 1
 --- !u!1 &5292414484703669585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,6 +2861,56 @@ MonoBehaviour:
   debug: 0
   moveRange: 1
   movementKey: move_dest
+--- !u!1 &5329037194802290591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3030623384830040382}
+  - component: {fileID: 1369987180178972156}
+  m_Layer: 0
+  m_Name: Condition_Damaged
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3030623384830040382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5329037194802290591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5238480589911567453}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369987180178972156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5329037194802290591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ad51c0816e8406a8335f2d0152fe0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  entityKey: building_check_if_damaged
+  key1: health
+  defaultValue1: 0
+  mode: 2
+  key2: max_health
+  defaultValue2: 0
 --- !u!1 &5356424859551252951
 GameObject:
   m_ObjectHideFlags: 0
@@ -3073,6 +3326,7 @@ Transform:
   m_Children:
   - {fileID: 8943023846711544672}
   - {fileID: 5588801768466674726}
+  - {fileID: 5543731238255541704}
   m_Father: {fileID: 8465974150821872909}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3092,6 +3346,7 @@ MonoBehaviour:
   behaviors:
   - {fileID: 1860834053470066197}
   - {fileID: 843021589188764351}
+  - {fileID: 7849110072689826866}
 --- !u!1 &6044913566671122516
 GameObject:
   m_ObjectHideFlags: 0
@@ -3719,6 +3974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  entityKey: 
   key1: stockpile_wood
   defaultValue1: 0
   mode: 3
@@ -4001,6 +4257,7 @@ Transform:
   m_Children:
   - {fileID: 6603668134305383145}
   - {fileID: 1169913681238085821}
+  - {fileID: 3035118846338677899}
   - {fileID: 35558498758393716}
   - {fileID: 8134465905084367894}
   m_Father: {fileID: 0}
@@ -4021,8 +4278,64 @@ MonoBehaviour:
   debug: 0
   behaviors:
   - {fileID: 4837135271046629040}
+  - {fileID: 811755339615382517}
   - {fileID: 5065099775786302380}
   - {fileID: 6278758598750527281}
+--- !u!1 &8326830847789452427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3035118846338677899}
+  - component: {fileID: 811755339615382517}
+  m_Layer: 0
+  m_Name: RepairBuildings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3035118846338677899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8326830847789452427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2014966928779055857}
+  - {fileID: 5238480589911567453}
+  - {fileID: 5426260950201545310}
+  - {fileID: 97134091358431577}
+  - {fileID: 4589587086171761571}
+  m_Father: {fileID: 8448191133758397465}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &811755339615382517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8326830847789452427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behaviors:
+  - {fileID: 5925916082168933734}
+  - {fileID: 8475734381929656241}
+  - {fileID: 6933125413481924934}
+  - {fileID: 8028699544404003832}
+  - {fileID: 1668658928064263077}
 --- !u!1 &8451507417095593080
 GameObject:
   m_ObjectHideFlags: 0
@@ -4175,6 +4488,57 @@ MonoBehaviour:
   debug: 0
   animationKey: Build
   time: 4
+--- !u!1 &8728468969022807521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4589587086171761571}
+  - component: {fileID: 1668658928064263077}
+  m_Layer: 0
+  m_Name: RepairBuilding
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4589587086171761571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8728468969022807521}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3035118846338677899}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1668658928064263077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8728468969022807521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30db3430d2b6343c893da771449b962e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  range: 0
+  interval: 2
+  animationKey: Build_OneShot
+  targetKey: to_repair
+  mode: 1
+  amountKey: repair_amt
+  defaultAmount: 1
 --- !u!1 &8862447202391104782
 GameObject:
   m_ObjectHideFlags: 0
@@ -4270,6 +4634,53 @@ MonoBehaviour:
   conditions:
   - {fileID: 3293182843349141375}
   - {fileID: 3886328026641314373}
+--- !u!1 &8936158519601819727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 97134091358431577}
+  - component: {fileID: 8028699544404003832}
+  m_Layer: 0
+  m_Name: PathToBuilding
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &97134091358431577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936158519601819727}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3035118846338677899}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8028699544404003832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936158519601819727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07273ee41ab643e48cac19839da080c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  movement: {fileID: 8289872602678364966}
+  destinationKey: to_repair
+  movementKey: move_dest
 --- !u!1 &9039276716324774769
 GameObject:
   m_ObjectHideFlags: 0
@@ -4321,6 +4732,58 @@ MonoBehaviour:
   - stockpile_wood
   targetReadKeys: []
   myWriteKeys: []
+--- !u!1 &9043397845171790564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2014966928779055857}
+  - component: {fileID: 5925916082168933734}
+  m_Layer: 0
+  m_Name: FindBuildings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2014966928779055857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043397845171790564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3035118846338677899}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5925916082168933734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043397845171790564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5409ab55f4a4dcabd91651b54bd12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  allies: 1
+  enemies: 0
+  tags:
+  - structure
+  checkUniqueTag: 0
+  range: 10
+  entitiesKey: damaged_buildings
+  countKey: 
 --- !u!1 &9187741913347801945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4542,12 +5005,6 @@ PrefabInstance:
       objectReference: {fileID: 8289872602678364966}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad1d4cc511e274a8e88dc82554c39b19, type: 3}
---- !u!4 &1714507140695409888 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-    type: 3}
-  m_PrefabInstance: {fileID: 4834290467111079628}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4872238828320643735 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 39251429090415707, guid: ad1d4cc511e274a8e88dc82554c39b19,
@@ -4560,6 +5017,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1714507140695409888 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+    type: 3}
+  m_PrefabInstance: {fileID: 4834290467111079628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8853967932073328776
 PrefabInstance:
   m_ObjectHideFlags: 0

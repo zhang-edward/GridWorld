@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab585fffd6aa4ad8986e79e64144307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 3199580320612990385}
 --- !u!1001 &5467414730320771685
@@ -72,6 +73,11 @@ PrefabInstance:
         type: 3}
       propertyPath: key
       value: num_soldiers
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922506090535112319, guid: 9a86b91d75d5e4b69b311341f57dfeac,
+        type: 3}
+      propertyPath: value
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6064120160617626769, guid: 9a86b91d75d5e4b69b311341f57dfeac,
         type: 3}
@@ -142,6 +148,11 @@ PrefabInstance:
         type: 3}
       propertyPath: key
       value: num_soldiers
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162878243539742653, guid: 9a86b91d75d5e4b69b311341f57dfeac,
+        type: 3}
+      propertyPath: value
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8449767387832534633, guid: 9a86b91d75d5e4b69b311341f57dfeac,
         type: 3}

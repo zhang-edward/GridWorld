@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695afd001dd8c4b2caaa43fd0d081d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  entityKey: 
   key: num_enemies
   mode: 1
   value: 0
@@ -87,13 +89,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6317502237709354780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f5500fb65a8f4bd582764905dc60a3d, type: 3}
+  m_Script: {fileID: 11500000, guid: 30db3430d2b6343c893da771449b962e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 0
-  attackInterval: 2
+  debug: 0
+  range: 1
+  interval: 2
   animationKey: Attack
   targetKey: enemy
+  mode: 0
+  amountKey: attack
+  defaultAmount: 2
 --- !u!1 &7430276934111169975
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae32e190e10b642b4acf59d213fb5eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   time: 5
 --- !u!1 &7623429734414137433
 GameObject:
@@ -183,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab585fffd6aa4ad8986e79e64144307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 8227940450633639942}
   - {fileID: 3933465352393345669}
@@ -231,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d5b274f005f45ce933f412d21c30a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   conditions:
   - {fileID: 8227940451336065561}
   - {fileID: 7271228511366245024}
@@ -277,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89418b629a96f4fe2a8e12bb17a9e88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   mode: 1
   positionsKey: patrol_waypoints
   selectedKey: patrol_waypoint
@@ -324,6 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07273ee41ab643e48cac19839da080c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   movement: {fileID: 7683089950301255200}
   destinationKey: patrol_waypoint
   movementKey: move_dest
@@ -370,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009ef675ac6f647deb94996d7524d066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   allies: 1
   enemies: 0
   range: 10
@@ -418,6 +430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bd192e7066e4659acb76ceaefa2e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  moveRange: 1
   movementKey: move_dest
 --- !u!1 &7683089950479197730
 GameObject:
@@ -467,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8021c7071e9f7418d98752759ce76f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   conditional: {fileID: 9046598644885809079}
   subBehavior: {fileID: 4181226540315575962}
 --- !u!114 &4181226540315575962
@@ -481,6 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 7623429733943089656}
   - {fileID: 7683089950061492398}
@@ -533,6 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 9046598644885809079}
   - {fileID: 8227940452228732798}
@@ -581,6 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5409ab55f4a4dcabd91651b54bd12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   allies: 0
   enemies: 1
   tags: []
@@ -632,6 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07273ee41ab643e48cac19839da080c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   movement: {fileID: 8227940451793802660}
   destinationKey: enemy
   movementKey: move_dest
@@ -678,6 +697,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bd192e7066e4659acb76ceaefa2e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  moveRange: 1
   movementKey: move_dest
 --- !u!1 &8227940452228732796
 GameObject:
@@ -722,5 +743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9771706a9d55443d5a411b2db1452f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   entitiesKey: enemies
   writeKey: enemy

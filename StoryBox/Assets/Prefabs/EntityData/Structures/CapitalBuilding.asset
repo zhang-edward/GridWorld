@@ -18,6 +18,7 @@ MonoBehaviour:
   allowedTiles: 0100000002000000
   defaultBehavior: Capital
   defaultTags:
+  - structure
   - employer
   animations:
     dict:

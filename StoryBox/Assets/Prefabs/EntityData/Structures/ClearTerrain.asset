@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: ClearTerrain
   m_EditorClassIdentifier: 
   maxHealth: 1
-  attack: 0
   expandTerritoryRange: 0
   allowedTiles: 0100000002000000
-  defaultBehavior: Dummy
+  defaultBehavior: Project
   defaultTags:
   - clear_terrain
   - unreserved
@@ -55,3 +54,4 @@ MonoBehaviour:
         looping: 0
   immobile: 1
   spriteOffset: 0.2
+  infoPanelData: {fileID: 0}

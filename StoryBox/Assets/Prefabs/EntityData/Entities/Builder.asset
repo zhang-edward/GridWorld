@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Builder
   m_EditorClassIdentifier: 
   maxHealth: 10
-  attack: 1
   expandTerritoryRange: 0
   allowedTiles: 010000000200000003000000
   defaultBehavior: Builder
@@ -47,10 +46,12 @@ MonoBehaviour:
       - Default
       - Move
       - Build
+      - Build_OneShot
       _keys:
       - Default
       - Move
       - Build
+      - Build_OneShot
       _values:
       - frames:
         - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
@@ -71,6 +72,13 @@ MonoBehaviour:
         - {fileID: -2674780064655468220, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
         fps: 10
         looping: 1
+      - frames:
+        - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 8862369697692505149, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 5662891429576332192, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: -2674780064655468220, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        fps: 10
+        looping: 0
   immobile: 0
   spriteOffset: 0.3
   infoPanelData: {fileID: 11400000, guid: 470530927151a44fdbacced6661cd0ca, type: 2}
