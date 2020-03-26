@@ -7,7 +7,7 @@ public class Conditional_EntityIsAlive : Behavior {
 
 	protected override NodeStatus Act(Entity entity, Memory memory) {
 		Entity other = memory[targetKey] as Entity;
-		if (other.health > 0)
+		if (other != null && other.health > 0)
 			return NodeStatus.Success;
 		else
 			return NodeStatus.Failure;

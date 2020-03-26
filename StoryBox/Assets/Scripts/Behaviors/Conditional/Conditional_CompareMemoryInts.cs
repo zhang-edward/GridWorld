@@ -10,6 +10,8 @@ public class Conditional_CompareMemoryInts : Behavior {
 		LessThanOrEqualTo
 	}
 
+	[Header("Entity Key")]
+	public string entityKey;
 
 	[Header("Read Keys")]
 	public string key1;
@@ -19,12 +21,14 @@ public class Conditional_CompareMemoryInts : Behavior {
 	public int defaultValue2;
 
 	protected override NodeStatus Act(Entity entity, Memory memory) {
-		memory.SetDefault(key1, defaultValue1);
-		memory.SetDefault(key2, defaultValue2);
+		Memory mem = entityKey != "" ? ((Entity)memory[entityKey]).memory : memory;
+		
+		mem.SetDefault(key1, defaultValue1);
+		mem.SetDefault(key2, defaultValue2);
 
 		bool result = false;
-		int mem1 = (int)memory[key1];
-		int mem2 = (int)memory[key2];
+		int mem1 = (int)mem[key1];
+		int mem2 = (int)mem[key2];
 		switch (mode) {
 			case Mode.Equal:
 				result = mem1 == mem2;

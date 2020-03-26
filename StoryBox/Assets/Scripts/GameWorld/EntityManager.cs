@@ -44,7 +44,7 @@ public class EntityManager : MonoBehaviour {
 			List<Entity> l = entityMap[coords.y, coords.x];
 			for (int i = l.Count - 1; i >= 0; i--) {
 				Entity e = l[i];
-				RemoveEntity(e);
+				e.Damage(e.maxHealth / 2);
 			}
 		}
 	}

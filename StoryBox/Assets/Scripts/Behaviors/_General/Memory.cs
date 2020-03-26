@@ -17,6 +17,10 @@ public class Memory {
 		}
 	}
 
+	public void RemoveKey(string key) {
+		values.Remove(key);
+	}
+
 	public void SetDefault(string key, object value) {
 		if (!values.ContainsKey(key)) {
 			values[key] = value;

@@ -7,7 +7,6 @@ public class InfoPanel : MonoBehaviour {
 	public GameObject trackerPrefabs;
 	public TMP_Text entityNameText;
 	public TMP_Text healthText;
-	public TMP_Text attackText;
 
 	private Entity entity;
 	private InfoPanelData data;
@@ -58,7 +57,6 @@ public class InfoPanel : MonoBehaviour {
 			return;
 		entityNameText.text = entity.gameObject.name;
 		healthText.text = $"Health: {entity.health}/{entity.maxHealth}";
-		attackText.text = $"Attack: {entity.attack}";
 		foreach (MemoryIntTracker tracker in memoryIntTrackers)
 			tracker.Tick();
 	}

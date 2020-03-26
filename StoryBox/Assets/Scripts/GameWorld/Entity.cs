@@ -18,7 +18,6 @@ public class Entity : MonoBehaviour {
 	public int faction { get; private set; }
 	public int maxHealth { get; private set; }
 	public int health { get; private set; }
-	public int attack { get; private set; }
 	public int expandTerritoryRange { get; private set; }
 	public List<int> allowedTiles { get; private set; }
 	public InfoPanelData infoPanelData { get; private set; }
@@ -41,6 +40,7 @@ public class Entity : MonoBehaviour {
 	public delegate void LifecycleEvent(Entity entity);
 	public event LifecycleEvent onEntityInitialized;
 	public event LifecycleEvent onEntityDied;
+	public event LifecycleEvent onEntityHealthChanged;
 
 	public void Init(int x, int y, int faction, World world, EntityData data) {
 		this.faction = faction;
@@ -52,15 +52,14 @@ public class Entity : MonoBehaviour {
 		memory = new Memory();
 		memory["self"] = this;
 
-
 		TransformTo(data);
 		// Other properties
 		transform.position = (Vector2) position;
+		onEntityHealthChanged += WriteHealthToMemory;
 	}
 
 	public void TransformTo(EntityData data) {
 		allowedTiles = data.allowedTiles;
-		attack = data.attack;
 		maxHealth = data.maxHealth;
 		health = data.maxHealth;
 		infoPanelData = data.infoPanelData;
@@ -69,6 +68,10 @@ public class Entity : MonoBehaviour {
 		behavior = BehaviorManager.instance.GetBehavior(data.defaultBehavior);
 		tags = new List<string>();
 		tags.AddRange(data.defaultTags);
+
+		// Write memory
+		memory["health"] = health;
+		memory["max_health"] = maxHealth;
 
 		// Reset behavior tree
 		currentNodes = new Stack<int>();
@@ -95,7 +98,13 @@ public class Entity : MonoBehaviour {
 
 	public void Damage(int amt) {
 		health -= amt;
+		onEntityHealthChanged?.Invoke(this);
 		entitySprite.AnimateDamage();
+	}
+
+	public void Heal(int amt) {
+		health = Mathf.Min(health + amt, maxHealth);
+		onEntityHealthChanged?.Invoke(this);
 	}
 
 	public void Kill() {
@@ -176,5 +185,9 @@ public class Entity : MonoBehaviour {
 			if (list.Contains(child))
 				list.Remove(child);
 		child.onEntityDied -= RemoveChild;
+	}
+
+	private void WriteHealthToMemory(Entity _) {
+		memory["health"] = health;
 	}
 }
