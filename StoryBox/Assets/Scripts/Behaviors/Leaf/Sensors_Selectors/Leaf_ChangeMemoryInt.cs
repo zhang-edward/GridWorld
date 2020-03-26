@@ -4,7 +4,8 @@ public class Leaf_ChangeMemoryInt : Behavior {
 #pragma warning disable CS0649
 	private enum Mode {
 		Add,
-		Subtract
+		Subtract,
+		Set
 	}
 
 	[SerializeField] private Mode mode;
@@ -20,6 +21,8 @@ public class Leaf_ChangeMemoryInt : Behavior {
 			memory[key] = (int) memory[key] + value;
 		if (mode == Mode.Subtract)
 			memory[key] = (int) memory[key] - value;
+		if (mode == Mode.Set)
+			memory[key] = value;
 
 		return NodeStatus.Success;
 	}

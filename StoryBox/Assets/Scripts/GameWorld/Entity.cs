@@ -16,10 +16,12 @@ public class Entity : MonoBehaviour {
 
 	// Properties
 	public int faction { get; private set; }
+	public int maxHealth { get; private set; }
 	public int health { get; private set; }
 	public int attack { get; private set; }
 	public int expandTerritoryRange { get; private set; }
 	public List<int> allowedTiles { get; private set; }
+	public InfoPanelData infoPanelData { get; private set; }
 
 	// State
 	public World world { get; private set; }
@@ -59,7 +61,9 @@ public class Entity : MonoBehaviour {
 	public void TransformTo(EntityData data) {
 		allowedTiles = data.allowedTiles;
 		attack = data.attack;
+		maxHealth = data.maxHealth;
 		health = data.maxHealth;
+		infoPanelData = data.infoPanelData;
 		expandTerritoryRange = data.expandTerritoryRange;
 		entitySprite.Init(this, data.animations, data.spriteOffset, data.immobile);
 		behavior = BehaviorManager.instance.GetBehavior(data.defaultBehavior);

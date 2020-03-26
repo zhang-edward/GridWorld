@@ -12,31 +12,33 @@ public class Conditional_CheckMemoryInt : Behavior {
 
 
 	[Header("Read Keys")]
+	public string entityKey;
 	public string key;
 	[SerializeField] Mode mode = Mode.Equal;
 	public int value;
 	public int defaultValue;
 
 	protected override NodeStatus Act(Entity entity, Memory memory) {
-		memory.SetDefault(key, defaultValue);
+		Memory mem = entityKey != "" ? ((Entity)memory[entityKey]).memory : memory;
+		mem.SetDefault(key, defaultValue);
 
 		bool result = false;
-		int mem = (int)memory[key];
+		int memVal = (int)mem[key];
 		switch (mode) {
 			case Mode.Equal:
-				result = mem == value;
+				result = memVal == value;
 				break;
 			case Mode.GreaterThan:
-				result = mem > value;
+				result = memVal > value;
 				break;
 			case Mode.LessThan:
-				result = mem < value;
+				result = memVal < value;
 				break;
 			case Mode.GreaterThanOrEqualTo:
-				result = mem >= value;
+				result = memVal >= value;
 				break;
 			case Mode.LessThanOrEqualTo:
-				result = mem <= value;
+				result = memVal <= value;
 				break;
 		}
 		return result ? NodeStatus.Success : NodeStatus.Failure;

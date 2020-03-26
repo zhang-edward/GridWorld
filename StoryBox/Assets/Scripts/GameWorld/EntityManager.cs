@@ -27,6 +27,10 @@ public class EntityManager : MonoBehaviour {
 		entities = new List<Entity>();
 	}
 
+	void Start() {
+		GameManager.instance.onTick += Tick;
+	}
+
 	void Update() {
 		Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		Vector2Int coords = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));

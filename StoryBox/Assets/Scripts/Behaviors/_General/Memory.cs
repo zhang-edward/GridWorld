@@ -11,8 +11,13 @@ public class Memory {
 	public object this[string s] {
 		get => values.ContainsKey(s) ? values[s] : null;
 		set {
-			if (s != "")
+			if (s != "") {
+				if (s == "stockpile_wood") {
+					_ = 0;
+				}
+
 				values[s] = value;
+			}
 		}
 	}
 

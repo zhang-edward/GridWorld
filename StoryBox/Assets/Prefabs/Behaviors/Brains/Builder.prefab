@@ -1,5 +1,102 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &135331659614211829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3234717693586548893}
+  - component: {fileID: 7555648266138757728}
+  m_Layer: 0
+  m_Name: NotEnoughWood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3234717693586548893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135331659614211829}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8614718092652202032}
+  - {fileID: 8478831455718833784}
+  m_Father: {fileID: 1075686948651515874}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7555648266138757728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135331659614211829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behaviors:
+  - {fileID: 8209906527401823189}
+  - {fileID: 3868805955488220507}
+--- !u!1 &344295701929267525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8478831455718833784}
+  - component: {fileID: 3868805955488220507}
+  m_Layer: 0
+  m_Name: CalcStockpile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8478831455718833784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344295701929267525}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3234717693586548893}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3868805955488220507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344295701929267525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb343e192c1ba4c90a8daeec68070675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  mode: 2
+  value: 0
+  defaultValue: 0
+  key: stockpile_wood
 --- !u!1 &428380675242810631
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +172,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 35558498758393716}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5090062896876359821
 MonoBehaviour:
@@ -186,12 +283,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833616142499905458}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5026154100886278303}
-  m_RootOrder: 0
+  m_Father: {fileID: 3603343071725307584}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5808828616832996416
 MonoBehaviour:
@@ -308,6 +405,54 @@ MonoBehaviour:
   behaviors:
   - {fileID: 6150548376785171233}
   - {fileID: 5757447441208213155}
+--- !u!1 &894303525685319359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3980159422052064692}
+  - component: {fileID: 5897508532221441001}
+  m_Layer: 0
+  m_Name: RemoveMyWood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3980159422052064692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894303525685319359}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5313017356692581421}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5897508532221441001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894303525685319359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb343e192c1ba4c90a8daeec68070675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  mode: 2
+  value: 0
+  defaultValue: 0
+  key: wood
 --- !u!1 &940150622279185353
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5026154100886278303}
+  - component: {fileID: 1468602019706861890}
   m_Layer: 0
   m_Name: CalculateNewStockpileAmount
   m_TagString: Untagged
@@ -382,12 +528,27 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6712491465113323349}
-  - {fileID: 2790533806851548910}
-  - {fileID: 3135457083883382913}
+  - {fileID: 3603343071725307584}
+  - {fileID: 5313017356692581421}
   m_Father: {fileID: 35558498758393716}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1468602019706861890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977614562785097370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab585fffd6aa4ad8986e79e64144307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behaviors:
+  - {fileID: 8560502135012763955}
+  - {fileID: 3970373533612846355}
 --- !u!1 &1071642207613999527
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +595,55 @@ MonoBehaviour:
   debug: 0
   entitiesKey: building_projects
   writeKey: project
+--- !u!1 &1083020019579723580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3634276689751589407}
+  - component: {fileID: 5164686839258504373}
+  m_Layer: 0
+  m_Name: HasStockpile?
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3634276689751589407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083020019579723580}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3603343071725307584}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5164686839258504373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083020019579723580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695afd001dd8c4b2caaa43fd0d081d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  entityKey: parent
+  key: stockpile_wood
+  mode: 1
+  value: 0
+  defaultValue: 0
 --- !u!1 &1253539184169475194
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +691,56 @@ MonoBehaviour:
   mode: 1
   tagValue: unreserved
   entityKey: project
+--- !u!1 &1315459781955864386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8614718092652202032}
+  - component: {fileID: 8209906527401823189}
+  m_Layer: 0
+  m_Name: CalcWood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8614718092652202032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315459781955864386}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3234717693586548893}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8209906527401823189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315459781955864386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a4cd75071e040979ee5514bf069092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  key1: wood
+  defaultValue1: 0
+  mode: 0
+  key2: stockpile_wood
+  defaultValue2: 0
+  writeKey: wood
 --- !u!1 &1399964628527869198
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +787,56 @@ MonoBehaviour:
   debug: 0
   mode: 0
   entityKey: clear_terrain
+--- !u!1 &1404223520922696392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 230354841532326949}
+  - component: {fileID: 6173944858835877645}
+  m_Layer: 0
+  m_Name: UseWood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &230354841532326949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404223520922696392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7248520727765978408}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6173944858835877645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404223520922696392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a4cd75071e040979ee5514bf069092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  key1: wood
+  defaultValue1: 0
+  mode: 1
+  key2: project_wood
+  defaultValue2: 0
+  writeKey: wood
 --- !u!1 &1716851431977533084
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,10 +881,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  entityKey: 
   key: num_building_projects
   mode: 1
   value: 0
   defaultValue: 0
+--- !u!1 &1722854633958494472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4525661853074795586}
+  - component: {fileID: 7480263673907122893}
+  m_Layer: 0
+  m_Name: CalcWood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4525661853074795586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722854633958494472}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6838668679492210250}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7480263673907122893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722854633958494472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a4cd75071e040979ee5514bf069092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  key1: wood
+  defaultValue1: 0
+  mode: 0
+  key2: wood_needed
+  defaultValue2: 0
+  writeKey: wood
 --- !u!1 &1833630862430893766
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +1032,54 @@ MonoBehaviour:
   behaviors:
   - {fileID: 5015163050273087916}
   - {fileID: 8239012991466447472}
+--- !u!1 &2001482124844455587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2704158857955371571}
+  - component: {fileID: 2354505810949461820}
+  m_Layer: 0
+  m_Name: SetResourcesNeeded
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2704158857955371571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001482124844455587}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3130924654965720485}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2354505810949461820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001482124844455587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb343e192c1ba4c90a8daeec68070675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  mode: 2
+  value: 2
+  defaultValue: 0
+  key: project_wood
 --- !u!1 &2068073276200839139
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +1124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  entityKey: 
   key: num_clear_projects
   mode: 1
   value: 0
@@ -765,6 +1175,51 @@ MonoBehaviour:
   debug: 0
   mode: 0
   entityKey: project
+--- !u!1 &2171897996284175576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5936354777041790192}
+  - component: {fileID: 5856902435234832535}
+  m_Layer: 0
+  m_Name: GetWood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5936354777041790192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171897996284175576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7248520727765978408}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5856902435234832535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171897996284175576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b512dd89fe06642329c658a06ae27d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behavior: {fileID: 8476841633974873496}
 --- !u!1 &2295057401760875793
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,12 +1244,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2295057401760875793}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5026154100886278303}
-  m_RootOrder: 2
+  m_Father: {fileID: 3603343071725307584}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2260158557668253717
 MonoBehaviour:
@@ -889,12 +1344,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2493845437131198839}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5026154100886278303}
-  m_RootOrder: 1
+  m_Father: {fileID: 3603343071725307584}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1057711098138226460
 MonoBehaviour:
@@ -910,9 +1365,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   key1: stockpile_wood
+  defaultValue1: 0
   mode: 0
   key2: wood
+  defaultValue2: 0
   writeKey: stockpile_wood
+--- !u!1 &2527103430715076664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3603343071725307584}
+  - component: {fileID: 8560502135012763955}
+  m_Layer: 0
+  m_Name: AddToCurrentStockpile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3603343071725307584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2527103430715076664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3634276689751589407}
+  - {fileID: 6712491465113323349}
+  - {fileID: 2790533806851548910}
+  - {fileID: 7591234266957316696}
+  - {fileID: 3135457083883382913}
+  m_Father: {fileID: 5026154100886278303}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8560502135012763955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2527103430715076664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behaviors:
+  - {fileID: 5164686839258504373}
+  - {fileID: 5808828616832996416}
+  - {fileID: 1057711098138226460}
+  - {fileID: 408958510727913742}
+  - {fileID: 2260158557668253717}
 --- !u!1 &2529675203197496837
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +1459,7 @@ Transform:
   - {fileID: 5690928108220757091}
   - {fileID: 8723920420535112320}
   m_Father: {fileID: 8448191133758397465}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6278758598750527281
 MonoBehaviour:
@@ -968,6 +1480,318 @@ MonoBehaviour:
   - {fileID: 4866414042553403867}
   - {fileID: 696645293223497298}
   - {fileID: 2707514623030221120}
+--- !u!1 &2546968150704597215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6539182238062604271}
+  - component: {fileID: 1426910596763031766}
+  m_Layer: 0
+  m_Name: GetWood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6539182238062604271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546968150704597215}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3130924654965720485}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1426910596763031766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546968150704597215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b512dd89fe06642329c658a06ae27d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behavior: {fileID: 8476841633974873496}
+--- !u!1 &2753586385912304221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6838668679492210250}
+  - component: {fileID: 6123604713015014914}
+  m_Layer: 0
+  m_Name: EnoughWood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6838668679492210250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753586385912304221}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6362507502586329215}
+  - {fileID: 4525661853074795586}
+  - {fileID: 2407163562183058626}
+  m_Father: {fileID: 1075686948651515874}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6123604713015014914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753586385912304221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behaviors:
+  - {fileID: 4876093070716211877}
+  - {fileID: 7480263673907122893}
+  - {fileID: 1340223115408887945}
+--- !u!1 &2853647478174105822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4245787840345283594}
+  - component: {fileID: 8476841633974873496}
+  - component: {fileID: 6086475124299304409}
+  m_Layer: 0
+  m_Name: GetEnoughWoodForProject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4245787840345283594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2853647478174105822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5773550298201890474}
+  - {fileID: 134423731698376143}
+  - {fileID: 4303644213899467999}
+  m_Father: {fileID: 6603668134305383145}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8476841633974873496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2853647478174105822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8021c7071e9f7418d98752759ce76f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  conditional: {fileID: 6465902241221681987}
+  subBehavior: {fileID: 6086475124299304409}
+--- !u!114 &6086475124299304409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2853647478174105822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab585fffd6aa4ad8986e79e64144307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behaviors:
+  - {fileID: 4156006907699888132}
+  - {fileID: 6258122715955189726}
+--- !u!1 &2884070290080969865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2414142086856452639}
+  - component: {fileID: 7984716494525019380}
+  m_Layer: 0
+  m_Name: WriteStockpile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2414142086856452639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884070290080969865}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7819940931500261919}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7984716494525019380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884070290080969865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92627ad5a4904b108550abc4deedf80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  targetEntity: parent
+  myReadKeys:
+  - stockpile_wood
+  targetWriteKeys:
+  - stockpile_wood
+  targetReadKeys: []
+  myWriteKeys: []
+--- !u!1 &2976264483466414169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2258618365254553620}
+  - component: {fileID: 515639335448431043}
+  m_Layer: 0
+  m_Name: UseWood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2258618365254553620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976264483466414169}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3130924654965720485}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &515639335448431043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976264483466414169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a4cd75071e040979ee5514bf069092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  key1: wood
+  defaultValue1: 0
+  mode: 1
+  key2: project_wood
+  defaultValue2: 0
+  writeKey: wood
+--- !u!1 &3296806034926034707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5773550298201890474}
+  - component: {fileID: 6465902241221681987}
+  m_Layer: 0
+  m_Name: Condition_EnoughWoodForProject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5773550298201890474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3296806034926034707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1660462789254453386}
+  - {fileID: 7768765670581627738}
+  m_Father: {fileID: 4245787840345283594}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6465902241221681987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3296806034926034707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d5b274f005f45ce933f412d21c30a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  conditions:
+  - {fileID: 634649155591596501}
+  - {fileID: 7774454041689640989}
 --- !u!1 &3543919430453324772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,8 +2119,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  entityKey: 
   key: num_resources_here
   mode: 1
+  value: 0
+  defaultValue: 0
+--- !u!1 &3759321128431551996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7768765670581627738}
+  - component: {fileID: 7774454041689640989}
+  m_Layer: 0
+  m_Name: EnoughWoodForProject?
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7768765670581627738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759321128431551996}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5773550298201890474}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7774454041689640989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759321128431551996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695afd001dd8c4b2caaa43fd0d081d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  entityKey: 
+  key: wood_needed
+  mode: 4
   value: 0
   defaultValue: 0
 --- !u!1 &3805075795311105171
@@ -1308,6 +2182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 35558498758393716}
+  - component: {fileID: 5065099775786302380}
   m_Layer: 0
   m_Name: StoreResources
   m_TagString: Untagged
@@ -1326,11 +2201,29 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 7116476237175196983}
   - {fileID: 5832012835668575845}
   - {fileID: 5026154100886278303}
   m_Father: {fileID: 8448191133758397465}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5065099775786302380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3805075795311105171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behaviors:
+  - {fileID: 8362819372734895683}
+  - {fileID: 5090062896876359821}
+  - {fileID: 1468602019706861890}
 --- !u!1 &4085308346016910455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +2467,54 @@ MonoBehaviour:
   debug: 0
   mode: 1
   entityKey: project
+--- !u!1 &4866879614326759773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6837465560898719318}
+  - component: {fileID: 1675396426789043216}
+  m_Layer: 0
+  m_Name: SetResourcesNeeded
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6837465560898719318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866879614326759773}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7248520727765978408}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1675396426789043216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866879614326759773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb343e192c1ba4c90a8daeec68070675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  mode: 2
+  value: 5
+  defaultValue: 0
+  key: project_wood
 --- !u!1 &4867317511959259615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,12 +2636,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5325488798239928801}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8448191133758397465}
-  m_RootOrder: 3
+  m_Father: {fileID: 6603668134305383145}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8289872602678364966
 MonoBehaviour:
@@ -1886,8 +2827,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8331988120694122049}
-  - {fileID: 4303644213899467999}
+  - {fileID: 6837465560898719318}
+  - {fileID: 5936354777041790192}
   - {fileID: 3315320390978210468}
+  - {fileID: 230354841532326949}
   m_Father: {fileID: 4759231502971798194}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1906,8 +2849,9 @@ MonoBehaviour:
   debug: 0
   behaviors:
   - {fileID: 408363216293711515}
-  - {fileID: 6399997605764445779}
+  - {fileID: 5856902435234832535}
   - {fileID: 8814932174633571539}
+  - {fileID: 6173944858835877645}
 --- !u!1 &5831917858885561464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,6 +2947,55 @@ MonoBehaviour:
   debug: 0
   mode: 0
   entityKey: clear_terrain
+--- !u!1 &5858017026764102035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7116476237175196983}
+  - component: {fileID: 8362819372734895683}
+  m_Layer: 0
+  m_Name: HasWood?
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7116476237175196983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858017026764102035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 35558498758393716}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8362819372734895683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858017026764102035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695afd001dd8c4b2caaa43fd0d081d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  entityKey: 
+  key: wood
+  mode: 1
+  value: 0
+  defaultValue: 0
 --- !u!1 &5875145275726299652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,6 +3092,156 @@ MonoBehaviour:
   behaviors:
   - {fileID: 1860834053470066197}
   - {fileID: 843021589188764351}
+--- !u!1 &6044913566671122516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5313017356692581421}
+  - component: {fileID: 3970373533612846355}
+  m_Layer: 0
+  m_Name: CreateNewStockpile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5313017356692581421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6044913566671122516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8753027089068584226}
+  - {fileID: 3980159422052064692}
+  m_Father: {fileID: 5026154100886278303}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3970373533612846355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6044913566671122516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behaviors:
+  - {fileID: 7204803883609463056}
+  - {fileID: 5897508532221441001}
+--- !u!1 &6081006609111587246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660462789254453386}
+  - component: {fileID: 634649155591596501}
+  m_Layer: 0
+  m_Name: CalcWoodNeeded
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1660462789254453386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6081006609111587246}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5773550298201890474}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &634649155591596501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6081006609111587246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a4cd75071e040979ee5514bf069092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  key1: project_wood
+  defaultValue1: 0
+  mode: 1
+  key2: wood
+  defaultValue2: 0
+  writeKey: wood_needed
+--- !u!1 &6315733751083301431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134423731698376143}
+  - component: {fileID: 4156006907699888132}
+  m_Layer: 0
+  m_Name: GetWoodFromStockpile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &134423731698376143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6315733751083301431}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2449858718966622495}
+  - {fileID: 941951307786453433}
+  - {fileID: 7819940931500261919}
+  m_Father: {fileID: 4245787840345283594}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4156006907699888132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6315733751083301431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behaviors:
+  - {fileID: 2009211052044588845}
+  - {fileID: 3388593562678615193}
+  - {fileID: 6800062291448045864}
 --- !u!1 &6366937658745454031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,7 +3538,7 @@ Transform:
   - {fileID: 8465974150821872909}
   - {fileID: 4759231502971798194}
   m_Father: {fileID: 8448191133758397465}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4837135271046629040
 MonoBehaviour:
@@ -2485,6 +3628,349 @@ MonoBehaviour:
   range: 25
   entitiesKey: building_projects
   countKey: num_building_projects
+--- !u!1 &6859855523210978619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 941951307786453433}
+  - component: {fileID: 3388593562678615193}
+  m_Layer: 0
+  m_Name: PathTo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &941951307786453433
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6859855523210978619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 134423731698376143}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3388593562678615193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6859855523210978619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07273ee41ab643e48cac19839da080c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  movement: {fileID: 8289872602678364966}
+  destinationKey: parent
+  movementKey: move_dest
+--- !u!1 &7263919309143925892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6362507502586329215}
+  - component: {fileID: 4876093070716211877}
+  m_Layer: 0
+  m_Name: EnoughWood?
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6362507502586329215
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7263919309143925892}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6838668679492210250}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4876093070716211877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7263919309143925892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ad51c0816e8406a8335f2d0152fe0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  key1: stockpile_wood
+  defaultValue1: 0
+  mode: 3
+  key2: wood_needed
+  defaultValue2: 0
+--- !u!1 &7498929501248084047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7819940931500261919}
+  - component: {fileID: 6800062291448045864}
+  m_Layer: 0
+  m_Name: TakeFromStockpile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7819940931500261919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7498929501248084047}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6139733545644645006}
+  - {fileID: 1075686948651515874}
+  - {fileID: 2414142086856452639}
+  m_Father: {fileID: 134423731698376143}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6800062291448045864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7498929501248084047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behaviors:
+  - {fileID: 8109191544380054731}
+  - {fileID: 6749731445008517626}
+  - {fileID: 7984716494525019380}
+--- !u!1 &7685427969650378483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2407163562183058626}
+  - component: {fileID: 1340223115408887945}
+  m_Layer: 0
+  m_Name: CalcStockpile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2407163562183058626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7685427969650378483}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6838668679492210250}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1340223115408887945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7685427969650378483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a4cd75071e040979ee5514bf069092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  key1: stockpile_wood
+  defaultValue1: 0
+  mode: 1
+  key2: wood_needed
+  defaultValue2: 0
+  writeKey: stockpile_wood
+--- !u!1 &7728940912349996191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7591234266957316696}
+  - component: {fileID: 408958510727913742}
+  m_Layer: 0
+  m_Name: RemoveMyWood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7591234266957316696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728940912349996191}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3603343071725307584}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &408958510727913742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728940912349996191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb343e192c1ba4c90a8daeec68070675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  mode: 2
+  value: 0
+  defaultValue: 0
+  key: wood
+--- !u!1 &7973941469841230753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2449858718966622495}
+  - component: {fileID: 2009211052044588845}
+  m_Layer: 0
+  m_Name: ParentHasStockpile?
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2449858718966622495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973941469841230753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 134423731698376143}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2009211052044588845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973941469841230753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695afd001dd8c4b2caaa43fd0d081d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  entityKey: parent
+  key: stockpile_wood
+  mode: 1
+  value: 0
+  defaultValue: 0
+--- !u!1 &8045548485775561277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1075686948651515874}
+  - component: {fileID: 6749731445008517626}
+  m_Layer: 0
+  m_Name: CalcNewStockpileAndWood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1075686948651515874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8045548485775561277}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6838668679492210250}
+  - {fileID: 3234717693586548893}
+  m_Father: {fileID: 7819940931500261919}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6749731445008517626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8045548485775561277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab585fffd6aa4ad8986e79e64144307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  behaviors:
+  - {fileID: 6123604713015014914}
+  - {fileID: 7555648266138757728}
 --- !u!1 &8045814647719255044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,10 +3999,10 @@ Transform:
   m_LocalPosition: {x: 0.48668832, y: -1.0202425, z: -26.621939}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 6603668134305383145}
   - {fileID: 1169913681238085821}
   - {fileID: 35558498758393716}
   - {fileID: 8134465905084367894}
-  - {fileID: 4358359667818346578}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2535,7 +4021,59 @@ MonoBehaviour:
   debug: 0
   behaviors:
   - {fileID: 4837135271046629040}
+  - {fileID: 5065099775786302380}
   - {fileID: 6278758598750527281}
+--- !u!1 &8451507417095593080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6139733545644645006}
+  - component: {fileID: 8109191544380054731}
+  m_Layer: 0
+  m_Name: ReadStockpile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6139733545644645006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451507417095593080}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7819940931500261919}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8109191544380054731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451507417095593080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92627ad5a4904b108550abc4deedf80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  targetEntity: parent
+  myReadKeys: []
+  targetWriteKeys: []
+  targetReadKeys:
+  - stockpile_wood
+  myWriteKeys:
+  - stockpile_wood
 --- !u!1 &8531440416974559797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2565,8 +4103,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 927523227741643588}
-  - {fileID: 2702314145866505987}
+  - {fileID: 2704158857955371571}
+  - {fileID: 6539182238062604271}
   - {fileID: 1714507140695409888}
+  - {fileID: 2258618365254553620}
   m_Father: {fileID: 4759231502971798194}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2585,8 +4125,10 @@ MonoBehaviour:
   debug: 0
   behaviors:
   - {fileID: 8180666523245371245}
-  - {fileID: 5109415211445974415}
+  - {fileID: 2354505810949461820}
+  - {fileID: 1426910596763031766}
   - {fileID: 4872238828320643735}
+  - {fileID: 515639335448431043}
 --- !u!1 &8615814516191396196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2728,12 +4270,95 @@ MonoBehaviour:
   conditions:
   - {fileID: 3293182843349141375}
   - {fileID: 3886328026641314373}
+--- !u!1 &9039276716324774769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8753027089068584226}
+  - component: {fileID: 7204803883609463056}
+  m_Layer: 0
+  m_Name: WriteStockpile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8753027089068584226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9039276716324774769}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5313017356692581421}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7204803883609463056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9039276716324774769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92627ad5a4904b108550abc4deedf80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  targetEntity: parent
+  myReadKeys:
+  - wood
+  targetWriteKeys:
+  - stockpile_wood
+  targetReadKeys: []
+  myWriteKeys: []
+--- !u!1 &9187741913347801945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6603668134305383145}
+  m_Layer: 0
+  m_Name: _Common
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6603668134305383145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9187741913347801945}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4358359667818346578}
+  - {fileID: 4245787840345283594}
+  m_Father: {fileID: 8448191133758397465}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &668962233678294313
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7248520727765978408}
+    m_TransformParent: {fileID: 4245787840345283594}
     m_Modifications:
     - target: {fileID: 1877366528234498673, guid: daddb91651277475aae522ba1393fc90,
         type: 3}
@@ -2748,7 +4373,7 @@ PrefabInstance:
     - target: {fileID: 3670781172376367601, guid: daddb91651277475aae522ba1393fc90,
         type: 3}
       propertyPath: m_Name
-      value: GetWood
+      value: GetWoodFromForest
       objectReference: {fileID: 0}
     - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
         type: 3}
@@ -2788,7 +4413,7 @@ PrefabInstance:
     - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
         type: 3}
@@ -2815,18 +4440,20 @@ PrefabInstance:
       propertyPath: movement
       value: 
       objectReference: {fileID: 8289872602678364966}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1877366528234498673, guid: daddb91651277475aae522ba1393fc90, type: 3}
+    - {fileID: 5880006158667438970, guid: daddb91651277475aae522ba1393fc90, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: daddb91651277475aae522ba1393fc90, type: 3}
---- !u!114 &6399997605764445779 stripped
+--- !u!114 &6258122715955189726 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5880006158667438970, guid: daddb91651277475aae522ba1393fc90,
+  m_CorrespondingSourceObject: {fileID: 6886550216523397879, guid: daddb91651277475aae522ba1393fc90,
     type: 3}
   m_PrefabInstance: {fileID: 668962233678294313}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8021c7071e9f7418d98752759ce76f6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &4303644213899467999 stripped
@@ -2835,113 +4462,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 668962233678294313}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1689325274426879733
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 3130924654965720485}
-    m_Modifications:
-    - target: {fileID: 1877366528234498673, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: value
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2389731689275472728, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: animationKey
-      value: Build
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670781172376367601, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: m_Name
-      value: GetWood
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.9458935
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.3552573
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -15.5231
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806643689070097647, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: animationKey
-      value: Build
-      objectReference: {fileID: 0}
-    - target: {fileID: 6351547768143246235, guid: daddb91651277475aae522ba1393fc90,
-        type: 3}
-      propertyPath: movement
-      value: 
-      objectReference: {fileID: 8289872602678364966}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: daddb91651277475aae522ba1393fc90, type: 3}
---- !u!114 &5109415211445974415 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5880006158667438970, guid: daddb91651277475aae522ba1393fc90,
-    type: 3}
-  m_PrefabInstance: {fileID: 1689325274426879733}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8021c7071e9f7418d98752759ce76f6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2702314145866505987 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3670781172376367606, guid: daddb91651277475aae522ba1393fc90,
-    type: 3}
-  m_PrefabInstance: {fileID: 1689325274426879733}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4834290467111079628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2949,103 +4469,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3130924654965720485}
     m_Modifications:
-    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6414475006085005831, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: m_Name
-      value: BuildProject
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449797825623814350, guid: ad1d4cc511e274a8e88dc82554c39b19,
-        type: 3}
-      propertyPath: movement
-      value: 
-      objectReference: {fileID: 8289872602678364966}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ad1d4cc511e274a8e88dc82554c39b19, type: 3}
---- !u!114 &4872238828320643735 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 39251429090415707, guid: ad1d4cc511e274a8e88dc82554c39b19,
-    type: 3}
-  m_PrefabInstance: {fileID: 4834290467111079628}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1714507140695409888 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
-    type: 3}
-  m_PrefabInstance: {fileID: 4834290467111079628}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8853967932073328776
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7248520727765978408}
-    m_Modifications:
     - target: {fileID: 4901404248405685274, guid: ad1d4cc511e274a8e88dc82554c39b19,
         type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: 1a58e98932c87466c85bdede9d6ed8d1,
+      objectReference: {fileID: 11400000, guid: 714a51d95504a46198a8db8965d87792,
         type: 2}
     - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
         type: 3}
@@ -3085,7 +4513,99 @@ PrefabInstance:
     - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414475006085005831, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: m_Name
+      value: BuildProject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7449797825623814350, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 8289872602678364966}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad1d4cc511e274a8e88dc82554c39b19, type: 3}
+--- !u!4 &1714507140695409888 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+    type: 3}
+  m_PrefabInstance: {fileID: 4834290467111079628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4872238828320643735 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 39251429090415707, guid: ad1d4cc511e274a8e88dc82554c39b19,
+    type: 3}
+  m_PrefabInstance: {fileID: 4834290467111079628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &8853967932073328776
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7248520727765978408}
+    m_Modifications:
+    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6115323935521491500, guid: ad1d4cc511e274a8e88dc82554c39b19,
         type: 3}

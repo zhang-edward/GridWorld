@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 	public float tickInterval = 0.5f;
 
+	public delegate void GameEvent();
+	public event GameEvent onTick;
+
 	private bool paused = true;
 	private bool step = false;
 
@@ -43,7 +46,7 @@ public class GameManager : MonoBehaviour {
 				step = false;
 				yield return null;
 			}
-			EntityManager.instance.Tick();
+			onTick?.Invoke();
 			if (step)
 				paused = true;
 			yield return new WaitForSecondsRealtime(tickInterval);

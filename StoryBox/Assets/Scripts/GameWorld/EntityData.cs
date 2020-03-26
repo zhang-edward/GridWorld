@@ -16,4 +16,5 @@ public class EntityData : ScriptableObject {
 	public AnimationSet animations;
 	public bool immobile;
 	public float spriteOffset = 0.3f;
+	public InfoPanelData infoPanelData;
 }

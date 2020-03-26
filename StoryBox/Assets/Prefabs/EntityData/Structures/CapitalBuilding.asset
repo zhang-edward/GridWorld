@@ -54,3 +54,4 @@ MonoBehaviour:
         looping: 0
   immobile: 1
   spriteOffset: 0.2
+  infoPanelData: {fileID: 11400000, guid: 37be1c39b9ee64c6eb4108f64f2f47ff, type: 2}

@@ -5,18 +5,24 @@ using UnityEngine;
 public class Leaf_MemoryIntOperation : Behavior {
 	public enum Mode {
 		Add,
-		Subtract
+		Subtract,
+		Set
 	}
 
 	[Header("Read Keys")]
 	public string key1;
+	public int defaultValue1;
 	public Mode mode;
 	public string key2;
+	public int defaultValue2;
 
 	[Header("Write Keys")]
 	public string writeKey;
 
 	protected override NodeStatus Act(Entity entity, Memory memory) {
+		memory.SetDefault(key1, defaultValue1);
+		memory.SetDefault(key2, defaultValue2);
+
 		int num1 = (int)memory[key1];
 		int num2 = (int)memory[key2];
 		int result = 0;
@@ -27,6 +33,9 @@ public class Leaf_MemoryIntOperation : Behavior {
 				break;
 			case Mode.Subtract:
 				result = num1 - num2;
+				break;
+			case Mode.Set:
+				result = num2;
 				break;
 		}
 
