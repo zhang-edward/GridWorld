@@ -9,9 +9,9 @@ public class World : MonoBehaviour {
 
 	// Base tile IDs
 	public const int WATER = 0;
-	public const int GRASS = 1;
-	public const int DIRT = 2;
-	public const int SAND = 3;
+	public const int SAND = 1;
+	public const int GRASS = 2;
+	public const int DIRT = 3;
 
 	// Object tile IDs
 	public const int NONE = 0;
@@ -21,11 +21,14 @@ public class World : MonoBehaviour {
 	public const int FOREST4 = 4;
 	public const int MOUNTAIN = 5;
 
-	[SerializeField] private Tilemap baseTilemap;
-	[SerializeField] private TileBase[] baseTiles;
 
 	[SerializeField] private Tilemap resourcesTilemap;
 	[SerializeField] private TileBase[] resourcesTiles;
+
+	[SerializeField] private GameObject tilemapPrefab;
+	[SerializeField] private Tilemap[] baseTilemaps;
+	[SerializeField] private TileBase[] baseTiles;
+	public float[] thresholds = new float[] { 0.12f, 0.2f, 0.4f };
 
 	public EntityData entityData;
 
@@ -43,10 +46,20 @@ public class World : MonoBehaviour {
 
 		GenerateTerrain();
 
-		for (int r = 0; r < WORLD_SIZE; r++) {
-			for (int c = 0; c < WORLD_SIZE; c++) {
-				baseTilemap.SetTile(new Vector3Int(c, r, 0), baseTiles[baseMap[r, c]]);
-				resourcesTilemap.SetTile(new Vector3Int(c, r, 0), resourcesTiles[resourcesMap[r, c]]);
+		baseTilemaps = new Tilemap[baseTiles.Length];
+		for (int i = 0; i < baseTiles.Length; i++) {
+			GameObject obj = Instantiate(tilemapPrefab, transform);
+			Tilemap tilemap = obj.GetComponent<Tilemap>();
+			baseTilemaps[i] = tilemap;
+		}
+
+		for (int y = 0; y < WORLD_SIZE; y++) {
+			for (int x = 0; x < WORLD_SIZE; x++) {
+				for (int i = 0; i < baseTilemaps.Length; i++) {
+					if (i <= baseMap[y, x])
+						baseTilemaps[i].SetTile(new Vector3Int(x, y, 0), baseTiles[i]);
+				}
+				resourcesTilemap.SetTile(new Vector3Int(x, y, 0), resourcesTiles[resourcesMap[y, x]]);
 			}
 		}
 	}
@@ -77,8 +90,7 @@ public class World : MonoBehaviour {
 	/// <returns>The array for the terrain</returns>
 	/// <param name="size">Size.</param>
 	public void GenerateTerrain() {
-		gen.randomizeArray(baseMap, 0, 1, 0.45f); // Generate random noise
-		gen.reduceNoise(ref baseMap, 1, 10); // Make noise into blobs with cell automata
+		gen.GeneratePerlinNoiseMap(ref baseMap, WORLD_SIZE, thresholds);
 
 		// Set borders to be water
 		for (int i = 0; i < WORLD_SIZE; i++) {
@@ -88,15 +100,15 @@ public class World : MonoBehaviour {
 			baseMap[i, WORLD_SIZE - 1] = WATER;
 		}
 
-		gen.checkNeighbors(ref baseMap, GRASS, SAND, WATER, 2);
+		gen.CheckNeighbors(ref baseMap, GRASS, SAND, WATER, 2);
 
-		gen.overlay(ref baseMap, ref resourcesMap, FOREST1, GRASS, 0.6f, 2);
-		gen.checkNeighbors(ref resourcesMap, FOREST1, FOREST2, FOREST1, 7);
-		gen.checkNeighbors(ref resourcesMap, FOREST2, FOREST3, FOREST2, 6);
-		gen.checkNeighbors(ref resourcesMap, FOREST3, FOREST4, FOREST3, 6);
+		gen.Overlay(ref baseMap, ref resourcesMap, FOREST1, GRASS, 0.6f, 2);
+		gen.CheckNeighbors(ref resourcesMap, FOREST1, FOREST2, FOREST1, 7);
+		gen.CheckNeighbors(ref resourcesMap, FOREST2, FOREST3, FOREST2, 6);
+		gen.CheckNeighbors(ref resourcesMap, FOREST3, FOREST4, FOREST3, 6);
 
-		gen.overlay(ref baseMap, ref resourcesMap, MOUNTAIN, GRASS, 0.38f, 2);
-		// gen.checkNeighbors(ref map, World.MOUNTAIN, World.DIRT, World.GRASS, 3);
+		gen.Overlay(ref baseMap, ref resourcesMap, MOUNTAIN, DIRT, 0.5f, 2);
+		//gen.checkNeighbors(ref map, World.MOUNTAIN, World.DIRT, World.GRASS, 3);
 	}
 
 	public static List<Vector2Int> GetAdjacentCoords(int x, int y) {

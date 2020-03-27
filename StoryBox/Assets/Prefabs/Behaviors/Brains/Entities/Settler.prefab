@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  entityKey: 
   key: num_enemy_territory
   mode: 4
   value: 0
@@ -442,7 +443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   tilemap: 0
-  ids: 0100000002000000
+  ids: 02000000
   range: 25
   noEntity: 1
   positionsKey: potential_settle_locations

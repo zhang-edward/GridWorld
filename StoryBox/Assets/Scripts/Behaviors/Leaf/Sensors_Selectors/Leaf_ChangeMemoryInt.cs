@@ -8,21 +8,25 @@ public class Leaf_ChangeMemoryInt : Behavior {
 		Set
 	}
 
-	[SerializeField] private Mode mode;
-	public int value;
-	public int defaultValue;
+	[Header("Read Keys")]
+	public string entityKey;
 
 	[Header("Read and Write Keys")]
 	public string key;
+	public int defaultValue;
+	[SerializeField] private Mode mode;
+	public int value;
 
 	protected override NodeStatus Act(Entity entity, Memory memory) {
-		memory.SetDefault(key, defaultValue);
+		Memory mem = entityKey != "" ? ((Entity)memory[entityKey]).memory : memory;
+
+		mem.SetDefault(key, defaultValue);
 		if (mode == Mode.Add)
-			memory[key] = (int) memory[key] + value;
+			mem[key] = (int) mem[key] + value;
 		if (mode == Mode.Subtract)
-			memory[key] = (int) memory[key] - value;
+			mem[key] = (int) mem[key] - value;
 		if (mode == Mode.Set)
-			memory[key] = value;
+			mem[key] = value;
 
 		return NodeStatus.Success;
 	}

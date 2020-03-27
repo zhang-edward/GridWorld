@@ -2,24 +2,32 @@
 using UnityEngine;
 
 public class WorldGenerator {
-	// /// <summary>
-	// /// Generates the terrain using cell automata.
-	// /// </summary>
-	// /// <returns>The array for the terrain</returns>
-	// /// <param name="size">Size.</param>
-	// public int[,] GenerateTerrain(int size)
-	// {
-	// 	int[,] map = new int[size, size];
-	// 	randomizeArray(map, 0, 1, 0.45f);   // Generate random noise
-	// 	reduceNoise(ref map, 1, 10);      // Reduce noise
-	// 	checkNeighbors(ref map, World.GRASS, World.SAND, World.WATER, 2);
 
-	// 	overlay(ref map, World.FOREST, World.GRASS, 0.4f, 2);
-	// 	overlay(ref map, World.MOUNTAIN, World.GRASS, 0.38f, 2);
-	// 	checkNeighbors(ref map, World.MOUNTAIN, World.DIRT, World.GRASS, 3);
+	public void GeneratePerlinNoiseMap(ref int[,] arr, int worldSize, float[] thresholds) {
+		int xOffset = Random.Range(0, worldSize);
+		int yOffset = Random.Range(0, worldSize);
+		for (int y = 0; y < worldSize; y++) {
+			for (int x = 0; x < worldSize; x++) {
+				float yy = (float)y / worldSize * 4f + yOffset;
+				float xx = (float)x / worldSize * 4f + xOffset;
+				float noise = Mathf.Max(Mathf.PerlinNoise(xx, yy) - CircleGradient(x, y, worldSize) * 1.25f, 0);
+				arr[y, x] = CalculateThreshold(noise, thresholds);
+			}
+		}
+	}
 
-	// 	return map;
-	// }
+	private int CalculateThreshold(float val, float[] thresholds) {
+		int i;
+		for (i = 0; i < thresholds.Length; i++) {
+			if (val < thresholds[i])
+				return i;
+		}
+		return i;
+	}
+
+	private float CircleGradient(float x, float y, float size) {
+		return (new Vector2(x - (size / 2), y - (size / 2))).magnitude / size;
+	}
 
 	/// <summary>
 	/// Do a pass on each grid cell. Count the neighbors that are of type `check`
@@ -29,11 +37,11 @@ public class WorldGenerator {
 	/// <param name="newID">ID of the tile to replace the old one, if conditions are met</param>
 	/// <param name="checkID">ID of the tile to check when looking at neighbors</param>
 	/// <param name="count">Threshold for the number of neighbors</param>
-	public void checkNeighbors(ref int[, ] arr, int oldID, int newID, int checkID, int count) {
+	public void CheckNeighbors(ref int[, ] arr, int oldID, int newID, int checkID, int count) {
 		int[, ] answer = new int[arr.GetLength(0), arr.GetLength(1)];
 		for (int y = 0; y < arr.GetLength(0); y++) {
 			for (int x = 0; x < arr.GetLength(1); x++) {
-				if (arr[y, x] == oldID && countNeighbors(arr, x, y, checkID) >= count)
+				if (arr[y, x] == oldID && CountNeighbors(arr, x, y, checkID) >= count)
 					answer[y, x] = newID;
 				else
 					answer[y, x] = arr[y, x];
@@ -51,10 +59,10 @@ public class WorldGenerator {
 	/// <param name="prob">Higher prob means denser blobs generated.</param>
 	/// <param name="noiseReductionReps">Noise reduction reps. Less = more randomized/jagged</param>
 	/// <param name="overlayOnTo">ID of tile to overlay on to.</param>
-	public void overlay(ref int[, ] arr, ref int[, ] destArr, int id, int overlayOnTo, float prob, int noiseReductionReps) {
+	public void Overlay(ref int[, ] arr, ref int[, ] destArr, int id, int overlayOnTo, float prob, int noiseReductionReps) {
 		int[, ] overlay = new int[arr.GetLength(0), arr.GetLength(1)];
-		randomizeArray(overlay, id, 0, prob);
-		reduceNoise(ref overlay, id, noiseReductionReps);
+		RandomizeArray(overlay, id, 0, prob);
+		ReduceNoise(ref overlay, id, noiseReductionReps);
 
 		for (int y = 0; y < arr.GetLength(0); y++) {
 			for (int x = 0; x < arr.GetLength(1); x++) {
@@ -65,7 +73,7 @@ public class WorldGenerator {
 	}
 
 	// places random values into an array
-	public void randomizeArray(int[, ] arr, int one, int two, float prob) {
+	public void RandomizeArray(int[, ] arr, int one, int two, float prob) {
 		for (int r = 0; r < arr.GetLength(0); r++) {
 			for (int c = 0; c < arr.GetLength(1); c++) {
 				if (Random.value < prob)
@@ -76,17 +84,17 @@ public class WorldGenerator {
 		}
 	}
 
-	public void reduceNoise(ref int[, ] arr, int check, int iterations = 1) {
+	public void ReduceNoise(ref int[, ] arr, int check, int iterations = 1) {
 		for (int i = 0; i < iterations; i++)
-			reduceNoise(ref arr, check);
+			ReduceNoise(ref arr, check);
 	}
 
 	// use cell automata to reduce noise
-	private void reduceNoise(ref int[, ] arr, int check) {
+	private void ReduceNoise(ref int[, ] arr, int check) {
 		int[, ] answer = new int[arr.GetLength(0), arr.GetLength(1)];
 		for (int y = 0; y < arr.GetLength(0); y++) {
 			for (int x = 0; x < arr.GetLength(1); x++) {
-				int wallNeighbors = countNeighbors(arr, x, y, check);
+				int wallNeighbors = CountNeighbors(arr, x, y, check);
 				if (wallNeighbors >= 5)
 					answer[y, x] = check;
 			}
@@ -105,7 +113,7 @@ public class WorldGenerator {
 	/// <param name="y">The y coordinate.</param>
 	/// <param name="check">The int to count.</param>
 	// note: this also checks the cell at x and y, not just neighbors
-	private int countNeighbors(int[, ] arr, int x, int y, int check) {
+	private int CountNeighbors(int[, ] arr, int x, int y, int check) {
 		int counter = 0;
 		for (int yy = -1; yy <= 1; yy++) {
 			for (int xx = -1; xx <= 1; xx++) {

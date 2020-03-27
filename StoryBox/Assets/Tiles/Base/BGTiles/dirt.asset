@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: water
+  m_Name: dirt
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1023812297924101269, guid: 9430f688833ec4111962ef1d8097bd12,
+  m_Sprite: {fileID: -3627264120405484348, guid: e69aa59137d674cf5a3d7630c201ee69,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:

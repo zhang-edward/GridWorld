@@ -191,6 +191,57 @@ MonoBehaviour:
   debug: 0
   targetEntity: employer
   targetWriteKey: soldiers
+--- !u!1 &5631607634607970469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8228960263892692429}
+  - component: {fileID: 2547572052971816596}
+  m_Layer: 0
+  m_Name: SaveHouseToMemory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8228960263892692429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5631607634607970469}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8658969303200364322}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2547572052971816596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5631607634607970469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92627ad5a4904b108550abc4deedf80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  targetEntity: parent
+  myReadKeys: []
+  targetWriteKeys: []
+  targetReadKeys:
+  - self
+  myWriteKeys:
+  - my_house
 --- !u!1 &7163252172574264114
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +614,7 @@ Transform:
   - {fileID: 8658969302688443365}
   - {fileID: 1188267645134843335}
   m_Father: {fileID: 8658969303200364322}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8658969303158175566
 MonoBehaviour:
@@ -612,6 +663,7 @@ Transform:
   - {fileID: 8658969302339074157}
   - {fileID: 8658969302346175945}
   - {fileID: 8658969302843294245}
+  - {fileID: 8228960263892692429}
   - {fileID: 8658969303158175565}
   m_Father: {fileID: 8658969303152596193}
   m_RootOrder: 0
@@ -633,6 +685,7 @@ MonoBehaviour:
   - {fileID: 8658969302339074158}
   - {fileID: 8658969302346175946}
   - {fileID: 8658969302843294246}
+  - {fileID: 2547572052971816596}
   - {fileID: 8658969303158175566}
 --- !u!1 &8658969304050694566
 GameObject:
