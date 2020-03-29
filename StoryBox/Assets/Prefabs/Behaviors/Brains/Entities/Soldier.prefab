@@ -95,6 +95,7 @@ MonoBehaviour:
   debug: 0
   range: 1
   interval: 2
+  triggerBattle: 1
   animationKey: Attack
   targetKey: enemy
   mode: 0
@@ -604,6 +605,7 @@ MonoBehaviour:
   tags: []
   checkUniqueTag: 0
   range: 3
+  searchFromKey: 
   entitiesKey: enemies
   countKey: num_enemies
 --- !u!1 &8227940451349176380

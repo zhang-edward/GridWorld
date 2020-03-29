@@ -4,6 +4,7 @@ public class Leaf_ModifyHealth : Behavior {
 
 	public int range = 1;
 	public int interval = 2;
+	public bool triggerBattle = false;
 	public string animationKey;
 
 	public enum Mode {
@@ -25,7 +26,7 @@ public class Leaf_ModifyHealth : Behavior {
 
 	protected override NodeStatus Act(Entity entity, Memory memory) {
 		// Timer cooldown
-		memory.SetDefault(timerKey, interval);
+		memory.SetDefault(timerKey, 0);
 		int timer = (int)memory[timerKey];
 		timer--;
 		if (timer > 0) {
@@ -51,6 +52,8 @@ public class Leaf_ModifyHealth : Behavior {
 
 			switch (mode) {
 				case Mode.Damage:
+					if (triggerBattle)
+						target.TriggerBattle();
 					target.Damage(amount);
 					return target.health > 0 ? NodeStatus.Running : NodeStatus.Success;
 				case Mode.Heal:

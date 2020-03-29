@@ -16,6 +16,7 @@ MonoBehaviour:
   expandTerritoryRange: 0
   allowedTiles: 010000000200000003000000
   defaultBehavior: Worker
+  battleBehavior: Cower
   defaultTags:
   - worker
   animations:
@@ -58,8 +59,9 @@ MonoBehaviour:
         - {fileID: -8253327620333915485, guid: 5ce845c0ddeab4ec8b685088142632a5, type: 3}
         - {fileID: 4761598018604310582, guid: 5ce845c0ddeab4ec8b685088142632a5, type: 3}
         - {fileID: 1831328664270491200, guid: 5ce845c0ddeab4ec8b685088142632a5, type: 3}
-        fps: 10
+        fps: 8
         looping: 0
   immobile: 0
+  hasHeight: 1
   spriteOffset: 0.3
   infoPanelData: {fileID: 0}

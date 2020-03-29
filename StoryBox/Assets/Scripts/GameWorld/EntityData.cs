@@ -9,6 +9,7 @@ public class EntityData : ScriptableObject {
 	public int expandTerritoryRange = 0;
 	public List<int> allowedTiles; // Which tiles is this entity allowed to be on?
 	public string defaultBehavior;
+	public string battleBehavior;
 	public List<string> defaultTags;
 
 	[Header("View")]

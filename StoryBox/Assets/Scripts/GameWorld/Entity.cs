@@ -32,6 +32,9 @@ public class Entity : MonoBehaviour {
 	public Dictionary<string, List<Entity>> childEntities { get; private set; }
 
 	private Behavior behavior;
+	private Behavior battleBehavior;
+	private Behavior deathBehavior;
+	private bool battling;
 	private Coroutine moveRoutine;
 
 	public delegate void PositionChanged(Entity entity, Vector2Int oldPos, Vector2Int newPos);
@@ -66,6 +69,8 @@ public class Entity : MonoBehaviour {
 		expandTerritoryRange = data.expandTerritoryRange;
 		entitySprite.Init(this, data.animations, data.spriteOffset, data.immobile, data.hasHeight);
 		behavior = BehaviorManager.instance.GetBehavior(data.defaultBehavior);
+		if (data.battleBehavior != "")
+			battleBehavior = BehaviorManager.instance.GetBehavior(data.battleBehavior);
 		tags = new List<string>();
 		tags.AddRange(data.defaultTags);
 
@@ -84,16 +89,32 @@ public class Entity : MonoBehaviour {
 	}
 
 	public void Act() {
-		behavior.ExecuteAction(this, memory);
-		if (debugBehavior) {
-			// Perform shallow copy of the stack
-			List<int> lst = new List<int>(currentNodes.ToArray());
-			lst.Reverse();
-			Stack<int> btTraversal = new Stack<int>(lst);
-			//foreach (int n in btTraversal)
-			//	print(n);
-			print("Next tick:\n" + behavior.PrintTreeTraversal(btTraversal, this));
+		if (battling) {
+			// If battle behavior completes, go back to normal
+			if (battleBehavior.ExecuteAction(this, memory) != NodeStatus.Running) {
+				battling = false;
+				currentNodes.Clear();
+			}
 		}
+		else {
+			behavior.ExecuteAction(this, memory);
+			//if (debugBehavior) {
+			//	// Perform shallow copy of the stack
+			//	List<int> lst = new List<int>(currentNodes.ToArray());
+			//	lst.Reverse();
+			//	Stack<int> btTraversal = new Stack<int>(lst);
+			//	//foreach (int n in btTraversal)
+			//	//	print(n);
+			//	print("Next tick:\n" + behavior.PrintTreeTraversal(btTraversal, this));
+			//}
+		}
+	}
+
+	public void TriggerBattle() {
+		if (battleBehavior == null)
+			return;
+		battling = true;
+		currentNodes.Clear();
 	}
 
 	public void Damage(int amt) {

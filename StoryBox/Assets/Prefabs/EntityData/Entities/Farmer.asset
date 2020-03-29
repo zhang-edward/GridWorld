@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e28537663ce409196230287a792fc4, type: 3}
   m_Name: Farmer
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 10
   expandTerritoryRange: 0
   allowedTiles: 010000000200000003000000
   defaultBehavior: Farmer
+  battleBehavior: Flee
   defaultTags:
   - farmer
   animations:
@@ -69,9 +70,8 @@ MonoBehaviour:
         - {fileID: -2588129535086066865, guid: 6dbb67e10ef494b41ba5f51bb2d05f1e, type: 3}
         - {fileID: 1089435390041203343, guid: 6dbb67e10ef494b41ba5f51bb2d05f1e, type: 3}
         - {fileID: 1089435390041203343, guid: 6dbb67e10ef494b41ba5f51bb2d05f1e, type: 3}
-        - {fileID: 1089435390041203343, guid: 6dbb67e10ef494b41ba5f51bb2d05f1e, type: 3}
         fps: 5
-        looping: 0
+        looping: 1
   immobile: 0
   hasHeight: 1
   spriteOffset: 0.3

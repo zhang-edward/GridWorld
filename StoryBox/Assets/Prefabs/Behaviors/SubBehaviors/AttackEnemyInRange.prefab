@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bd192e7066e4659acb76ceaefa2e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  moveRange: 1
   movementKey: move_dest
 --- !u!1 &1000218461469878985
 GameObject:
@@ -87,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9771706a9d55443d5a411b2db1452f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   entitiesKey: enemies
   writeKey: enemy
 --- !u!1 &1000218461987657136
@@ -137,12 +140,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aae2b6f6ad34fe3a4a9576690d016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   behaviors:
   - {fileID: 1000218462438436780}
   - {fileID: 1956372675059734293}
   - {fileID: 1000218461469878987}
   - {fileID: 1000218462416936331}
-  - {fileID: 8224471350015189711}
+  - {fileID: 0}
 --- !u!1 &1000218462416936329
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07273ee41ab643e48cac19839da080c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   movement: {fileID: 1000218460898633745}
   destinationKey: enemy
   movementKey: move_dest
@@ -233,11 +238,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5409ab55f4a4dcabd91651b54bd12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   allies: 0
   enemies: 1
   tags: []
   checkUniqueTag: 0
   range: 3
+  searchFromKey: 
   entitiesKey: enemies
   countKey: num_enemies
 --- !u!1 &2910098913358576297
@@ -280,13 +287,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2910098913358576297}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f5500fb65a8f4bd582764905dc60a3d, type: 3}
+  m_Script: {fileID: 11500000, guid: 30db3430d2b6343c893da771449b962e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 0
-  attackInterval: 3
-  animationKey: Attack
-  targetKey: enemy
+  debug: 0
+  range: 1
+  interval: 2
+  triggerBattle: 1
+  animationKey: 
+  targetKey: 
+  mode: 0
+  amountKey: 
+  defaultAmount: 0
 --- !u!1 &5346227818186577726
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695afd001dd8c4b2caaa43fd0d081d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  entityKey: 
   key: num_enemies
   mode: 1
   value: 0

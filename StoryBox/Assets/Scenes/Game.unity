@@ -1151,7 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce920acdf4d3a43e9b39714a8ae9c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugEntity: {fileID: 11400000, guid: 22d3f73a011a046a4a6f3626fb2a52d8, type: 2}
+  debugEntity: {fileID: 11400000, guid: 3fe73ba4cedba4a7fa7d2903e3c688c5, type: 2}
   world: {fileID: 353964532}
   entityPool: {fileID: 111865306}
 --- !u!4 &1359973687
@@ -1469,7 +1469,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b79e6dccf5d4210a6e2bc1d6d29db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  behaviors:
+  entityBehaviors:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 0
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 0
+    _keyValues:
+    - Aggro
+    - Builder
+    - Farmer
+    - Settler
+    - Soldier
+    - Worker
+    _keys:
+    - Aggro
+    - Builder
+    - Farmer
+    - Settler
+    - Soldier
+    - Worker
+    _values:
+    - {fileID: 1129449537865081008, guid: 5afc53bdf574940c2aa6652dca3ff196, type: 3}
+    - {fileID: 7285802270037134447, guid: b4d71273e2d584295a547fc79d1d5e49, type: 3}
+    - {fileID: 3698700529209788588, guid: 4e397afd2005743d2b03c7b026894521, type: 3}
+    - {fileID: 972157483258670459, guid: 82dd35a8c682742f2b0cc9195356376c, type: 3}
+    - {fileID: 7623429734414137435, guid: 9fccfde97c65443d8aa54596c4d3b9e7, type: 3}
+    - {fileID: 7251292323832962078, guid: ac8686d974b7b46c0bb23001a23fbbd2, type: 3}
+  structureBehaviors:
     reorderableList:
       canAdd: 1
       canRemove: 1
@@ -1493,47 +1537,58 @@ MonoBehaviour:
     reqReferences: {fileID: 0}
     isExpanded: 1
     _keyValues:
-    - Dummy
-    - Settler
-    - Worker
-    - Soldier
-    - Builder
-    - Capital
-    - House
     - Barracks
+    - Capital
     - EnemyCamp
-    - Aggro
-    - Project
     - Farm
-    - Farmer
+    - House
+    - Project
     _keys:
-    - Dummy
-    - Settler
-    - Worker
-    - Soldier
-    - Builder
-    - Capital
-    - House
     - Barracks
+    - Capital
     - EnemyCamp
-    - Aggro
-    - Project
     - Farm
-    - Farmer
+    - House
+    - Project
     _values:
-    - {fileID: 4310568840794384901, guid: 053637df062304613aa32eb8e7eaa452, type: 3}
-    - {fileID: 972157483258670459, guid: 82dd35a8c682742f2b0cc9195356376c, type: 3}
-    - {fileID: 7251292323832962078, guid: ac8686d974b7b46c0bb23001a23fbbd2, type: 3}
-    - {fileID: 7623429734414137435, guid: 9fccfde97c65443d8aa54596c4d3b9e7, type: 3}
-    - {fileID: 7285802270037134447, guid: b4d71273e2d584295a547fc79d1d5e49, type: 3}
-    - {fileID: 4526551685978593677, guid: c7e7da72cd7ef4080a8e285c2473b5ce, type: 3}
-    - {fileID: 1929478104114394408, guid: 7c6e944170e404431bc5d90ff9f1ac68, type: 3}
     - {fileID: 3222829710095964034, guid: 116dbe4754c6f414fa1baa54af038f23, type: 3}
+    - {fileID: 4526551685978593677, guid: c7e7da72cd7ef4080a8e285c2473b5ce, type: 3}
     - {fileID: 6508914233073115633, guid: 40f51f6de080b4e839d8bbb743f5380a, type: 3}
-    - {fileID: 1129449537865081008, guid: 5afc53bdf574940c2aa6652dca3ff196, type: 3}
-    - {fileID: 2831825321604697118, guid: 61b329b222fb246e48c6daa6f5841234, type: 3}
     - {fileID: 5750336441481927008, guid: 5d49071177380401b9290be32d42ed0d, type: 3}
-    - {fileID: 3698700529209788588, guid: 4e397afd2005743d2b03c7b026894521, type: 3}
+    - {fileID: 1929478104114394408, guid: 7c6e944170e404431bc5d90ff9f1ac68, type: 3}
+    - {fileID: 2831825321604697118, guid: 61b329b222fb246e48c6daa6f5841234, type: 3}
+  battleBehaviors:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues:
+    - Cower
+    - Flee
+    _keys:
+    - Cower
+    - Flee
+    _values:
+    - {fileID: 6288545280950407473, guid: 52fff9a83e58249e896465eda51c6031, type: 3}
+    - {fileID: 3092779952776512742, guid: 9d492ab676e014a3e9c0288e25016988, type: 3}
 --- !u!4 &1486372153
 Transform:
   m_ObjectHideFlags: 0
