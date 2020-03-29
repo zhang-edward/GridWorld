@@ -9,6 +9,7 @@ public class EntitySprite : MonoBehaviour {
 
 	private SpriteRenderer sr;
 	private AnimationSetPlayer player;
+	[SerializeField] private SortingLayerControl sortingLayerControl = null;
 	private Entity entity;
 	private Vector3 randomOffset;
 	private float offsetSpeed = 0.05f;
@@ -21,10 +22,16 @@ public class EntitySprite : MonoBehaviour {
 		sr = GetComponent<SpriteRenderer>();
 	}
 
-	public void Init(Entity entity, AnimationSet set, float offsetAmount, bool immobile) {
+	public void Init(Entity entity, AnimationSet set, float offsetAmount, bool immobile, bool hasHeight) {
 		this.entity = entity;
 		this.offsetAmount = offsetAmount;
 		this.immobile = immobile;
+
+		// Set this sprite to be behind everything
+		if (!hasHeight) {
+			sortingLayerControl.usingCustomPivot = true;
+			sortingLayerControl.customPivot = 1;
+		}
 
 		// Configure animation
 		if (set.dict.ContainsKey("Move"))

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e28537663ce409196230287a792fc4, type: 3}
+  m_Name: Farm
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  expandTerritoryRange: 1
+  allowedTiles: 02000000
+  defaultBehavior: Farm
+  defaultTags:
+  - structure
+  - farm
+  - employer
+  animations:
+    dict:
+      reorderableList:
+        canAdd: 1
+        canRemove: 1
+        draggable: 1
+        expandable: 1
+        multipleSelection: 1
+        isExpanded: 1
+        label:
+          m_Text: Keys
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+        headerHeight: 18
+        footerHeight: 13
+        slideEasing: 0.15
+        verticalSpacing: 2
+        showDefaultBackground: 1
+        elementDisplayType: 0
+        elementNameProperty: 
+        elementNameOverride: 
+        elementIcon: {fileID: 0}
+      reqReferences: {fileID: 0}
+      isExpanded: 1
+      _keyValues:
+      - Default
+      _keys:
+      - Default
+      _values:
+      - frames:
+        - {fileID: 7698297483019045855, guid: 66f7de081b08e435dbbf924d91095b5c, type: 3}
+        fps: 0
+        looping: 0
+  immobile: 1
+  hasHeight: 0
+  spriteOffset: 0
+  infoPanelData: {fileID: 11400000, guid: 63d75e9b9000e41aca2b373aa3aa329e, type: 2}

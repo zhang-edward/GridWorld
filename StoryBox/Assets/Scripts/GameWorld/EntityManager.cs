@@ -19,16 +19,18 @@ public class EntityManager : MonoBehaviour {
 
 	void Awake() {
 		// Singleton, but destroyed on reloaded
-		if (instance == null)
+		if (instance != this)
 			instance = this;
-		else
-			Destroy(gameObject);
 
 		entities = new List<Entity>();
 	}
 
 	void Start() {
 		GameManager.instance.onTick += Tick;
+	}
+
+	void OnDisable() {
+		GameManager.instance.onTick -= Tick;
 	}
 
 	void Update() {

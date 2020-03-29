@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Barracks
   m_EditorClassIdentifier: 
   maxHealth: 60
-  attack: 0
   expandTerritoryRange: 2
   allowedTiles: 
   defaultBehavior: Barracks
@@ -51,7 +50,7 @@ MonoBehaviour:
       - Default
       _values:
       - frames:
-        - {fileID: -6390229602189606177, guid: 29539c8bda8d243488487b78c5634121, type: 3}
+        - {fileID: -4216053607638181208, guid: 50c5df6b34fee464c93e4c7baa4857de, type: 3}
         fps: 0
         looping: 0
   immobile: 1

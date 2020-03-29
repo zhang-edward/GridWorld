@@ -154,7 +154,13 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -310,7 +316,7 @@ TilemapRenderer:
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
-  m_SortOrder: 0
+  m_SortOrder: 2
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
@@ -409,10 +415,10 @@ RectTransform:
   m_Father: {fileID: 1723760541}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 128, y: -128}
-  m_SizeDelta: {x: 240, y: 48}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &189614095
 MonoBehaviour:
@@ -642,7 +648,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9981d0dfb084448a2ace1b789428af4d, type: 2}
   - {fileID: 11400000, guid: e3e7aa76b1ac044b18a44778c9c2a638, type: 2}
   - {fileID: 11400000, guid: 2eac7cea4e11d4e2f88951a52fae3489, type: 2}
-  - {fileID: 11400000, guid: 7751342cbc0fb4fd5a3c71010fcfe2fd, type: 2}
+  - {fileID: 11400000, guid: 71fc1b94bc9de4c20a23e409c62e17f3, type: 2}
   tilemapPrefab: {fileID: 8401150659206816661, guid: dcb18611faee64e7e82c5f9d6cf8ecbc,
     type: 3}
   baseTilemaps: []
@@ -708,10 +714,10 @@ RectTransform:
   m_Father: {fileID: 1723760541}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 128, y: -40}
-  m_SizeDelta: {x: 240, y: 64}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &452243441
 MonoBehaviour:
@@ -759,8 +765,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -993,10 +999,10 @@ RectTransform:
   m_Father: {fileID: 1723760541}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 128, y: -88}
-  m_SizeDelta: {x: 240, y: 32}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1245687346
 MonoBehaviour:
@@ -1044,8 +1050,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1498,6 +1504,8 @@ MonoBehaviour:
     - EnemyCamp
     - Aggro
     - Project
+    - Farm
+    - Farmer
     _keys:
     - Dummy
     - Settler
@@ -1510,18 +1518,22 @@ MonoBehaviour:
     - EnemyCamp
     - Aggro
     - Project
+    - Farm
+    - Farmer
     _values:
     - {fileID: 4310568840794384901, guid: 053637df062304613aa32eb8e7eaa452, type: 3}
     - {fileID: 972157483258670459, guid: 82dd35a8c682742f2b0cc9195356376c, type: 3}
     - {fileID: 7251292323832962078, guid: ac8686d974b7b46c0bb23001a23fbbd2, type: 3}
     - {fileID: 7623429734414137435, guid: 9fccfde97c65443d8aa54596c4d3b9e7, type: 3}
-    - {fileID: 7713886501807508016, guid: b4d71273e2d584295a547fc79d1d5e49, type: 3}
-    - {fileID: 3371419866820580107, guid: c7e7da72cd7ef4080a8e285c2473b5ce, type: 3}
+    - {fileID: 7285802270037134447, guid: b4d71273e2d584295a547fc79d1d5e49, type: 3}
+    - {fileID: 4526551685978593677, guid: c7e7da72cd7ef4080a8e285c2473b5ce, type: 3}
     - {fileID: 1929478104114394408, guid: 7c6e944170e404431bc5d90ff9f1ac68, type: 3}
     - {fileID: 3222829710095964034, guid: 116dbe4754c6f414fa1baa54af038f23, type: 3}
     - {fileID: 6508914233073115633, guid: 40f51f6de080b4e839d8bbb743f5380a, type: 3}
     - {fileID: 1129449537865081008, guid: 5afc53bdf574940c2aa6652dca3ff196, type: 3}
     - {fileID: 2831825321604697118, guid: 61b329b222fb246e48c6daa6f5841234, type: 3}
+    - {fileID: 5750336441481927008, guid: 5d49071177380401b9290be32d42ed0d, type: 3}
+    - {fileID: 3698700529209788588, guid: 4e397afd2005743d2b03c7b026894521, type: 3}
 --- !u!4 &1486372153
 Transform:
   m_ObjectHideFlags: 0
@@ -1554,7 +1566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1692376329
 MonoBehaviour:
   m_ObjectHideFlags: 0

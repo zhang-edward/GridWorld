@@ -53,5 +53,6 @@ MonoBehaviour:
         fps: 0
         looping: 0
   immobile: 1
+  hasHeight: 0
   spriteOffset: 0.2
   infoPanelData: {fileID: 0}

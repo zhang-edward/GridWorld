@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: town
+  m_Script: {fileID: 11500000, guid: 535f8e525ff367c4ba67961e201a05ed, type: 3}
+  m_Name: rock
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -2688849645817902931, guid: 9430f688833ec4111962ef1d8097bd12,
-    type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -35,3 +34,8 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
+  m_Sprites:
+  - {fileID: -8373391323728436399, guid: 7a11d780ce3a74b629e796abd60441dd, type: 3}
+  - {fileID: -6499986850445425416, guid: 7a11d780ce3a74b629e796abd60441dd, type: 3}
+  - {fileID: 7669212285095828728, guid: 7a11d780ce3a74b629e796abd60441dd, type: 3}
+  - {fileID: -4240612016408468850, guid: 7a11d780ce3a74b629e796abd60441dd, type: 3}

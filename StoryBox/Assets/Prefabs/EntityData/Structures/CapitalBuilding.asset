@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: CapitalBuilding
   m_EditorClassIdentifier: 
   maxHealth: 100
-  attack: 0
   expandTerritoryRange: 3
   allowedTiles: 0100000002000000
   defaultBehavior: Capital
@@ -50,7 +49,7 @@ MonoBehaviour:
       - Default
       _values:
       - frames:
-        - {fileID: 1032229067355242517, guid: 29539c8bda8d243488487b78c5634121, type: 3}
+        - {fileID: -9012831778426787833, guid: 66f7de081b08e435dbbf924d91095b5c, type: 3}
         fps: 0
         looping: 0
   immobile: 1

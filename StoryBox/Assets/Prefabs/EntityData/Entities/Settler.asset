@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Settler
   m_EditorClassIdentifier: 
   maxHealth: 1
-  attack: 1
   expandTerritoryRange: 0
   allowedTiles: 010000000200000003000000
   defaultBehavior: Settler
@@ -51,16 +50,16 @@ MonoBehaviour:
       - Move
       _values:
       - frames:
-        - {fileID: 4862552147654451688, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 1757776262717163670, guid: 7b8beaf3e523c478cac80401a0150bdb, type: 3}
         fps: 0
         looping: 0
       - frames:
-        - {fileID: 4862552147654451688, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 770849671259497214, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 4862552147654451688, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 770849671259497214, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 4862552147654451688, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 3606008699692657469, guid: 7b8beaf3e523c478cac80401a0150bdb, type: 3}
+        - {fileID: -8756733531388117390, guid: 7b8beaf3e523c478cac80401a0150bdb, type: 3}
+        - {fileID: 2825641549689670234, guid: 7b8beaf3e523c478cac80401a0150bdb, type: 3}
+        - {fileID: 1757776262717163670, guid: 7b8beaf3e523c478cac80401a0150bdb, type: 3}
         fps: 10
         looping: 0
   immobile: 0
   spriteOffset: 0.3
+  infoPanelData: {fileID: 0}

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Worker
   m_EditorClassIdentifier: 
   maxHealth: 10
-  attack: 0
   expandTerritoryRange: 0
   allowedTiles: 010000000200000003000000
   defaultBehavior: Worker
@@ -51,16 +50,16 @@ MonoBehaviour:
       - Move
       _values:
       - frames:
-        - {fileID: 8351446633001484291, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: -6138138606470901868, guid: 5ce845c0ddeab4ec8b685088142632a5, type: 3}
         fps: 0
         looping: 0
       - frames:
-        - {fileID: 8351446633001484291, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: -4472081488600128898, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 8351446633001484291, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: -4472081488600128898, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 8351446633001484291, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: -6138138606470901868, guid: 5ce845c0ddeab4ec8b685088142632a5, type: 3}
+        - {fileID: -8253327620333915485, guid: 5ce845c0ddeab4ec8b685088142632a5, type: 3}
+        - {fileID: 4761598018604310582, guid: 5ce845c0ddeab4ec8b685088142632a5, type: 3}
+        - {fileID: 1831328664270491200, guid: 5ce845c0ddeab4ec8b685088142632a5, type: 3}
         fps: 10
         looping: 0
   immobile: 0
   spriteOffset: 0.3
+  infoPanelData: {fileID: 0}

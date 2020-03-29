@@ -10,7 +10,7 @@ public class CameraControl : MonoBehaviour {
     private float targetCameraSize;
     private float maxCameraSize;
     private float minCameraSize = 2;
-    private Vector3 targetCameraPos;
+	private Vector3 targetCameraPos;
 
     void Start() {
         targetCameraSize = Camera.main.orthographicSize;

@@ -64,7 +64,7 @@ public class Entity : MonoBehaviour {
 		health = data.maxHealth;
 		infoPanelData = data.infoPanelData;
 		expandTerritoryRange = data.expandTerritoryRange;
-		entitySprite.Init(this, data.animations, data.spriteOffset, data.immobile);
+		entitySprite.Init(this, data.animations, data.spriteOffset, data.immobile, data.hasHeight);
 		behavior = BehaviorManager.instance.GetBehavior(data.defaultBehavior);
 		tags = new List<string>();
 		tags.AddRange(data.defaultTags);

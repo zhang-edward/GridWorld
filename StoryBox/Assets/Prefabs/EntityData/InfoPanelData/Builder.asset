@@ -16,3 +16,5 @@ MonoBehaviour:
   - wood
   - wood_needed
   - project_wood
+  - hunger
+  - food

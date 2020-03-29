@@ -6,7 +6,8 @@ public class Leaf_MemoryIntOperation : Behavior {
 	public enum Mode {
 		Add,
 		Subtract,
-		Set
+		Set,
+		Multiply
 	}
 
 	[Header("Read Keys")]
@@ -21,10 +22,11 @@ public class Leaf_MemoryIntOperation : Behavior {
 
 	protected override NodeStatus Act(Entity entity, Memory memory) {
 		memory.SetDefault(key1, defaultValue1);
-		memory.SetDefault(key2, defaultValue2);
+		if (key2 != "")
+			memory.SetDefault(key2, defaultValue2);
 
 		int num1 = (int)memory[key1];
-		int num2 = (int)memory[key2];
+		int num2 = key2 != "" ? (int)memory[key2] : defaultValue2;
 		int result = 0;
 
 		switch(mode) {
@@ -36,6 +38,9 @@ public class Leaf_MemoryIntOperation : Behavior {
 				break;
 			case Mode.Set:
 				result = num2;
+				break;
+			case Mode.Multiply:
+				result = num1 * num2;
 				break;
 		}
 

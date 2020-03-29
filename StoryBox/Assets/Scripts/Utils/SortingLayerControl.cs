@@ -9,11 +9,9 @@ public class SortingLayerControl : MonoBehaviour {
 	public float customPivot;
 	SpriteRenderer sr;
 
-	void Start() {
+	void OnEnable() {
 		sr = GetComponent<SpriteRenderer>();
-		if (updating)
-			StartCoroutine(SetSortingOrderRepeating());
-		else
+		if (!updating)
 			SetSortingOrder();
 	}
 
@@ -29,18 +27,15 @@ public class SortingLayerControl : MonoBehaviour {
 		}
 	}
 
-	private IEnumerator SetSortingOrderRepeating() {
-		for (; ; )
-		{
+	void Update() {
+		if (updating)
 			SetSortingOrder();
-			yield return null;
-		}
 	}
 
 	private void SetSortingOrder() {
 		float offset;
 		if (!usingCustomPivot)
-			offset = sr.bounds.size.y / 2;
+			offset = 0;
 		else
 			offset = -customPivot;
 

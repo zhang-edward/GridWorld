@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  mode: 0
+  mode: 1
   positionsKey: potential_settle_locations
   selectedKey: selected_settle_location
 --- !u!1 &4545538016063071055

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Soldier
   m_EditorClassIdentifier: 
   maxHealth: 20
-  attack: 2
   expandTerritoryRange: 0
   allowedTiles: 010000000200000003000000
   defaultBehavior: Soldier
@@ -27,7 +26,7 @@ MonoBehaviour:
         draggable: 1
         expandable: 1
         multipleSelection: 1
-        isExpanded: 0
+        isExpanded: 1
         label:
           m_Text: Keys
           m_Image: {fileID: 0}
@@ -42,7 +41,7 @@ MonoBehaviour:
         elementNameOverride: 
         elementIcon: {fileID: 0}
       reqReferences: {fileID: 0}
-      isExpanded: 0
+      isExpanded: 1
       _keyValues:
       - Default
       - Move
@@ -53,22 +52,24 @@ MonoBehaviour:
       - Attack
       _values:
       - frames:
-        - {fileID: 6246832655069406539, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
+        - {fileID: -7888883623822391485, guid: 6813fd119f9c0410a96b614b35e22e8d, type: 3}
         fps: 0
         looping: 0
       - frames:
-        - {fileID: 6246832655069406539, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
-        - {fileID: -2269519568428476932, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
-        - {fileID: 6246832655069406539, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
-        - {fileID: -2269519568428476932, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
-        fps: 10
+        - {fileID: -7219599049323253994, guid: 6813fd119f9c0410a96b614b35e22e8d, type: 3}
+        - {fileID: -4411765047106136263, guid: 6813fd119f9c0410a96b614b35e22e8d, type: 3}
+        - {fileID: 6494343574222222044, guid: 6813fd119f9c0410a96b614b35e22e8d, type: 3}
+        - {fileID: -7888883623822391485, guid: 6813fd119f9c0410a96b614b35e22e8d, type: 3}
+        fps: 8
         looping: 0
       - frames:
-        - {fileID: 6246832655069406539, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
-        - {fileID: -6676640116428088755, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
-        - {fileID: -2411736328533753459, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
-        - {fileID: 3240119343033235501, guid: 0285b407eb51d4377a64e235fdfc5cf7, type: 3}
+        - {fileID: -9115218041845982128, guid: 6813fd119f9c0410a96b614b35e22e8d, type: 3}
+        - {fileID: 4930095747641883597, guid: 6813fd119f9c0410a96b614b35e22e8d, type: 3}
+        - {fileID: -8059075215647428288, guid: 6813fd119f9c0410a96b614b35e22e8d, type: 3}
+        - {fileID: -4412410498506004856, guid: 6813fd119f9c0410a96b614b35e22e8d, type: 3}
+        - {fileID: -2647333609133476714, guid: 6813fd119f9c0410a96b614b35e22e8d, type: 3}
         fps: 10
         looping: 0
   immobile: 0
   spriteOffset: 0.3
+  infoPanelData: {fileID: 0}

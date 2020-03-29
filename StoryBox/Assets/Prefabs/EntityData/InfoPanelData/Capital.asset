@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Capital
   m_EditorClassIdentifier: 
   displayedMemoryIntKeys:
-  - num_builders
+  - food_surplus
+  - potential_food_surplus
   - stockpile_wood

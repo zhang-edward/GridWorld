@@ -54,29 +54,30 @@ MonoBehaviour:
       - Build_OneShot
       _values:
       - frames:
-        - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: -3235603631770543932, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
         fps: 10
         looping: 0
       - frames:
-        - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: -3333249045553888777, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: -3333249045553888777, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        fps: 10
+        - {fileID: 6127311033911270373, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
+        - {fileID: -1054062038475493243, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
+        - {fileID: 4890335269990563429, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
+        - {fileID: -3235603631770543932, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
+        fps: 8
         looping: 0
       - frames:
-        - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 8862369697692505149, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 5662891429576332192, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: -2674780064655468220, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 6295352424422762645, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
+        - {fileID: -245080895592834864, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
+        - {fileID: 2060161749085279149, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
+        - {fileID: -6405722883256397706, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
+        - {fileID: 5895781990151256186, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
         fps: 10
         looping: 1
       - frames:
-        - {fileID: 5793479280948049655, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 8862369697692505149, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: 5662891429576332192, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
-        - {fileID: -2674780064655468220, guid: fe5c862abc4f64df99960f41c108f739, type: 3}
+        - {fileID: 6295352424422762645, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
+        - {fileID: -245080895592834864, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
+        - {fileID: 2060161749085279149, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
+        - {fileID: -6405722883256397706, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
+        - {fileID: 5895781990151256186, guid: 9f88d4aac02bd4711a44af32eb036b28, type: 3}
         fps: 10
         looping: 0
   immobile: 0

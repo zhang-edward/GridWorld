@@ -38,9 +38,10 @@ public class Leaf_ModifyHealth : Behavior {
 		}
 
 		// Attack target
-		memory.SetDefault(amountKey, defaultAmount);
-		Entity target = memory[targetKey] as Entity;
-		int amount = (int)memory[amountKey];
+		if (amountKey != "")
+			memory.SetDefault(amountKey, defaultAmount);
+		Entity target = targetKey != "" ? memory[targetKey] as Entity : entity;
+		int amount = amountKey != "" ? (int)memory[amountKey] : defaultAmount;
 
 		if (target.health > 0 &&
 			entity.position.ManhattanDistance(target.position) <= range) {

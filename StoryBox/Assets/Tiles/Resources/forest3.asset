@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 11500000, guid: 535f8e525ff367c4ba67961e201a05ed, type: 3}
   m_Name: forest3
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -2843559141928408099, guid: 9430f688833ec4111962ef1d8097bd12,
-    type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -35,3 +34,6 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
+  m_Sprites:
+  - {fileID: 7948283228235417757, guid: 4158ef9ebe9f6424b8a09981a7232c36, type: 3}
+  - {fileID: 3185705269240509557, guid: 4158ef9ebe9f6424b8a09981a7232c36, type: 3}

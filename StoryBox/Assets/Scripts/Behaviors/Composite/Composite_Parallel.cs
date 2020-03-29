@@ -46,7 +46,6 @@ public class Composite_Parallel : Behavior {
 
 			// Run the current sub-behavior
 			status = behaviors[i].ExecuteAction(entity, memory);
-			print($"{behaviors[i]}: {status.ToString()}");
 			// print($"{behaviors[i]}: {status.ToString()}");
 			// Fails => break with status FAILURE
 			if (status == NodeStatus.Failure) {

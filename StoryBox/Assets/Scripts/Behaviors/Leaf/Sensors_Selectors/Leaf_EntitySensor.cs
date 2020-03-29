@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Leaf_EntitySensor : Behavior {
 
+	private static Vector2Int NONE = new Vector2Int(-1, -1);
+
 	[Header("What to detect")]
 	public bool allies = false;
 	public bool enemies = true;
@@ -13,15 +15,20 @@ public class Leaf_EntitySensor : Behavior {
 	[Header("Other properties")]
 	public int range;
 
+	[Header("Read Keys")]
+	public string searchFromKey;
+
 	[Header("Write Keys")]
 	public string entitiesKey = "entities";
 	public string countKey;
 
 	protected override NodeStatus Act(Entity entity, Memory memory) {
+		Vector2Int startPosition = GetStartPosition(entity, memory);
+
 		List<Entity> answer = new List<Entity>();
 
-		int xx = entity.position.x;
-		int yy = entity.position.y;
+		int xx = startPosition.x;
+		int yy = startPosition.y;
 		for (int y = yy - range; y <= yy + range; y++) {
 			for (int x = xx - range; x <= xx + range; x++) {
 				if (World.InBounds(x, y)) {
@@ -53,5 +60,19 @@ public class Leaf_EntitySensor : Behavior {
 				return false;
 		}
 		return true;
+	}
+
+	private Vector2Int GetStartPosition(Entity entity, Memory memory) {
+		if (searchFromKey == "")
+			return entity.position;
+		object obj = memory[searchFromKey];
+		Vector2Int destination = NONE;
+		if (obj is Entity) {
+			destination = ((Entity)obj).position;
+		}
+		else if (obj is Vector2Int) {
+			destination = (Vector2Int)obj;
+		}
+		return destination;
 	}
 }
