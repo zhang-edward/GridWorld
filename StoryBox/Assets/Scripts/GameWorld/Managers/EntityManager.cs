@@ -6,7 +6,9 @@ public class EntityManager : MonoBehaviour {
 	public static EntityManager instance;
 	public const int MAX_ENTITIES_PER_CELL = 4;
 
-	public EntityData debugEntity;
+	public EntityData debugEntity1;
+	public EntityData debugEntity2;
+	[Space]
 	public World world;
 	public List<Entity> entities { get; private set; }
 	public ObjectPooler entityPool;
@@ -37,10 +39,10 @@ public class EntityManager : MonoBehaviour {
 		Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		Vector2Int coords = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
 		if (Input.GetKeyDown(KeyCode.Alpha1)) {
-			CreateEntity(debugEntity, coords.x, coords.y, 0);
+			CreateEntity(debugEntity1, coords.x, coords.y, 0);
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha2)) {
-			CreateEntity(debugEntity, coords.x, coords.y, 1);
+			CreateEntity(debugEntity2, coords.x, coords.y, 0);
 		}
 		if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift)) {
 			List<Entity> l = entityMap[coords.y, coords.x];
