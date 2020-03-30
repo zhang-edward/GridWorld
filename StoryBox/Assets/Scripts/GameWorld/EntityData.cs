@@ -7,6 +7,7 @@ public class EntityData : ScriptableObject {
 	[Header("Entity properties")]
 	public int maxHealth = 1;
 	public int expandTerritoryRange = 0;
+	public bool untargetable = false;
 	public List<int> allowedTiles; // Which tiles is this entity allowed to be on?
 	public string defaultBehavior;
 	public string battleBehavior;

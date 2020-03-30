@@ -5,7 +5,7 @@ public class Leaf_PostJob : Behavior {
 
 	public const string HAS_JOB_TAG = "has_job";
 	public const string JOB_TAG = "job_";
-	public const string APPLICANTS_TAG = "_applicants";
+	public const string APPLICANTS_KEY = "_applicants";
 
 	public string jobTitle;
 	public int capacity;
@@ -35,7 +35,7 @@ public class Leaf_PostJob : Behavior {
 		}
 
 		// Go thru applicants and process them
-		List<Entity> applicants = entity.childEntities.ContainsKey(jobTitle + APPLICANTS_TAG) ? entity.childEntities[jobTitle + APPLICANTS_TAG] : null;
+		List<Entity> applicants = entity.childEntities.ContainsKey(jobTitle + APPLICANTS_KEY) ? entity.childEntities[jobTitle + APPLICANTS_KEY] : null;
 		if (applicants == null || applicants.Count <= 0) {
 			return NodeStatus.Success;
 		}

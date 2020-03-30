@@ -8,6 +8,7 @@ public class Leaf_EntitySensor : Behavior {
 	[Header("What to detect")]
 	public bool allies = false;
 	public bool enemies = true;
+	public bool untargetables = false;
 	public List<string> tags;
 	[Tooltip("Check if this entity has the tag placed by Leaf_TagUniquely")]
 	public bool checkUniqueTag;
@@ -48,6 +49,7 @@ public class Leaf_EntitySensor : Behavior {
 
 	private bool Detects(Entity entity, Entity other) {
 		return CheckTags(entity, other) &&
+			(!untargetables && other.untargetable) &&
 			((allies && other.faction == entity.faction) ||
 			(enemies && other.faction != entity.faction));
 	}

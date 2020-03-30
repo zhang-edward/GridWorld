@@ -25,7 +25,7 @@ public class Leaf_AcceptJob : Behavior
 				foreach (string tag in employer.tags) {
 					if (tag.StartsWith(Leaf_PostJob.JOB_TAG)) {
 						string positionName = tag.Substring(Leaf_PostJob.JOB_TAG.Length);
-						employer.AddChild(positionName + Leaf_PostJob.APPLICANTS_TAG, entity);
+						employer.AddChild(positionName + Leaf_PostJob.APPLICANTS_KEY, entity);
 						memory[applicationStateKey] = true;
 						return NodeStatus.Running;
 					}

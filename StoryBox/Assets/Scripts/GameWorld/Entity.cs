@@ -19,6 +19,7 @@ public class Entity : MonoBehaviour {
 	public int maxHealth { get; private set; }
 	public int health { get; private set; }
 	public int expandTerritoryRange { get; private set; }
+	public bool untargetable { get; private set; }
 	public List<int> allowedTiles { get; private set; }
 	public InfoPanelData infoPanelData { get; private set; }
 
@@ -67,6 +68,7 @@ public class Entity : MonoBehaviour {
 		health = data.maxHealth;
 		infoPanelData = data.infoPanelData;
 		expandTerritoryRange = data.expandTerritoryRange;
+		untargetable = data.untargetable;
 		entitySprite.Init(this, data.animations, data.spriteOffset, data.immobile, data.hasHeight);
 		behavior = BehaviorManager.instance.GetBehavior(data.defaultBehavior);
 		if (data.battleBehavior != "")
