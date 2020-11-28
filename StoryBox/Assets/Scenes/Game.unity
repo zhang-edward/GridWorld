@@ -1151,7 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce920acdf4d3a43e9b39714a8ae9c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugEntity1: {fileID: 11400000, guid: fa03fefa1d69740c7b8d7bf96c3b7ae0, type: 2}
+  debugEntity1: {fileID: 11400000, guid: 22d3f73a011a046a4a6f3626fb2a52d8, type: 2}
   debugEntity2: {fileID: 11400000, guid: 1c9583c96dff2481da3212bc4df11f58, type: 2}
   world: {fileID: 353964532}
   entityPool: {fileID: 111865306}
@@ -1477,7 +1477,7 @@ MonoBehaviour:
       draggable: 1
       expandable: 1
       multipleSelection: 1
-      isExpanded: 0
+      isExpanded: 1
       label:
         m_Text: Keys
         m_Image: {fileID: 0}
@@ -1492,7 +1492,7 @@ MonoBehaviour:
       elementNameOverride: 
       elementIcon: {fileID: 0}
     reqReferences: {fileID: 0}
-    isExpanded: 0
+    isExpanded: 1
     _keyValues:
     - Aggro
     - Builder

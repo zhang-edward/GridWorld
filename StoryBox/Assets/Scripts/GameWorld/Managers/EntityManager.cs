@@ -4,7 +4,7 @@ using UnityEngine;
 public class EntityManager : MonoBehaviour {
 
 	public static EntityManager instance;
-	public const int MAX_ENTITIES_PER_CELL = 4;
+	public const int MAX_ENTITIES_PER_CELL = 100;
 
 	public EntityData debugEntity1;
 	public EntityData debugEntity2;
